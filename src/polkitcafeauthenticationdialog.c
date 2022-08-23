@@ -428,7 +428,7 @@ get_image (PolkitCafeAuthenticationDialog *dialog)
                         copy_pixbuf,
                         24, 24, 24, 24,
                         24, 24, 0.5, 0.5,
-                        CDK_INTERP_BILINEAR,
+                        GDK_INTERP_BILINEAR,
                         255);
 
   image = ctk_image_new_from_pixbuf (copy_pixbuf);
