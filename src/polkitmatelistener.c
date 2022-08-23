@@ -25,8 +25,8 @@
 #include <string.h>
 #include <glib/gi18n.h>
 
-#include "polkitmatelistener.h"
-#include "polkitmateauthenticator.h"
+#include "polkitcafelistener.h"
+#include "polkitcafeauthenticator.h"
 
 struct _PolkitMateListener
 {
@@ -43,7 +43,7 @@ struct _PolkitMateListenerClass
   PolkitAgentListenerClass parent_class;
 };
 
-static void polkit_mate_listener_initiate_authentication (PolkitAgentListener  *listener,
+static void polkit_cafe_listener_initiate_authentication (PolkitAgentListener  *listener,
                                                            const gchar          *action_id,
                                                            const gchar          *message,
                                                            const gchar          *icon_name,
@@ -54,26 +54,26 @@ static void polkit_mate_listener_initiate_authentication (PolkitAgentListener  *
                                                            GAsyncReadyCallback   callback,
                                                            gpointer              user_data);
 
-static gboolean polkit_mate_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
+static gboolean polkit_cafe_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
                                                                       GAsyncResult         *res,
                                                                       GError              **error);
 
-G_DEFINE_TYPE (PolkitMateListener, polkit_mate_listener, POLKIT_AGENT_TYPE_LISTENER);
+G_DEFINE_TYPE (PolkitMateListener, polkit_cafe_listener, POLKIT_AGENT_TYPE_LISTENER);
 
 static void
-polkit_mate_listener_init (PolkitMateListener *listener)
+polkit_cafe_listener_init (PolkitMateListener *listener)
 {
 }
 
 static void
-polkit_mate_listener_finalize (GObject *object)
+polkit_cafe_listener_finalize (GObject *object)
 {
-  if (G_OBJECT_CLASS (polkit_mate_listener_parent_class)->finalize != NULL)
-    G_OBJECT_CLASS (polkit_mate_listener_parent_class)->finalize (object);
+  if (G_OBJECT_CLASS (polkit_cafe_listener_parent_class)->finalize != NULL)
+    G_OBJECT_CLASS (polkit_cafe_listener_parent_class)->finalize (object);
 }
 
 static void
-polkit_mate_listener_class_init (PolkitMateListenerClass *klass)
+polkit_cafe_listener_class_init (PolkitMateListenerClass *klass)
 {
   GObjectClass *gobject_class;
   PolkitAgentListenerClass *listener_class;
@@ -81,14 +81,14 @@ polkit_mate_listener_class_init (PolkitMateListenerClass *klass)
   gobject_class = G_OBJECT_CLASS (klass);
   listener_class = POLKIT_AGENT_LISTENER_CLASS (klass);
 
-  gobject_class->finalize = polkit_mate_listener_finalize;
+  gobject_class->finalize = polkit_cafe_listener_finalize;
 
-  listener_class->initiate_authentication          = polkit_mate_listener_initiate_authentication;
-  listener_class->initiate_authentication_finish   = polkit_mate_listener_initiate_authentication_finish;
+  listener_class->initiate_authentication          = polkit_cafe_listener_initiate_authentication;
+  listener_class->initiate_authentication_finish   = polkit_cafe_listener_initiate_authentication_finish;
 }
 
 PolkitAgentListener *
-polkit_mate_listener_new (void)
+polkit_cafe_listener_new (void)
 {
   return POLKIT_AGENT_LISTENER (g_object_new (POLKIT_MATE_TYPE_LISTENER, NULL));
 }
@@ -137,7 +137,7 @@ maybe_initiate_next_authenticator (PolkitMateListener *listener)
 {
   if (listener->active_authenticator == NULL && listener->authenticators != NULL)
     {
-      polkit_mate_authenticator_initiate (POLKIT_MATE_AUTHENTICATOR (listener->authenticators->data));
+      polkit_cafe_authenticator_initiate (POLKIT_MATE_AUTHENTICATOR (listener->authenticators->data));
       listener->active_authenticator = listener->authenticators->data;
     }
 }
@@ -178,11 +178,11 @@ cancelled_cb (GCancellable *cancellable,
 {
   AuthData *data = user_data;
 
-  polkit_mate_authenticator_cancel (data->authenticator);
+  polkit_cafe_authenticator_cancel (data->authenticator);
 }
 
 static void
-polkit_mate_listener_initiate_authentication (PolkitAgentListener  *agent_listener,
+polkit_cafe_listener_initiate_authentication (PolkitAgentListener  *agent_listener,
                                                const gchar          *action_id,
                                                const gchar          *message,
                                                const gchar          *icon_name,
@@ -203,9 +203,9 @@ polkit_mate_listener_initiate_authentication (PolkitAgentListener  *agent_listen
                      callback,
                      user_data);
   g_task_set_source_tag (task,
-                         polkit_mate_listener_initiate_authentication);
+                         polkit_cafe_listener_initiate_authentication);
 
-  authenticator = polkit_mate_authenticator_new (action_id,
+  authenticator = polkit_cafe_authenticator_new (action_id,
                                                   message,
                                                   icon_name,
                                                   details,
@@ -245,13 +245,13 @@ polkit_mate_listener_initiate_authentication (PolkitAgentListener  *agent_listen
 }
 
 static gboolean
-polkit_mate_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
+polkit_cafe_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
                                                       GAsyncResult         *res,
                                                       GError              **error)
 {
   GTask *task = G_TASK (res);
 
-  g_warn_if_fail (g_task_get_source_tag (task) == polkit_mate_listener_initiate_authentication);
+  g_warn_if_fail (g_task_get_source_tag (task) == polkit_cafe_listener_initiate_authentication);
 
   if (g_task_propagate_pointer (task, error) == NULL) {
     return FALSE;

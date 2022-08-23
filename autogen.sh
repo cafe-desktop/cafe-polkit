@@ -4,7 +4,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="mate-polkit"
+PKG_NAME="cafe-polkit"
 
 (test -f $srcdir/src/Makefile.am) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
@@ -12,8 +12,8 @@ PKG_NAME="mate-polkit"
     exit 1
 }
 
-which mate-autogen || {
-    echo "You need to install mate-common from the MATE SVN repository"
+which cafe-autogen || {
+    echo "You need to install cafe-common from the MATE SVN repository"
     exit 1
 }
 
@@ -21,4 +21,4 @@ REQUIRED_AUTOMAKE_VERSION=1.9
 USE_MATE2_MACROS=1
 USE_COMMON_DOC_BUILD=yes
 
-. mate-autogen
+. cafe-autogen
