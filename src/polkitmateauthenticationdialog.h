@@ -19,8 +19,8 @@
  * Author: David Zeuthen <davidz@redhat.com>
  */
 
-#ifndef __POLKIT_MATE_AUTHENTICATION_DIALOG_H
-#define __POLKIT_MATE_AUTHENTICATION_DIALOG_H
+#ifndef __POLKIT_CAFE_AUTHENTICATION_DIALOG_H
+#define __POLKIT_CAFE_AUTHENTICATION_DIALOG_H
 
 #include <gtk/gtk.h>
 #include <polkit/polkit.h>
@@ -29,11 +29,11 @@
 extern "C" {
 #endif
 
-#define POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG            (polkit_cafe_authentication_dialog_get_type ())
-#define POLKIT_MATE_AUTHENTICATION_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialog))
-#define POLKIT_MATE_AUTHENTICATION_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialogClass))
-#define POLKIT_MATE_IS_AUTHENTICATION_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG))
-#define POLKIT_MATE_IS_AUTHENTICATION_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG))
+#define POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG            (polkit_cafe_authentication_dialog_get_type ())
+#define POLKIT_CAFE_AUTHENTICATION_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialog))
+#define POLKIT_CAFE_AUTHENTICATION_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialogClass))
+#define POLKIT_CAFE_IS_AUTHENTICATION_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG))
+#define POLKIT_CAFE_IS_AUTHENTICATION_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG))
 
 typedef struct _PolkitCafeAuthenticationDialog        PolkitCafeAuthenticationDialog;
 typedef struct _PolkitCafeAuthenticationDialogClass   PolkitCafeAuthenticationDialogClass;
@@ -74,4 +74,4 @@ void       polkit_cafe_authentication_dialog_set_info_message              (Polk
 }
 #endif
 
-#endif /* __POLKIT_MATE_AUTHENTICATION_DIALOG_H */
+#endif /* __POLKIT_CAFE_AUTHENTICATION_DIALOG_H */

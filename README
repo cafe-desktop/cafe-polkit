@@ -1,5 +1,5 @@
 PolicyKit-cafe provides an Authentication Agent for PolicyKit that
-integrates well with the MATE desktop environment
+integrates well with the CAFE desktop environment
 
 See http://www.freedesktop.org/wiki/Software/PolicyKit for lots of
 documentation, mailing lists, etc. about PolicyKit.
@@ -11,4 +11,4 @@ Report bugs against PolicyKit-cafe at github
 
  https://github.com/cafe-desktop/cafe-polkit/issues
 
-MATE polkit is a fork of GNOME polkit.
+CAFE polkit is a fork of GNOME polkit.

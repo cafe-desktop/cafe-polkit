@@ -408,7 +408,7 @@ main (int argc, char **argv)
   session = NULL;
   ret = 1;
 
-  bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+  bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 #if HAVE_BIND_TEXTDOMAIN_CODESET
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-polkit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -120,5 +120,5 @@ msgid "PolicyKit Authentication Agent"
 msgstr "Axente de autenticación PolicyKit"
 
 #: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
-msgid "PolicyKit Authentication Agent for the MATE Desktop"
-msgstr "Axente de autenticación PolicyKit para o escritorio MATE"
+msgid "PolicyKit Authentication Agent for the CAFE Desktop"
+msgstr "Axente de autenticación PolicyKit para o escritorio CAFE"

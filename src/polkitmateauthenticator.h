@@ -19,8 +19,8 @@
  * Author: David Zeuthen <davidz@redhat.com>
  */
 
-#ifndef __POLKIT_MATE_AUTHENTICATOR_H
-#define __POLKIT_MATE_AUTHENTICATOR_H
+#ifndef __POLKIT_CAFE_AUTHENTICATOR_H
+#define __POLKIT_CAFE_AUTHENTICATOR_H
 
 #include <glib-object.h>
 
@@ -28,12 +28,12 @@
 extern "C" {
 #endif
 
-#define POLKIT_MATE_TYPE_AUTHENTICATOR          (polkit_cafe_authenticator_get_type())
-#define POLKIT_MATE_AUTHENTICATOR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticator))
-#define POLKIT_MATE_AUTHENTICATOR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
-#define POLKIT_MATE_AUTHENTICATOR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
-#define POLKIT_MATE_IS_AUTHENTICATOR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), POLKIT_MATE_TYPE_AUTHENTICATOR))
-#define POLKIT_MATE_IS_AUTHENTICATOR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), POLKIT_MATE_TYPE_AUTHENTICATOR))
+#define POLKIT_CAFE_TYPE_AUTHENTICATOR          (polkit_cafe_authenticator_get_type())
+#define POLKIT_CAFE_AUTHENTICATOR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_CAFE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticator))
+#define POLKIT_CAFE_AUTHENTICATOR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_CAFE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
+#define POLKIT_CAFE_AUTHENTICATOR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_CAFE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
+#define POLKIT_CAFE_IS_AUTHENTICATOR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), POLKIT_CAFE_TYPE_AUTHENTICATOR))
+#define POLKIT_CAFE_IS_AUTHENTICATOR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), POLKIT_CAFE_TYPE_AUTHENTICATOR))
 
 typedef struct _PolkitCafeAuthenticator PolkitCafeAuthenticator;
 typedef struct _PolkitCafeAuthenticatorClass PolkitCafeAuthenticatorClass;
@@ -53,4 +53,4 @@ const gchar               *polkit_cafe_authenticator_get_cookie (PolkitCafeAuthe
 }
 #endif
 
-#endif /* __POLKIT_MATE_AUTHENTICATOR_H */
+#endif /* __POLKIT_CAFE_AUTHENTICATOR_H */

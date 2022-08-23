@@ -113,7 +113,7 @@ static void
 user_combobox_changed (GtkComboBox *widget,
                        gpointer     user_data)
 {
-  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (user_data);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (user_data);
   GtkTreeIter iter;
   gchar *user_name;
 
@@ -452,7 +452,7 @@ polkit_cafe_authentication_dialog_set_property (GObject      *object,
                                                  const GValue *value,
                                                  GParamSpec   *pspec)
 {
-  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (object);
 
   switch (prop_id)
     {
@@ -496,7 +496,7 @@ polkit_cafe_authentication_dialog_get_property (GObject    *object,
                                                  GValue     *value,
                                                  GParamSpec *pspec)
 {
-  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (object);
 
   switch (prop_id)
     {
@@ -595,7 +595,7 @@ polkit_cafe_authentication_dialog_finalize (GObject *object)
 {
   PolkitCafeAuthenticationDialog *dialog;
 
-  dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (object);
 
   g_free (dialog->priv->message);
   g_free (dialog->priv->action_id);
@@ -653,7 +653,7 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
   gchar *s;
   guint rows;
 
-  dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (object);
 
   if (G_OBJECT_CLASS (polkit_cafe_authentication_dialog_parent_class)->constructed != NULL)
     G_OBJECT_CLASS (polkit_cafe_authentication_dialog_parent_class)->constructed (object);
@@ -997,7 +997,7 @@ polkit_cafe_authentication_dialog_new (const gchar    *action_id,
   PolkitCafeAuthenticationDialog *dialog;
   GtkWindow *window;
 
-  dialog = g_object_new (POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG,
+  dialog = g_object_new (POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG,
                          "action-id", action_id,
                          "vendor", vendor,
                          "vendor-url", vendor_url,
