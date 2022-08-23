@@ -1,0 +1,90 @@
+### mate-polkit 1.24.0
+
+  * build: show warning flags on configure summary
+  * build: warning flags are already defined
+  * autoconf: AC_PROG_CC was called before AX_CHECK_ENABLE_DEBUG
+  * Translations update
+  * migrate from intltool to gettext
+
+### mate-polkit 1.23.0
+
+  * Translations update
+  * Migrate from GSimpleAsyncResult to GTask
+  * [ci] Add cppcheck html report
+  * drop deprecated gtk_dialog_get_action_area
+  * Avoid deprecated g_type_class_add_private
+  * polkitmateauthenticationdialog: avoid GtkStock
+  * Change url project's website
+  * [ci] Enable Clang Static Analyzer
+
+### mate-polkit 1.22.0
+
+  * Translations update
+  * Initialize Travis CI support
+
+### mate-polkit 1.21.0
+
+  * Translations update
+  * disable deprecation warnings for distcheck
+
+### mate-polkit 1.20.0
+
+  * Translations update
+  * require GTK+ 3.22 and GLib 2.50
+  * drop polkitgtkmate library and its docs
+
+### mate-polkit 1.19.0
+
+  * Translations update
+  * Fix reshow/hide icon with statusnotifier
+  * Restore Polish translation credits from GNOME
+  * status-icon: don't use stock icons
+  * polkitmateauthenticationdialog: avoid deprecated GtkAlignment
+  * polkitmateauthenticationdialog: replace a GTK_STOCK deprecation
+
+### mate-polkit 1.18.0
+
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
+  * Fix some GTK+ deprecations
+  * Translations update
+
+### mate-polkit 1.16.0
+
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+    --with-gtk build option
+  * Translations update
+
+### mate-polkit 1.14.0
+
+  * GTK+3: fix several deprecations
+  * Translations update
+  * Add Changelog generation
+
+### mate-polkit 1.12.0
+
+  * GTK+3: add support for application indicators as well
+  * Some fixes and cleanups
+
+### mate-polkit 1.10.2
+
+  * Return error when authentication dialog is dismissed
+  * Optionally use accountsservice to retrieve face
+  * Add support for autorestart
+  * Select the current user to authenticate by default
+  * Add support for application indicators
+  * Gtk3: Auth dialog: make the label wrap at 50 chars
+
+### mate-polkit 1.10.1
+
+  * Fix losing focus when displaying password prompt dialog.
+  * Drop some deprecated GTK code and obsolete build marco.
+  * Update translations.
+
+### mate-polkit 1.10.0
+
+  * Translations updates
+
+### mate-polkit 1.8.0
+
+  * Add GTK3 support
