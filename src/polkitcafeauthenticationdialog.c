@@ -267,7 +267,7 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
     return;
 
   combo = CTK_COMBO_BOX (dialog->priv->user_combobox);
-  dialog->priv->store = ctk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+  dialog->priv->store = ctk_list_store_new (3, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   ctk_list_store_append (dialog->priv->store, &iter);
   ctk_list_store_set (dialog->priv->store, &iter,
@@ -428,7 +428,7 @@ get_image (PolkitCafeAuthenticationDialog *dialog)
                         copy_pixbuf,
                         24, 24, 24, 24,
                         24, 24, 0.5, 0.5,
-                        GDK_INTERP_BILINEAR,
+                        CDK_INTERP_BILINEAR,
                         255);
 
   image = ctk_image_new_from_pixbuf (copy_pixbuf);
