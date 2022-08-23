@@ -267,7 +267,7 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
     return;
 
   combo = CTK_COMBO_BOX (dialog->priv->user_combobox);
-  dialog->priv->store = ctk_list_store_new (3, CDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+  dialog->priv->store = ctk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   ctk_list_store_append (dialog->priv->store, &iter);
   ctk_list_store_set (dialog->priv->store, &iter,
