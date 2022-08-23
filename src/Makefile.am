@@ -26,7 +26,7 @@ polkit_cafe_authentication_agent_1_CPPFLAGS = 		\
 	-I$(top_srcdir)					\
 	-DG_LOG_DOMAIN=\"polkit-cafe-1\"		\
 	-DDATADIR=\""$(pkgdatadir)"\"			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"	\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"	\
 	-DPOLKIT_AGENT_I_KNOW_API_IS_SUBJECT_TO_CHANGE	\
 	$(AM_CPPFLAGS)
 

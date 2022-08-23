@@ -13,12 +13,12 @@ PKG_NAME="cafe-polkit"
 }
 
 which cafe-autogen || {
-    echo "You need to install cafe-common from the MATE SVN repository"
+    echo "You need to install cafe-common from the CAFE SVN repository"
     exit 1
 }
 
 REQUIRED_AUTOMAKE_VERSION=1.9
-USE_MATE2_MACROS=1
+USE_CAFE2_MACROS=1
 USE_COMMON_DOC_BUILD=yes
 
 . cafe-autogen

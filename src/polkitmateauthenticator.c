@@ -85,7 +85,7 @@ polkit_cafe_authenticator_finalize (GObject *object)
 {
   PolkitCafeAuthenticator *authenticator;
 
-  authenticator = POLKIT_MATE_AUTHENTICATOR (object);
+  authenticator = POLKIT_CAFE_AUTHENTICATOR (object);
 
   if (authenticator->authority != NULL)
     g_object_unref (authenticator->authority);
@@ -133,7 +133,7 @@ polkit_cafe_authenticator_class_init (PolkitCafeAuthenticatorClass *klass)
    * upon receiving this signal.
    **/
   signals[COMPLETED_SIGNAL] = g_signal_new ("completed",
-                                            POLKIT_MATE_TYPE_AUTHENTICATOR,
+                                            POLKIT_CAFE_TYPE_AUTHENTICATOR,
                                             G_SIGNAL_RUN_LAST,
                                             0,                      /* class offset     */
                                             NULL,                   /* accumulator      */
@@ -182,7 +182,7 @@ on_dialog_deleted (GtkWidget *widget,
                    GdkEvent  *event,
                    gpointer   user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
   polkit_cafe_authenticator_cancel (authenticator);
 }
@@ -192,10 +192,10 @@ on_user_selected (GObject    *object,
                   GParamSpec *pspec,
                   gpointer    user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
   /* clear any previous messages */
-  polkit_cafe_authentication_dialog_set_info_message (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog), "");
+  polkit_cafe_authentication_dialog_set_info_message (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog), "");
 
   polkit_cafe_authenticator_cancel (authenticator);
   authenticator->new_user_selected = TRUE;
@@ -214,7 +214,7 @@ polkit_cafe_authenticator_new (const gchar     *action_id,
   guint n;
   GError *error;
 
-  authenticator = POLKIT_MATE_AUTHENTICATOR (g_object_new (POLKIT_MATE_TYPE_AUTHENTICATOR, NULL));
+  authenticator = POLKIT_CAFE_AUTHENTICATOR (g_object_new (POLKIT_CAFE_TYPE_AUTHENTICATOR, NULL));
 
   error = NULL;
   authenticator->authority = polkit_authority_get_sync (NULL /* GCancellable* */, &error);
@@ -281,7 +281,7 @@ session_request (PolkitAgentSession *session,
                  gboolean            echo_on,
                  gpointer            user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *password;
   gchar *modified_request;
 
@@ -309,7 +309,7 @@ session_request (PolkitAgentSession *session,
   gtk_widget_show_all (GTK_WIDGET (authenticator->dialog));
   gtk_window_present_with_time (GTK_WINDOW (authenticator->dialog),
                                 gdk_x11_get_server_time (gtk_widget_get_window (GTK_WIDGET (authenticator->dialog))));
-  password = polkit_cafe_authentication_dialog_run_until_response_for_prompt (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog),
+  password = polkit_cafe_authentication_dialog_run_until_response_for_prompt (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog),
                                                                                modified_request,
                                                                                echo_on,
                                                                                &authenticator->was_cancelled,
@@ -336,11 +336,11 @@ session_show_error (PolkitAgentSession *session,
                     const gchar        *msg,
                     gpointer            user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *s;
 
   s = g_strconcat ("<b>", msg, "</b>", NULL);
-  polkit_cafe_authentication_dialog_set_info_message (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog), s);
+  polkit_cafe_authentication_dialog_set_info_message (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog), s);
   g_free (s);
 }
 
@@ -349,11 +349,11 @@ session_show_info (PolkitAgentSession *session,
                    const gchar        *msg,
                    gpointer            user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *s;
 
   s = g_strconcat ("<b>", msg, "</b>", NULL);
-  polkit_cafe_authentication_dialog_set_info_message (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog), s);
+  polkit_cafe_authentication_dialog_set_info_message (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog), s);
   g_free (s);
 
   gtk_widget_show_all (GTK_WIDGET (authenticator->dialog));
@@ -366,7 +366,7 @@ session_completed (PolkitAgentSession *session,
                    gboolean            gained_authorization,
                    gpointer            user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
   authenticator->gained_authorization = gained_authorization;
 
@@ -379,13 +379,13 @@ session_completed (PolkitAgentSession *session,
 static gboolean
 do_initiate (gpointer user_data)
 {
-  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   PolkitIdentity *identity;
   gint num_tries;
 
   gtk_widget_show_all (GTK_WIDGET (authenticator->dialog));
   gtk_window_present (GTK_WINDOW (authenticator->dialog));
-  if (!polkit_cafe_authentication_dialog_run_until_user_is_selected (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog)))
+  if (!polkit_cafe_authentication_dialog_run_until_user_is_selected (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog)))
     {
       /* user cancelled the dialog */
       /*g_debug ("User cancelled before selecting a user");*/
@@ -400,7 +400,7 @@ do_initiate (gpointer user_data)
  try_again:
 
   g_free (authenticator->selected_user);
-  authenticator->selected_user = polkit_cafe_authentication_dialog_get_selected_user (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog));
+  authenticator->selected_user = polkit_cafe_authentication_dialog_get_selected_user (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog));
 
   /*g_debug ("Authenticating user %s", authenticator->selected_user);*/
   identity = polkit_unix_user_new_for_name (authenticator->selected_user, NULL);
@@ -457,13 +457,13 @@ do_initiate (gpointer user_data)
 
           s = g_strconcat ("<b>", _("Your authentication attempt was unsuccessful. Please try again."), "</b>", NULL);
           polkit_cafe_authentication_dialog_set_info_message (
-                                  POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog),
+                                  POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog),
                                   s);
           g_free (s);
           gtk_widget_queue_draw (authenticator->dialog);
 
           /* shake the dialog to indicate error */
-          polkit_cafe_authentication_dialog_indicate_error (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog));
+          polkit_cafe_authentication_dialog_indicate_error (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog));
 
           if (num_tries < 3)
             {
@@ -496,7 +496,7 @@ void
 polkit_cafe_authenticator_cancel (PolkitCafeAuthenticator *authenticator)
 {
   if (authenticator->dialog != NULL)
-    polkit_cafe_authentication_dialog_cancel (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog));
+    polkit_cafe_authentication_dialog_cancel (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog));
 
   authenticator->was_cancelled = TRUE;
 

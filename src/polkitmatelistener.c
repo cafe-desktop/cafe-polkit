@@ -90,7 +90,7 @@ polkit_cafe_listener_class_init (PolkitCafeListenerClass *klass)
 PolkitAgentListener *
 polkit_cafe_listener_new (void)
 {
-  return POLKIT_AGENT_LISTENER (g_object_new (POLKIT_MATE_TYPE_LISTENER, NULL));
+  return POLKIT_AGENT_LISTENER (g_object_new (POLKIT_CAFE_TYPE_LISTENER, NULL));
 }
 
 typedef struct
@@ -137,7 +137,7 @@ maybe_initiate_next_authenticator (PolkitCafeListener *listener)
 {
   if (listener->active_authenticator == NULL && listener->authenticators != NULL)
     {
-      polkit_cafe_authenticator_initiate (POLKIT_MATE_AUTHENTICATOR (listener->authenticators->data));
+      polkit_cafe_authenticator_initiate (POLKIT_CAFE_AUTHENTICATOR (listener->authenticators->data));
       listener->active_authenticator = listener->authenticators->data;
     }
 }
@@ -193,7 +193,7 @@ polkit_cafe_listener_initiate_authentication (PolkitAgentListener  *agent_listen
                                                GAsyncReadyCallback   callback,
                                                gpointer              user_data)
 {
-  PolkitCafeListener *listener = POLKIT_MATE_LISTENER (agent_listener);
+  PolkitCafeListener *listener = POLKIT_CAFE_LISTENER (agent_listener);
   GTask *task;
   PolkitCafeAuthenticator *authenticator;
   AuthData *data;
