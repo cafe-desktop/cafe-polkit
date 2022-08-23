@@ -18,10 +18,10 @@ requires:
     - libpolkit-agent-1-dev
     - libpolkit-gobject-1-dev
     - make
-    - mate-common
 
 before_scripts:
   - ./html-cppcheck
+  - ./install-from-git https://github.com/mate-desktop/mate-common master
 
 build_scripts:
   - ./before-build
