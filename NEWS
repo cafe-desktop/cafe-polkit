@@ -30,7 +30,7 @@
 ### cafe-polkit 1.20.0
 
   * Translations update
-  * require GTK+ 3.22 and GLib 2.50
+  * require CTK+ 3.22 and GLib 2.50
   * drop polkitctkcafe library and its docs
 
 ### cafe-polkit 1.19.0
@@ -40,30 +40,30 @@
   * Restore Polish translation credits from GNOME
   * status-icon: don't use stock icons
   * polkitcafeauthenticationdialog: avoid deprecated CtkAlignment
-  * polkitcafeauthenticationdialog: replace a GTK_STOCK deprecation
+  * polkitcafeauthenticationdialog: replace a CTK_STOCK deprecation
 
 ### cafe-polkit 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting
     to make generating release announcements easier
-  * Fix some GTK+ deprecations
+  * Fix some CTK+ deprecations
   * Translations update
 
 ### cafe-polkit 1.16.0
 
-  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+  * Move to CTK+3 (require CTK+ >= 3.14), drop CTK+2 code and
     --with-ctk build option
   * Translations update
 
 ### cafe-polkit 1.14.0
 
-  * GTK+3: fix several deprecations
+  * CTK+3: fix several deprecations
   * Translations update
   * Add Changelog generation
 
 ### cafe-polkit 1.12.0
 
-  * GTK+3: add support for application indicators as well
+  * CTK+3: add support for application indicators as well
   * Some fixes and cleanups
 
 ### cafe-polkit 1.10.2
@@ -78,7 +78,7 @@
 ### cafe-polkit 1.10.1
 
   * Fix losing focus when displaying password prompt dialog.
-  * Drop some deprecated GTK code and obsolete build marco.
+  * Drop some deprecated CTK code and obsolete build marco.
   * Update translations.
 
 ### cafe-polkit 1.10.0
@@ -87,4 +87,4 @@
 
 ### cafe-polkit 1.8.0
 
-  * Add GTK3 support
+  * Add CTK3 support

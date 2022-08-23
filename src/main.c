@@ -166,11 +166,11 @@ update_temporary_authorization_icon_real (void)
                             G_CALLBACK (on_menu_item_activate),
                             NULL);
           menu = ctk_menu_new ();
-          ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+          ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
           ctk_widget_show_all (menu);
 
           app_indicator_set_menu (app_indicator,
-                                  GTK_MENU (menu));
+                                  CTK_MENU (menu));
           app_indicator_set_status (app_indicator,
                                     APP_INDICATOR_STATUS_ACTIVE);
         }

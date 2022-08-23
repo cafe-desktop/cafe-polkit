@@ -306,9 +306,9 @@ session_request (PolkitAgentSession *session,
       modified_request = g_strdup (request);
     }
 
-  ctk_widget_show_all (GTK_WIDGET (authenticator->dialog));
-  ctk_window_present_with_time (GTK_WINDOW (authenticator->dialog),
-                                gdk_x11_get_server_time (ctk_widget_get_window (GTK_WIDGET (authenticator->dialog))));
+  ctk_widget_show_all (CTK_WIDGET (authenticator->dialog));
+  ctk_window_present_with_time (CTK_WINDOW (authenticator->dialog),
+                                gdk_x11_get_server_time (ctk_widget_get_window (CTK_WIDGET (authenticator->dialog))));
   password = polkit_cafe_authentication_dialog_run_until_response_for_prompt (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog),
                                                                                modified_request,
                                                                                echo_on,
@@ -356,8 +356,8 @@ session_show_info (PolkitAgentSession *session,
   polkit_cafe_authentication_dialog_set_info_message (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog), s);
   g_free (s);
 
-  ctk_widget_show_all (GTK_WIDGET (authenticator->dialog));
-  ctk_window_present (GTK_WINDOW (authenticator->dialog));
+  ctk_widget_show_all (CTK_WIDGET (authenticator->dialog));
+  ctk_window_present (CTK_WINDOW (authenticator->dialog));
 }
 
 
@@ -383,8 +383,8 @@ do_initiate (gpointer user_data)
   PolkitIdentity *identity;
   gint num_tries;
 
-  ctk_widget_show_all (GTK_WIDGET (authenticator->dialog));
-  ctk_window_present (GTK_WINDOW (authenticator->dialog));
+  ctk_widget_show_all (CTK_WIDGET (authenticator->dialog));
+  ctk_window_present (CTK_WINDOW (authenticator->dialog));
   if (!polkit_cafe_authentication_dialog_run_until_user_is_selected (POLKIT_CAFE_AUTHENTICATION_DIALOG (authenticator->dialog)))
     {
       /* user cancelled the dialog */
