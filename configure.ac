@@ -1,4 +1,4 @@
-AC_INIT([polkit-mate],[1.24.0],[https://mate-desktop.org/],[mate-polkit])
+AC_INIT([polkit-cafe],[1.24.0],[https://cafe-desktop.org/],[cafe-polkit])
 
 AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip check-news])
 
@@ -143,7 +143,7 @@ AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
-GETTEXT_PACKAGE=mate-polkit
+GETTEXT_PACKAGE=cafe-polkit
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[gettext domain])
 
@@ -163,7 +163,7 @@ src/Makefile
 AC_OUTPUT
 
 echo "
-                  polkit-mate $VERSION
+                  polkit-cafe $VERSION
                 =======================
 
         prefix:                     ${prefix}

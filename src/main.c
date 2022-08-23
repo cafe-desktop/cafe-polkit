@@ -33,7 +33,7 @@
 #include <libappindicator/app-indicator.h>
 #endif
 
-#include "polkitmatelistener.h"
+#include "polkitcafelistener.h"
 
 /* session management support for auto-restart */
 #define SM_DBUS_NAME      "org.gnome.SessionManager"
@@ -156,7 +156,7 @@ update_temporary_authorization_icon_real (void)
         {
           GtkWidget *item, *menu;
 
-          app_indicator = app_indicator_new ("mate-polkit",
+          app_indicator = app_indicator_new ("cafe-polkit",
                                              "dialog-password",
                                              APP_INDICATOR_CATEGORY_SYSTEM_SERVICES);
 
@@ -334,7 +334,7 @@ register_client_to_gnome_session (void)
         char       *client_id;
 
         startup_id = g_getenv ("DESKTOP_AUTOSTART_ID");
-        app_id = "polkit-mate-authentication-agent-1.desktop";
+        app_id = "polkit-cafe-authentication-agent-1.desktop";
 
         sm_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
                                                   G_DBUS_PROXY_FLAGS_NONE,
@@ -429,7 +429,7 @@ main (int argc, char **argv)
                     G_CALLBACK (on_authority_changed),
                     NULL);
 
-  listener = polkit_mate_listener_new ();
+  listener = polkit_cafe_listener_new ();
 
   error = NULL;
   session = polkit_unix_session_new_for_process_sync (getpid (), NULL, &error);
@@ -444,7 +444,7 @@ main (int argc, char **argv)
   if (!polkit_agent_listener_register (listener,
 				       POLKIT_AGENT_REGISTER_FLAGS_NONE,
                                        session,
-                                       "/org/mate/PolicyKit1/AuthenticationAgent",
+                                       "/org/cafe/PolicyKit1/AuthenticationAgent",
 				       NULL,
                                        &error))
     {

@@ -1,14 +1,14 @@
-PolicyKit-mate provides an Authentication Agent for PolicyKit that
+PolicyKit-cafe provides an Authentication Agent for PolicyKit that
 integrates well with the MATE desktop environment
 
 See http://www.freedesktop.org/wiki/Software/PolicyKit for lots of
 documentation, mailing lists, etc. about PolicyKit.
 
 See also the file HACKING for notes of interest to developers working
-on PolicyKit-mate.
+on PolicyKit-cafe.
 
-Report bugs against PolicyKit-mate at github
+Report bugs against PolicyKit-cafe at github
 
- https://github.com/mate-desktop/mate-polkit/issues
+ https://github.com/cafe-desktop/cafe-polkit/issues
 
 MATE polkit is a fork of GNOME polkit.
