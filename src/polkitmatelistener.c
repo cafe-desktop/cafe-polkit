@@ -28,17 +28,17 @@
 #include "polkitcafelistener.h"
 #include "polkitcafeauthenticator.h"
 
-struct _PolkitMateListener
+struct _PolkitCafeListener
 {
   PolkitAgentListener parent_instance;
 
   /* we support multiple authenticators - they are simply queued up */
   GList *authenticators;
 
-  PolkitMateAuthenticator *active_authenticator;
+  PolkitCafeAuthenticator *active_authenticator;
 };
 
-struct _PolkitMateListenerClass
+struct _PolkitCafeListenerClass
 {
   PolkitAgentListenerClass parent_class;
 };
@@ -58,10 +58,10 @@ static gboolean polkit_cafe_listener_initiate_authentication_finish (PolkitAgent
                                                                       GAsyncResult         *res,
                                                                       GError              **error);
 
-G_DEFINE_TYPE (PolkitMateListener, polkit_cafe_listener, POLKIT_AGENT_TYPE_LISTENER);
+G_DEFINE_TYPE (PolkitCafeListener, polkit_cafe_listener, POLKIT_AGENT_TYPE_LISTENER);
 
 static void
-polkit_cafe_listener_init (PolkitMateListener *listener)
+polkit_cafe_listener_init (PolkitCafeListener *listener)
 {
 }
 
@@ -73,7 +73,7 @@ polkit_cafe_listener_finalize (GObject *object)
 }
 
 static void
-polkit_cafe_listener_class_init (PolkitMateListenerClass *klass)
+polkit_cafe_listener_class_init (PolkitCafeListenerClass *klass)
 {
   GObjectClass *gobject_class;
   PolkitAgentListenerClass *listener_class;
@@ -95,8 +95,8 @@ polkit_cafe_listener_new (void)
 
 typedef struct
 {
-  PolkitMateListener *listener;
-  PolkitMateAuthenticator *authenticator;
+  PolkitCafeListener *listener;
+  PolkitCafeAuthenticator *authenticator;
 
   GTask        *task;
   GCancellable *cancellable;
@@ -105,8 +105,8 @@ typedef struct
 } AuthData;
 
 static AuthData *
-auth_data_new (PolkitMateListener *listener,
-               PolkitMateAuthenticator *authenticator,
+auth_data_new (PolkitCafeListener *listener,
+               PolkitCafeAuthenticator *authenticator,
                GTask *task,
                GCancellable *cancellable)
 {
@@ -133,7 +133,7 @@ auth_data_free (AuthData *data)
 }
 
 static void
-maybe_initiate_next_authenticator (PolkitMateListener *listener)
+maybe_initiate_next_authenticator (PolkitCafeListener *listener)
 {
   if (listener->active_authenticator == NULL && listener->authenticators != NULL)
     {
@@ -143,7 +143,7 @@ maybe_initiate_next_authenticator (PolkitMateListener *listener)
 }
 
 static void
-authenticator_completed (PolkitMateAuthenticator *authenticator,
+authenticator_completed (PolkitCafeAuthenticator *authenticator,
                          gboolean                 gained_authorization,
                          gboolean                 dismissed,
                          gpointer                 user_data)
@@ -193,9 +193,9 @@ polkit_cafe_listener_initiate_authentication (PolkitAgentListener  *agent_listen
                                                GAsyncReadyCallback   callback,
                                                gpointer              user_data)
 {
-  PolkitMateListener *listener = POLKIT_MATE_LISTENER (agent_listener);
+  PolkitCafeListener *listener = POLKIT_MATE_LISTENER (agent_listener);
   GTask *task;
-  PolkitMateAuthenticator *authenticator;
+  PolkitCafeAuthenticator *authenticator;
   AuthData *data;
 
   task = g_task_new (G_OBJECT (listener),

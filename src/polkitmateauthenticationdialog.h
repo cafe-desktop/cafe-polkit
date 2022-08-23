@@ -30,22 +30,22 @@ extern "C" {
 #endif
 
 #define POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG            (polkit_cafe_authentication_dialog_get_type ())
-#define POLKIT_MATE_AUTHENTICATION_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitMateAuthenticationDialog))
-#define POLKIT_MATE_AUTHENTICATION_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitMateAuthenticationDialogClass))
+#define POLKIT_MATE_AUTHENTICATION_DIALOG(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialog))
+#define POLKIT_MATE_AUTHENTICATION_DIALOG_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG, PolkitCafeAuthenticationDialogClass))
 #define POLKIT_MATE_IS_AUTHENTICATION_DIALOG(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG))
 #define POLKIT_MATE_IS_AUTHENTICATION_DIALOG_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG))
 
-typedef struct _PolkitMateAuthenticationDialog        PolkitMateAuthenticationDialog;
-typedef struct _PolkitMateAuthenticationDialogClass   PolkitMateAuthenticationDialogClass;
-typedef struct _PolkitMateAuthenticationDialogPrivate PolkitMateAuthenticationDialogPrivate;
+typedef struct _PolkitCafeAuthenticationDialog        PolkitCafeAuthenticationDialog;
+typedef struct _PolkitCafeAuthenticationDialogClass   PolkitCafeAuthenticationDialogClass;
+typedef struct _PolkitCafeAuthenticationDialogPrivate PolkitCafeAuthenticationDialogPrivate;
 
-struct _PolkitMateAuthenticationDialog
+struct _PolkitCafeAuthenticationDialog
 {
   GtkDialog parent_instance;
-  PolkitMateAuthenticationDialogPrivate *priv;
+  PolkitCafeAuthenticationDialogPrivate *priv;
 };
 
-struct _PolkitMateAuthenticationDialogClass
+struct _PolkitCafeAuthenticationDialogClass
 {
   GtkDialogClass parent_class;
 };
@@ -58,16 +58,16 @@ GtkWidget *polkit_cafe_authentication_dialog_new                           (cons
                                                                              const gchar    *message_markup,
                                                                              PolkitDetails  *details,
                                                                              gchar         **users);
-gchar     *polkit_cafe_authentication_dialog_get_selected_user             (PolkitMateAuthenticationDialog *dialog);
-gboolean   polkit_cafe_authentication_dialog_run_until_user_is_selected    (PolkitMateAuthenticationDialog *dialog);
-gchar     *polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitMateAuthenticationDialog *dialog,
+gchar     *polkit_cafe_authentication_dialog_get_selected_user             (PolkitCafeAuthenticationDialog *dialog);
+gboolean   polkit_cafe_authentication_dialog_run_until_user_is_selected    (PolkitCafeAuthenticationDialog *dialog);
+gchar     *polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitCafeAuthenticationDialog *dialog,
                                                                              const gchar                     *prompt,
                                                                              gboolean                         echo_chars,
                                                                              gboolean                        *was_cancelled,
                                                                              gboolean                        *new_user_selected);
-gboolean   polkit_cafe_authentication_dialog_cancel                        (PolkitMateAuthenticationDialog *dialog);
-void       polkit_cafe_authentication_dialog_indicate_error                (PolkitMateAuthenticationDialog *dialog);
-void       polkit_cafe_authentication_dialog_set_info_message              (PolkitMateAuthenticationDialog *dialog,
+gboolean   polkit_cafe_authentication_dialog_cancel                        (PolkitCafeAuthenticationDialog *dialog);
+void       polkit_cafe_authentication_dialog_indicate_error                (PolkitCafeAuthenticationDialog *dialog);
+void       polkit_cafe_authentication_dialog_set_info_message              (PolkitCafeAuthenticationDialog *dialog,
                                                                              const gchar                     *info_markup);
 
 #ifdef __cplusplus

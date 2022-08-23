@@ -41,7 +41,7 @@
 
 #define RESPONSE_USER_SELECTED 1001
 
-struct _PolkitMateAuthenticationDialogPrivate
+struct _PolkitCafeAuthenticationDialogPrivate
 {
   GtkWidget *user_combobox;
   GtkWidget *prompt_label;
@@ -66,7 +66,7 @@ struct _PolkitMateAuthenticationDialogPrivate
   GtkListStore *store;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PolkitMateAuthenticationDialog, polkit_cafe_authentication_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (PolkitCafeAuthenticationDialog, polkit_cafe_authentication_dialog, GTK_TYPE_DIALOG);
 
 enum {
   PROP_0,
@@ -113,7 +113,7 @@ static void
 user_combobox_changed (GtkComboBox *widget,
                        gpointer     user_data)
 {
-  PolkitMateAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (user_data);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (user_data);
   GtkTreeIter iter;
   gchar *user_name;
 
@@ -252,7 +252,7 @@ get_user_icon (char *username)
 #endif /* HAVE_ACCOUNTSSERVICE */
 
 static void
-create_user_combobox (PolkitMateAuthenticationDialog *dialog)
+create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
 {
   int n, i, selected_index = 0;
   GtkComboBox *combo;
@@ -379,7 +379,7 @@ create_user_combobox (PolkitMateAuthenticationDialog *dialog)
 }
 
 static GtkWidget *
-get_image (PolkitMateAuthenticationDialog *dialog)
+get_image (PolkitCafeAuthenticationDialog *dialog)
 {
   GdkPixbuf *pixbuf;
   GdkPixbuf *copy_pixbuf;
@@ -452,7 +452,7 @@ polkit_cafe_authentication_dialog_set_property (GObject      *object,
                                                  const GValue *value,
                                                  GParamSpec   *pspec)
 {
-  PolkitMateAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
 
   switch (prop_id)
     {
@@ -496,7 +496,7 @@ polkit_cafe_authentication_dialog_get_property (GObject    *object,
                                                  GValue     *value,
                                                  GParamSpec *pspec)
 {
-  PolkitMateAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
+  PolkitCafeAuthenticationDialog *dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
 
   switch (prop_id)
     {
@@ -585,7 +585,7 @@ out:
 }
 
 static void
-polkit_cafe_authentication_dialog_init (PolkitMateAuthenticationDialog *dialog)
+polkit_cafe_authentication_dialog_init (PolkitCafeAuthenticationDialog *dialog)
 {
   dialog->priv = polkit_cafe_authentication_dialog_get_instance_private (dialog);
 }
@@ -593,7 +593,7 @@ polkit_cafe_authentication_dialog_init (PolkitMateAuthenticationDialog *dialog)
 static void
 polkit_cafe_authentication_dialog_finalize (GObject *object)
 {
-  PolkitMateAuthenticationDialog *dialog;
+  PolkitCafeAuthenticationDialog *dialog;
 
   dialog = POLKIT_MATE_AUTHENTICATION_DIALOG (object);
 
@@ -638,7 +638,7 @@ polkit_cafe_dialog_add_button (GtkDialog   *dialog,
 static void
 polkit_cafe_authentication_dialog_constructed (GObject *object)
 {
-  PolkitMateAuthenticationDialog *dialog;
+  PolkitCafeAuthenticationDialog *dialog;
   GtkWidget *hbox;
   GtkWidget *main_vbox;
   GtkWidget *vbox;
@@ -872,7 +872,7 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
 }
 
 static void
-polkit_cafe_authentication_dialog_class_init (PolkitMateAuthenticationDialogClass *klass)
+polkit_cafe_authentication_dialog_class_init (PolkitCafeAuthenticationDialogClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
@@ -994,7 +994,7 @@ polkit_cafe_authentication_dialog_new (const gchar    *action_id,
                                         PolkitDetails  *details,
                                         gchar         **users)
 {
-  PolkitMateAuthenticationDialog *dialog;
+  PolkitCafeAuthenticationDialog *dialog;
   GtkWindow *window;
 
   dialog = g_object_new (POLKIT_MATE_TYPE_AUTHENTICATION_DIALOG,
@@ -1026,7 +1026,7 @@ polkit_cafe_authentication_dialog_new (const gchar    *action_id,
  * Call this function to indicate an authentication error; typically shakes the window
  **/
 void
-polkit_cafe_authentication_dialog_indicate_error (PolkitMateAuthenticationDialog *dialog)
+polkit_cafe_authentication_dialog_indicate_error (PolkitCafeAuthenticationDialog *dialog)
 {
   int x, y;
   int n;
@@ -1058,7 +1058,7 @@ polkit_cafe_authentication_dialog_indicate_error (PolkitMateAuthenticationDialog
 
 /**
  * polkit_cafe_authentication_dialog_run_until_user_is_selected:
- * @dialog: A #PolkitMateAuthenticationDialog.
+ * @dialog: A #PolkitCafeAuthenticationDialog.
  *
  * Runs @dialog in a recursive main loop until a user have been selected.
  *
@@ -1070,7 +1070,7 @@ polkit_cafe_authentication_dialog_indicate_error (PolkitMateAuthenticationDialog
  *          %FALSE if the dialog was cancelled.
  **/
 gboolean
-polkit_cafe_authentication_dialog_run_until_user_is_selected (PolkitMateAuthenticationDialog *dialog)
+polkit_cafe_authentication_dialog_run_until_user_is_selected (PolkitCafeAuthenticationDialog *dialog)
 {
   gboolean ret;
   gint response;
@@ -1098,7 +1098,7 @@ polkit_cafe_authentication_dialog_run_until_user_is_selected (PolkitMateAuthenti
 
 /**
  * polkit_cafe_authentication_dialog_run_until_response_for_prompt:
- * @dialog: A #PolkitMateAuthenticationDialog.
+ * @dialog: A #PolkitCafeAuthenticationDialog.
  * @prompt: The prompt to present the user with.
  * @echo_chars: Whether characters should be echoed in the password entry box.
  * @was_cancelled: Set to %TRUE if the dialog was cancelled.
@@ -1110,7 +1110,7 @@ polkit_cafe_authentication_dialog_run_until_user_is_selected (PolkitMateAuthenti
  *          has been set to %TRUE.
  **/
 gchar *
-polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitMateAuthenticationDialog *dialog,
+polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitCafeAuthenticationDialog *dialog,
                                                                   const gchar           *prompt,
                                                                   gboolean               echo_chars,
                                                                   gboolean              *was_cancelled,
@@ -1164,20 +1164,20 @@ polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitMateAuthe
 
 /**
  * polkit_cafe_authentication_dialog_get_selected_user:
- * @dialog: A #PolkitMateAuthenticationDialog.
+ * @dialog: A #PolkitCafeAuthenticationDialog.
  *
  * Gets the currently selected user.
  *
  * Returns: The currently selected user (free with g_free()) or %NULL if no user is currently selected.
  **/
 gchar *
-polkit_cafe_authentication_dialog_get_selected_user (PolkitMateAuthenticationDialog *dialog)
+polkit_cafe_authentication_dialog_get_selected_user (PolkitCafeAuthenticationDialog *dialog)
 {
   return g_strdup (dialog->priv->selected_user);
 }
 
 void
-polkit_cafe_authentication_dialog_set_info_message (PolkitMateAuthenticationDialog *dialog,
+polkit_cafe_authentication_dialog_set_info_message (PolkitCafeAuthenticationDialog *dialog,
                                                      const gchar                     *info_markup)
 {
   gtk_label_set_markup (GTK_LABEL (dialog->priv->info_label), info_markup);
@@ -1186,14 +1186,14 @@ polkit_cafe_authentication_dialog_set_info_message (PolkitMateAuthenticationDial
 
 /**
  * polkit_cafe_authentication_dialog_cancel:
- * @dialog: A #PolkitMateAuthenticationDialog.
+ * @dialog: A #PolkitCafeAuthenticationDialog.
  *
  * Cancels the dialog if it is currenlty running.
  *
  * Returns: %TRUE if the dialog was running.
  **/
 gboolean
-polkit_cafe_authentication_dialog_cancel (PolkitMateAuthenticationDialog *dialog)
+polkit_cafe_authentication_dialog_cancel (PolkitCafeAuthenticationDialog *dialog)
 {
   if (!dialog->priv->is_running)
     return FALSE;

@@ -29,14 +29,14 @@ extern "C" {
 #endif
 
 #define POLKIT_MATE_TYPE_LISTENER          (polkit_cafe_listener_get_type())
-#define POLKIT_MATE_LISTENER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_MATE_TYPE_LISTENER, PolkitMateListener))
-#define POLKIT_MATE_LISTENER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_MATE_TYPE_LISTENER, PolkitMateListenerClass))
-#define POLKIT_MATE_LISTENER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_MATE_TYPE_LISTENER, PolkitMateListenerClass))
+#define POLKIT_MATE_LISTENER(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_MATE_TYPE_LISTENER, PolkitCafeListener))
+#define POLKIT_MATE_LISTENER_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_MATE_TYPE_LISTENER, PolkitCafeListenerClass))
+#define POLKIT_MATE_LISTENER_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_MATE_TYPE_LISTENER, PolkitCafeListenerClass))
 #define POLKIT_MATE_IS_LISTENER(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), POLKIT_MATE_TYPE_LISTENER))
 #define POLKIT_MATE_IS_LISTENER_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), POLKIT_MATE_TYPE_LISTENER))
 
-typedef struct _PolkitMateListener PolkitMateListener;
-typedef struct _PolkitMateListenerClass PolkitMateListenerClass;
+typedef struct _PolkitCafeListener PolkitCafeListener;
+typedef struct _PolkitCafeListenerClass PolkitCafeListenerClass;
 
 GType                 polkit_cafe_listener_get_type   (void) G_GNUC_CONST;
 PolkitAgentListener  *polkit_cafe_listener_new        (void);
