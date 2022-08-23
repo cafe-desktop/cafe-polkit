@@ -214,7 +214,7 @@ get_user_icon (char *username)
   else
     {
       /* TODO: we probably shouldn't hard-code the size to 16x16 */
-      pixbuf = cdk_pixbuf_new_from_file_at_size (icon_filename,
+      pixbuf = gdk_pixbuf_new_from_file_at_size (icon_filename,
                                                  16,
                                                  16,
                                                  &error);
@@ -243,7 +243,7 @@ get_user_icon (char *username)
       gchar *path;
       path = g_strdup_printf ("%s/.face", passwd->pw_dir);
       /* TODO: we probably shouldn't hard-code the size to 16x16 */
-      pixbuf = cdk_pixbuf_new_from_file_at_scale (path, 16, 16, TRUE, NULL);
+      pixbuf = gdk_pixbuf_new_from_file_at_scale (path, 16, 16, TRUE, NULL);
       g_free (path);
     }
 
@@ -419,12 +419,12 @@ get_image (PolkitCafeAuthenticationDialog *dialog)
     goto out;
 
   /* need to copy the pixbuf since we're modifying it */
-  copy_pixbuf = cdk_pixbuf_copy (pixbuf);
+  copy_pixbuf = gdk_pixbuf_copy (pixbuf);
   if (copy_pixbuf == NULL)
     goto out;
 
   /* blend the vendor icon in the bottom right quarter */
-  cdk_pixbuf_composite (vendor_pixbuf,
+  gdk_pixbuf_composite (vendor_pixbuf,
                         copy_pixbuf,
                         24, 24, 24, 24,
                         24, 24, 0.5, 0.5,
