@@ -41,17 +41,17 @@ typedef struct _PolkitCafeAuthenticationDialogPrivate PolkitCafeAuthenticationDi
 
 struct _PolkitCafeAuthenticationDialog
 {
-  GtkDialog parent_instance;
+  CtkDialog parent_instance;
   PolkitCafeAuthenticationDialogPrivate *priv;
 };
 
 struct _PolkitCafeAuthenticationDialogClass
 {
-  GtkDialogClass parent_class;
+  CtkDialogClass parent_class;
 };
 
 GType      polkit_cafe_authentication_dialog_get_type                      (void);
-GtkWidget *polkit_cafe_authentication_dialog_new                           (const gchar    *action_id,
+CtkWidget *polkit_cafe_authentication_dialog_new                           (const gchar    *action_id,
                                                                              const gchar    *vendor,
                                                                              const gchar    *vendor_url,
                                                                              const gchar    *icon_name,

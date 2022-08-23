@@ -55,7 +55,7 @@ struct _PolkitCafeAuthenticator
   gchar *selected_user;
 
   PolkitAgentSession *session;
-  GtkWidget *dialog;
+  CtkWidget *dialog;
   GMainLoop *loop;
 };
 
@@ -178,7 +178,7 @@ get_desc_for_action (PolkitAuthority *authority,
 }
 
 static void
-on_dialog_deleted (GtkWidget *widget,
+on_dialog_deleted (CtkWidget *widget,
                    GdkEvent  *event,
                    gpointer   user_data)
 {
