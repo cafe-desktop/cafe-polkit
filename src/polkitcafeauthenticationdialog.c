@@ -136,7 +136,7 @@ user_combobox_changed (CtkComboBox *widget,
 }
 
 #if HAVE_ACCOUNTSSERVICE
-static GdkPixbuf *
+static CdkPixbuf *
 get_user_icon (char *username)
 {
   GError *error;
@@ -146,7 +146,7 @@ get_user_icon (char *username)
   GVariant *icon_result_variant;
   const gchar *user_path;
   const gchar *icon_filename;
-  GdkPixbuf *pixbuf = NULL;
+  CdkPixbuf *pixbuf = NULL;
 
   error = NULL;
   connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
@@ -231,10 +231,10 @@ get_user_icon (char *username)
   return pixbuf;
 }
 #else
-static GdkPixbuf *
+static CdkPixbuf *
 get_user_icon (char *username)
 {
-  GdkPixbuf *pixbuf = NULL;
+  CdkPixbuf *pixbuf = NULL;
   struct passwd *passwd;
 
   passwd = getpwnam (username);
@@ -282,7 +282,7 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
   {
       gchar *gecos;
       gchar *real_name;
-      GdkPixbuf *pixbuf = NULL;
+      CdkPixbuf *pixbuf = NULL;
       struct passwd *passwd;
 
       /* we're single threaded so this is fine */
@@ -381,9 +381,9 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
 static CtkWidget *
 get_image (PolkitCafeAuthenticationDialog *dialog)
 {
-  GdkPixbuf *pixbuf;
-  GdkPixbuf *copy_pixbuf;
-  GdkPixbuf *vendor_pixbuf;
+  CdkPixbuf *pixbuf;
+  CdkPixbuf *copy_pixbuf;
+  CdkPixbuf *vendor_pixbuf;
   CtkWidget *image;
 
   pixbuf = NULL;

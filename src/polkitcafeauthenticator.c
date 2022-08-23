@@ -179,7 +179,7 @@ get_desc_for_action (PolkitAuthority *authority,
 
 static void
 on_dialog_deleted (CtkWidget *widget,
-                   GdkEvent  *event,
+                   CdkEvent  *event,
                    gpointer   user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
