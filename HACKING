@@ -4,7 +4,7 @@ Coding Style
  - Please follow the coding style already used - it's not a must, but it's
    nice to have consistency.
 
- - Write docs for all functions and structs and so on. We use gtkdoc format.
+ - Write docs for all functions and structs and so on. We use ctkdoc format.
 
  - All external interfaces (network protocols, file formats, etc.)
    should have documented specifications sufficient to allow an

@@ -24,7 +24,7 @@
 #endif
 
 #include <string.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 #include <polkitagent/polkitagent.h>
@@ -160,14 +160,14 @@ update_temporary_authorization_icon_real (void)
                                              "dialog-password",
                                              APP_INDICATOR_CATEGORY_SYSTEM_SERVICES);
 
-          item = gtk_menu_item_new_with_label (_("Drop all elevated privileges"));
+          item = ctk_menu_item_new_with_label (_("Drop all elevated privileges"));
           g_signal_connect (item,
                             "activate",
                             G_CALLBACK (on_menu_item_activate),
                             NULL);
-          menu = gtk_menu_new ();
-          gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-          gtk_widget_show_all (menu);
+          menu = ctk_menu_new ();
+          ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+          ctk_widget_show_all (menu);
 
           app_indicator_set_menu (app_indicator,
                                   GTK_MENU (menu));
@@ -182,8 +182,8 @@ update_temporary_authorization_icon_real (void)
 #else
       if (status_icon == NULL)
         {
-          status_icon = gtk_status_icon_new_from_icon_name ("dialog-password");
-          gtk_status_icon_set_tooltip_text (status_icon,
+          status_icon = ctk_status_icon_new_from_icon_name ("dialog-password");
+          ctk_status_icon_set_tooltip_text (status_icon,
                                             _("Click the icon to drop all elevated privileges"));
           g_signal_connect (status_icon,
                             "activate",
@@ -209,7 +209,7 @@ update_temporary_authorization_icon_real (void)
 #else
       if (status_icon != NULL)
         {
-          gtk_status_icon_set_visible (status_icon, FALSE);
+          ctk_status_icon_set_visible (status_icon, FALSE);
           g_object_unref (status_icon);
           status_icon = NULL;
         }
@@ -400,7 +400,7 @@ main (int argc, char **argv)
   PolkitAgentListener *listener;
   GError *error;
 
-  gtk_init (&argc, &argv);
+  ctk_init (&argc, &argv);
 
   loop = NULL;
   authority = NULL;

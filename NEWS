@@ -11,7 +11,7 @@
   * Translations update
   * Migrate from GSimpleAsyncResult to GTask
   * [ci] Add cppcheck html report
-  * drop deprecated gtk_dialog_get_action_area
+  * drop deprecated ctk_dialog_get_action_area
   * Avoid deprecated g_type_class_add_private
   * polkitcafeauthenticationdialog: avoid GtkStock
   * Change url project's website
@@ -31,7 +31,7 @@
 
   * Translations update
   * require GTK+ 3.22 and GLib 2.50
-  * drop polkitgtkcafe library and its docs
+  * drop polkitctkcafe library and its docs
 
 ### cafe-polkit 1.19.0
 
@@ -52,7 +52,7 @@
 ### cafe-polkit 1.16.0
 
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
-    --with-gtk build option
+    --with-ctk build option
   * Translations update
 
 ### cafe-polkit 1.14.0

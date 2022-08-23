@@ -22,7 +22,7 @@
 #ifndef __POLKIT_CAFE_AUTHENTICATION_DIALOG_H
 #define __POLKIT_CAFE_AUTHENTICATION_DIALOG_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <polkit/polkit.h>
 
 #ifdef __cplusplus
