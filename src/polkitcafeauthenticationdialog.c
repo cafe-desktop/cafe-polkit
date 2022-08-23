@@ -43,13 +43,13 @@
 
 struct _PolkitCafeAuthenticationDialogPrivate
 {
-  GtkWidget *user_combobox;
-  GtkWidget *prompt_label;
-  GtkWidget *password_entry;
-  GtkWidget *auth_button;
-  GtkWidget *cancel_button;
-  GtkWidget *info_label;
-  GtkWidget *grid_password;
+  CtkWidget *user_combobox;
+  CtkWidget *prompt_label;
+  CtkWidget *password_entry;
+  CtkWidget *auth_button;
+  CtkWidget *cancel_button;
+  CtkWidget *info_label;
+  CtkWidget *grid_password;
 
   gchar *message;
   gchar *action_id;
@@ -63,7 +63,7 @@ struct _PolkitCafeAuthenticationDialogPrivate
 
   gboolean is_running;
 
-  GtkListStore *store;
+  CtkListStore *store;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (PolkitCafeAuthenticationDialog, polkit_cafe_authentication_dialog, GTK_TYPE_DIALOG);
@@ -88,13 +88,13 @@ enum {
 };
 
 static void
-user_combobox_set_sensitive (GtkCellLayout   *cell_layout,
-                             GtkCellRenderer *cell,
-                             GtkTreeModel    *tree_model,
-                             GtkTreeIter     *iter,
+user_combobox_set_sensitive (CtkCellLayout   *cell_layout,
+                             CtkCellRenderer *cell,
+                             CtkTreeModel    *tree_model,
+                             CtkTreeIter     *iter,
                              gpointer         user_data)
 {
-  GtkTreePath *path;
+  CtkTreePath *path;
   gint *indices;
   gboolean sensitive;
 
@@ -110,11 +110,11 @@ user_combobox_set_sensitive (GtkCellLayout   *cell_layout,
 }
 
 static void
-user_combobox_changed (GtkComboBox *widget,
+user_combobox_changed (CtkComboBox *widget,
                        gpointer     user_data)
 {
   PolkitCafeAuthenticationDialog *dialog = POLKIT_CAFE_AUTHENTICATION_DIALOG (user_data);
-  GtkTreeIter iter;
+  CtkTreeIter iter;
   gchar *user_name;
 
   if (ctk_combo_box_get_active_iter (GTK_COMBO_BOX (widget), &iter))
@@ -255,9 +255,9 @@ static void
 create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
 {
   int n, i, selected_index = 0;
-  GtkComboBox *combo;
-  GtkTreeIter iter;
-  GtkCellRenderer *renderer;
+  CtkComboBox *combo;
+  CtkTreeIter iter;
+  CtkCellRenderer *renderer;
 
   /* if we've already built the list of admin users once, then avoid
    * doing it again.. (this is mainly used when the user entered the
@@ -378,13 +378,13 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
                     dialog);
 }
 
-static GtkWidget *
+static CtkWidget *
 get_image (PolkitCafeAuthenticationDialog *dialog)
 {
   GdkPixbuf *pixbuf;
   GdkPixbuf *copy_pixbuf;
   GdkPixbuf *vendor_pixbuf;
-  GtkWidget *image;
+  CtkWidget *image;
 
   pixbuf = NULL;
   copy_pixbuf = NULL;
@@ -512,10 +512,10 @@ polkit_cafe_authentication_dialog_get_property (GObject    *object,
     }
 }
 
-static GtkWidget *
-add_row (GtkWidget *grid, int row, const char *label_text, GtkWidget *entry)
+static CtkWidget *
+add_row (CtkWidget *grid, int row, const char *label_text, CtkWidget *entry)
 {
-  GtkWidget *label;
+  CtkWidget *label;
 
   label = ctk_label_new_with_mnemonic (label_text);
   ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
@@ -534,7 +534,7 @@ add_row (GtkWidget *grid, int row, const char *label_text, GtkWidget *entry)
 }
 
 static void
-action_id_activated (GtkLabel *url_label, gpointer user_data)
+action_id_activated (CtkLabel *url_label, gpointer user_data)
 {
 #if 0
   GError *error;
@@ -615,13 +615,13 @@ polkit_cafe_authentication_dialog_finalize (GObject *object)
     G_OBJECT_CLASS (polkit_cafe_authentication_dialog_parent_class)->finalize (object);
 }
 
-static GtkWidget*
-polkit_cafe_dialog_add_button (GtkDialog   *dialog,
+static CtkWidget*
+polkit_cafe_dialog_add_button (CtkDialog   *dialog,
                                const gchar *button_text,
                                const gchar *icon_name,
                                      gint   response_id)
 {
-  GtkWidget *button;
+  CtkWidget *button;
 
   button = ctk_button_new_with_mnemonic (button_text);
   ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
@@ -639,16 +639,16 @@ static void
 polkit_cafe_authentication_dialog_constructed (GObject *object)
 {
   PolkitCafeAuthenticationDialog *dialog;
-  GtkWidget *hbox;
-  GtkWidget *main_vbox;
-  GtkWidget *vbox;
-  GtkWidget *grid_password;
-  GtkWidget *details_expander;
-  GtkWidget *details_vbox;
-  GtkWidget *grid;
-  GtkWidget *label;
-  GtkWidget *image;
-  GtkWidget *content_area;
+  CtkWidget *hbox;
+  CtkWidget *main_vbox;
+  CtkWidget *vbox;
+  CtkWidget *grid_password;
+  CtkWidget *details_expander;
+  CtkWidget *details_vbox;
+  CtkWidget *grid;
+  CtkWidget *label;
+  CtkWidget *image;
+  CtkWidget *content_area;
   gboolean have_user_combobox;
   gchar *s;
   guint rows;
@@ -985,7 +985,7 @@ polkit_cafe_authentication_dialog_class_init (PolkitCafeAuthenticationDialogClas
  *
  * Returns: A new password dialog.
  **/
-GtkWidget *
+CtkWidget *
 polkit_cafe_authentication_dialog_new (const gchar    *action_id,
                                         const gchar    *vendor,
                                         const gchar    *vendor_url,
@@ -995,7 +995,7 @@ polkit_cafe_authentication_dialog_new (const gchar    *action_id,
                                         gchar         **users)
 {
   PolkitCafeAuthenticationDialog *dialog;
-  GtkWindow *window;
+  CtkWindow *window;
 
   dialog = g_object_new (POLKIT_CAFE_TYPE_AUTHENTICATION_DIALOG,
                          "action-id", action_id,

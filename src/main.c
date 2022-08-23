@@ -54,7 +54,7 @@ static GList *current_temporary_authorizations = NULL;
 #ifdef HAVE_APPINDICATOR
 static AppIndicator *app_indicator = NULL;
 #else
-static GtkStatusIcon *status_icon = NULL;
+static CtkStatusIcon *status_icon = NULL;
 #endif
 
 static GDBusProxy      *sm_proxy;
@@ -92,21 +92,21 @@ revoke_tmp_authz (void)
 
 #ifdef HAVE_APPINDICATOR
 static void
-on_menu_item_activate (GtkMenuItem *menu_item,
+on_menu_item_activate (CtkMenuItem *menu_item,
                        gpointer     user_data)
 {
   revoke_tmp_authz ();
 }
 #else
 static void
-on_status_icon_activate (GtkStatusIcon *status_icon,
+on_status_icon_activate (CtkStatusIcon *status_icon,
                          gpointer       user_data)
 {
   revoke_tmp_authz ();
 }
 
 static void
-on_status_icon_popup_menu (GtkStatusIcon *status_icon,
+on_status_icon_popup_menu (CtkStatusIcon *status_icon,
                            guint          button,
                            guint          activate_time,
                            gpointer       user_data)
@@ -154,7 +154,7 @@ update_temporary_authorization_icon_real (void)
 #ifdef HAVE_APPINDICATOR
       if (app_indicator == NULL)
         {
-          GtkWidget *item, *menu;
+          CtkWidget *item, *menu;
 
           app_indicator = app_indicator_new ("cafe-polkit",
                                              "dialog-password",

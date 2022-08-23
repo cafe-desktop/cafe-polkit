@@ -13,7 +13,7 @@
   * [ci] Add cppcheck html report
   * drop deprecated ctk_dialog_get_action_area
   * Avoid deprecated g_type_class_add_private
-  * polkitcafeauthenticationdialog: avoid GtkStock
+  * polkitcafeauthenticationdialog: avoid CtkStock
   * Change url project's website
   * [ci] Enable Clang Static Analyzer
 
@@ -39,7 +39,7 @@
   * Fix reshow/hide icon with statusnotifier
   * Restore Polish translation credits from GNOME
   * status-icon: don't use stock icons
-  * polkitcafeauthenticationdialog: avoid deprecated GtkAlignment
+  * polkitcafeauthenticationdialog: avoid deprecated CtkAlignment
   * polkitcafeauthenticationdialog: replace a GTK_STOCK deprecation
 
 ### cafe-polkit 1.18.0
@@ -73,7 +73,7 @@
   * Add support for autorestart
   * Select the current user to authenticate by default
   * Add support for application indicators
-  * Gtk3: Auth dialog: make the label wrap at 50 chars
+  * Ctk3: Auth dialog: make the label wrap at 50 chars
 
 ### cafe-polkit 1.10.1
 
