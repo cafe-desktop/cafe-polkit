@@ -29,25 +29,25 @@ extern "C" {
 #endif
 
 #define POLKIT_MATE_TYPE_AUTHENTICATOR          (polkit_cafe_authenticator_get_type())
-#define POLKIT_MATE_AUTHENTICATOR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitMateAuthenticator))
-#define POLKIT_MATE_AUTHENTICATOR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitMateAuthenticatorClass))
-#define POLKIT_MATE_AUTHENTICATOR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitMateAuthenticatorClass))
+#define POLKIT_MATE_AUTHENTICATOR(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticator))
+#define POLKIT_MATE_AUTHENTICATOR_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
+#define POLKIT_MATE_AUTHENTICATOR_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), POLKIT_MATE_TYPE_AUTHENTICATOR, PolkitCafeAuthenticatorClass))
 #define POLKIT_MATE_IS_AUTHENTICATOR(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), POLKIT_MATE_TYPE_AUTHENTICATOR))
 #define POLKIT_MATE_IS_AUTHENTICATOR_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), POLKIT_MATE_TYPE_AUTHENTICATOR))
 
-typedef struct _PolkitMateAuthenticator PolkitMateAuthenticator;
-typedef struct _PolkitMateAuthenticatorClass PolkitMateAuthenticatorClass;
+typedef struct _PolkitCafeAuthenticator PolkitCafeAuthenticator;
+typedef struct _PolkitCafeAuthenticatorClass PolkitCafeAuthenticatorClass;
 
 GType                      polkit_cafe_authenticator_get_type   (void) G_GNUC_CONST;
-PolkitMateAuthenticator  *polkit_cafe_authenticator_new        (const gchar              *action_id,
+PolkitCafeAuthenticator  *polkit_cafe_authenticator_new        (const gchar              *action_id,
                                                                   const gchar              *message,
                                                                   const gchar              *icon_name,
                                                                   PolkitDetails            *details,
                                                                   const gchar              *cookie,
                                                                   GList                    *identities);
-void                       polkit_cafe_authenticator_initiate   (PolkitMateAuthenticator *authenticator);
-void                       polkit_cafe_authenticator_cancel     (PolkitMateAuthenticator *authenticator);
-const gchar               *polkit_cafe_authenticator_get_cookie (PolkitMateAuthenticator *authenticator);
+void                       polkit_cafe_authenticator_initiate   (PolkitCafeAuthenticator *authenticator);
+void                       polkit_cafe_authenticator_cancel     (PolkitCafeAuthenticator *authenticator);
+const gchar               *polkit_cafe_authenticator_get_cookie (PolkitCafeAuthenticator *authenticator);
 
 #ifdef __cplusplus
 }

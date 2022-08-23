@@ -354,7 +354,7 @@
 ========== sl.po ==========
 # Copyright (C) 2009 PolicyKit-gnome's COPYRIGHT HOLDER
 # This file is distributed under the same license as the PolicyKit-gnome package.
-# Matej Urbančič <gnomeju@svn.gnome.org>, 2010.
+# Cafej Urbančič <gnomeju@svn.gnome.org>, 2010.
 #
 
 

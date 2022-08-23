@@ -34,7 +34,7 @@
 #include "polkitcafeauthenticator.h"
 #include "polkitcafeauthenticationdialog.h"
 
-struct _PolkitMateAuthenticator
+struct _PolkitCafeAuthenticator
 {
   GObject parent_instance;
 
@@ -59,7 +59,7 @@ struct _PolkitMateAuthenticator
   GMainLoop *loop;
 };
 
-struct _PolkitMateAuthenticatorClass
+struct _PolkitCafeAuthenticatorClass
 {
   GObjectClass parent_class;
 
@@ -73,17 +73,17 @@ enum
 
 static guint signals[LAST_SIGNAL] = {0};
 
-G_DEFINE_TYPE (PolkitMateAuthenticator, polkit_cafe_authenticator, G_TYPE_OBJECT);
+G_DEFINE_TYPE (PolkitCafeAuthenticator, polkit_cafe_authenticator, G_TYPE_OBJECT);
 
 static void
-polkit_cafe_authenticator_init (PolkitMateAuthenticator *authenticator)
+polkit_cafe_authenticator_init (PolkitCafeAuthenticator *authenticator)
 {
 }
 
 static void
 polkit_cafe_authenticator_finalize (GObject *object)
 {
-  PolkitMateAuthenticator *authenticator;
+  PolkitCafeAuthenticator *authenticator;
 
   authenticator = POLKIT_MATE_AUTHENTICATOR (object);
 
@@ -115,7 +115,7 @@ polkit_cafe_authenticator_finalize (GObject *object)
 }
 
 static void
-polkit_cafe_authenticator_class_init (PolkitMateAuthenticatorClass *klass)
+polkit_cafe_authenticator_class_init (PolkitCafeAuthenticatorClass *klass)
 {
   GObjectClass *gobject_class;
 
@@ -124,8 +124,8 @@ polkit_cafe_authenticator_class_init (PolkitMateAuthenticatorClass *klass)
   gobject_class->finalize = polkit_cafe_authenticator_finalize;
 
   /**
-   * PolkitMateAuthenticator::completed:
-   * @authenticator: A #PolkitMateAuthenticator.
+   * PolkitCafeAuthenticator::completed:
+   * @authenticator: A #PolkitCafeAuthenticator.
    * @gained_authorization: Whether the authorization was gained.
    * @dismissed: Whether the dialog was dismissed.
    *
@@ -182,7 +182,7 @@ on_dialog_deleted (GtkWidget *widget,
                    GdkEvent  *event,
                    gpointer   user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
 
   polkit_cafe_authenticator_cancel (authenticator);
 }
@@ -192,7 +192,7 @@ on_user_selected (GObject    *object,
                   GParamSpec *pspec,
                   gpointer    user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
 
   /* clear any previous messages */
   polkit_cafe_authentication_dialog_set_info_message (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog), "");
@@ -201,7 +201,7 @@ on_user_selected (GObject    *object,
   authenticator->new_user_selected = TRUE;
 }
 
-PolkitMateAuthenticator *
+PolkitCafeAuthenticator *
 polkit_cafe_authenticator_new (const gchar     *action_id,
                                 const gchar     *message,
                                 const gchar     *icon_name,
@@ -209,7 +209,7 @@ polkit_cafe_authenticator_new (const gchar     *action_id,
                                 const gchar     *cookie,
                                 GList           *identities)
 {
-  PolkitMateAuthenticator *authenticator;
+  PolkitCafeAuthenticator *authenticator;
   GList *l;
   guint n;
   GError *error;
@@ -281,7 +281,7 @@ session_request (PolkitAgentSession *session,
                  gboolean            echo_on,
                  gpointer            user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
   gchar *password;
   gchar *modified_request;
 
@@ -336,7 +336,7 @@ session_show_error (PolkitAgentSession *session,
                     const gchar        *msg,
                     gpointer            user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
   gchar *s;
 
   s = g_strconcat ("<b>", msg, "</b>", NULL);
@@ -349,7 +349,7 @@ session_show_info (PolkitAgentSession *session,
                    const gchar        *msg,
                    gpointer            user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
   gchar *s;
 
   s = g_strconcat ("<b>", msg, "</b>", NULL);
@@ -366,7 +366,7 @@ session_completed (PolkitAgentSession *session,
                    gboolean            gained_authorization,
                    gpointer            user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
 
   authenticator->gained_authorization = gained_authorization;
 
@@ -379,7 +379,7 @@ session_completed (PolkitAgentSession *session,
 static gboolean
 do_initiate (gpointer user_data)
 {
-  PolkitMateAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
+  PolkitCafeAuthenticator *authenticator = POLKIT_MATE_AUTHENTICATOR (user_data);
   PolkitIdentity *identity;
   gint num_tries;
 
@@ -486,14 +486,14 @@ do_initiate (gpointer user_data)
 }
 
 void
-polkit_cafe_authenticator_initiate (PolkitMateAuthenticator *authenticator)
+polkit_cafe_authenticator_initiate (PolkitCafeAuthenticator *authenticator)
 {
   /* run from idle since we're going to block the main loop in the dialog (which has a recursive mainloop) */
   g_idle_add (do_initiate, g_object_ref (authenticator));
 }
 
 void
-polkit_cafe_authenticator_cancel (PolkitMateAuthenticator *authenticator)
+polkit_cafe_authenticator_cancel (PolkitCafeAuthenticator *authenticator)
 {
   if (authenticator->dialog != NULL)
     polkit_cafe_authentication_dialog_cancel (POLKIT_MATE_AUTHENTICATION_DIALOG (authenticator->dialog));
@@ -507,7 +507,7 @@ polkit_cafe_authenticator_cancel (PolkitMateAuthenticator *authenticator)
 }
 
 const gchar *
-polkit_cafe_authenticator_get_cookie (PolkitMateAuthenticator *authenticator)
+polkit_cafe_authenticator_get_cookie (PolkitCafeAuthenticator *authenticator)
 {
   return authenticator->cookie;
 }
