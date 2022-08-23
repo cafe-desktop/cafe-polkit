@@ -31,7 +31,7 @@ polkit_cafe_authentication_agent_1_CPPFLAGS = 		\
 	$(AM_CPPFLAGS)
 
 polkit_cafe_authentication_agent_1_CFLAGS = 		\
-	$(GTK_CFLAGS)					\
+	$(CTK_CFLAGS)					\
 	$(GLIB_CFLAGS)					\
 	$(POLKIT_AGENT_CFLAGS)				\
 	$(POLKIT_GOBJECT_CFLAGS)			\
@@ -43,7 +43,7 @@ polkit_cafe_authentication_agent_1_LDFLAGS = 		\
 	$(AM_LDFLAGS)
 
 polkit_cafe_authentication_agent_1_LDADD = 		\
-	$(GTK_LIBS)					\
+	$(CTK_LIBS)					\
 	$(GLIB_LIBS)					\
 	$(POLKIT_AGENT_LIBS)				\
 	$(POLKIT_GOBJECT_LIBS)				\

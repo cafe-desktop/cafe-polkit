@@ -66,7 +66,7 @@ struct _PolkitCafeAuthenticationDialogPrivate
   CtkListStore *store;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (PolkitCafeAuthenticationDialog, polkit_cafe_authentication_dialog, GTK_TYPE_DIALOG);
+G_DEFINE_TYPE_WITH_PRIVATE (PolkitCafeAuthenticationDialog, polkit_cafe_authentication_dialog, CTK_TYPE_DIALOG);
 
 enum {
   PROP_0,
@@ -117,16 +117,16 @@ user_combobox_changed (CtkComboBox *widget,
   CtkTreeIter iter;
   gchar *user_name;
 
-  if (ctk_combo_box_get_active_iter (GTK_COMBO_BOX (widget), &iter))
+  if (ctk_combo_box_get_active_iter (CTK_COMBO_BOX (widget), &iter))
     {
-      ctk_tree_model_get (GTK_TREE_MODEL (dialog->priv->store), &iter, USERNAME_COL, &user_name, -1);
+      ctk_tree_model_get (CTK_TREE_MODEL (dialog->priv->store), &iter, USERNAME_COL, &user_name, -1);
 
       g_free (dialog->priv->selected_user);
       dialog->priv->selected_user = user_name;
 
       g_object_notify (G_OBJECT (dialog), "selected-user");
 
-      ctk_dialog_response (GTK_DIALOG (dialog), RESPONSE_USER_SELECTED);
+      ctk_dialog_response (CTK_DIALOG (dialog), RESPONSE_USER_SELECTED);
 
       /* make the password entry and Authenticate button sensitive again */
       ctk_widget_set_sensitive (dialog->priv->prompt_label, TRUE);
@@ -266,7 +266,7 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
   if (dialog->priv->store != NULL)
     return;
 
-  combo = GTK_COMBO_BOX (dialog->priv->user_combobox);
+  combo = CTK_COMBO_BOX (dialog->priv->user_combobox);
   dialog->priv->store = ctk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
 
   ctk_list_store_append (dialog->priv->store, &iter);
@@ -320,7 +320,7 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
         {
           pixbuf = ctk_icon_theme_load_icon (ctk_icon_theme_get_default (),
                                              "stock_person",
-                                             GTK_ICON_SIZE_MENU,
+                                             CTK_ICON_SIZE_MENU,
                                              0,
                                              NULL);
         }
@@ -344,35 +344,35 @@ create_user_combobox (PolkitCafeAuthenticationDialog *dialog)
       g_object_unref (pixbuf);
     }
 
-  ctk_combo_box_set_model (combo, GTK_TREE_MODEL (dialog->priv->store));
+  ctk_combo_box_set_model (combo, CTK_TREE_MODEL (dialog->priv->store));
 
   renderer = ctk_cell_renderer_pixbuf_new ();
-  ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo), renderer, FALSE);
-  ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo),
+  ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (combo), renderer, FALSE);
+  ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (combo),
                                   renderer,
                                   "pixbuf", PIXBUF_COL,
                                   NULL);
-  ctk_cell_layout_set_cell_data_func (GTK_CELL_LAYOUT (combo),
+  ctk_cell_layout_set_cell_data_func (CTK_CELL_LAYOUT (combo),
                                       renderer,
                                       user_combobox_set_sensitive,
                                       NULL, NULL);
 
   renderer = ctk_cell_renderer_text_new ();
-  ctk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo), renderer, TRUE);
-  ctk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combo),
+  ctk_cell_layout_pack_start (CTK_CELL_LAYOUT (combo), renderer, TRUE);
+  ctk_cell_layout_set_attributes (CTK_CELL_LAYOUT (combo),
                                   renderer,
                                   "text", TEXT_COL,
                                   NULL);
-  ctk_cell_layout_set_cell_data_func (GTK_CELL_LAYOUT (combo),
+  ctk_cell_layout_set_cell_data_func (CTK_CELL_LAYOUT (combo),
                                       renderer,
                                       user_combobox_set_sensitive,
                                       NULL, NULL);
 
   /* Select the default user */
-  ctk_combo_box_set_active (GTK_COMBO_BOX (combo), selected_index);
+  ctk_combo_box_set_active (CTK_COMBO_BOX (combo), selected_index);
 
   /* Listen when a new user is selected */
-  g_signal_connect (GTK_WIDGET (combo),
+  g_signal_connect (CTK_WIDGET (combo),
                     "changed",
                     G_CALLBACK (user_combobox_changed),
                     dialog);
@@ -393,7 +393,7 @@ get_image (PolkitCafeAuthenticationDialog *dialog)
 
   if (dialog->priv->icon_name == NULL || strlen (dialog->priv->icon_name) == 0)
     {
-      image = ctk_image_new_from_icon_name ("dialog-password", GTK_ICON_SIZE_DIALOG);
+      image = ctk_image_new_from_icon_name ("dialog-password", CTK_ICON_SIZE_DIALOG);
       goto out;
     }
 
@@ -405,7 +405,7 @@ get_image (PolkitCafeAuthenticationDialog *dialog)
   if (vendor_pixbuf == NULL)
     {
       g_warning ("No icon for themed icon with name '%s'", dialog->priv->icon_name);
-      image = ctk_image_new_from_icon_name ("dialog-password", GTK_ICON_SIZE_DIALOG);
+      image = ctk_image_new_from_icon_name ("dialog-password", CTK_ICON_SIZE_DIALOG);
       goto out;
     }
 
@@ -518,17 +518,17 @@ add_row (CtkWidget *grid, int row, const char *label_text, CtkWidget *entry)
   CtkWidget *label;
 
   label = ctk_label_new_with_mnemonic (label_text);
-  ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
-  ctk_label_set_xalign (GTK_LABEL (label), 1.0);
-  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
+  ctk_label_set_use_markup (CTK_LABEL (label), TRUE);
+  ctk_label_set_xalign (CTK_LABEL (label), 1.0);
+  ctk_label_set_yalign (CTK_LABEL (label), 0.5);
 
   ctk_widget_set_hexpand (label, FALSE);
-  ctk_grid_attach (GTK_GRID (grid), label,
+  ctk_grid_attach (CTK_GRID (grid), label,
                    0, row, 1, 1);
   ctk_widget_set_hexpand (entry, TRUE);
-  ctk_grid_attach (GTK_GRID (grid), entry,
+  ctk_grid_attach (CTK_GRID (grid), entry,
                    1, row, 1, 1);
-  ctk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
+  ctk_label_set_mnemonic_widget (CTK_LABEL (label), entry);
 
   return label;
 }
@@ -563,7 +563,7 @@ action_id_activated (CtkLabel *url_label, gpointer user_data)
   if (!dbus_g_proxy_call (manager_proxy,
                           "ShowAction",
                           &error,
-                          G_TYPE_STRING, ctk_label_get_current_uri (GTK_LABEL (url_label)),
+                          G_TYPE_STRING, ctk_label_get_current_uri (CTK_LABEL (url_label)),
                           G_TYPE_INVALID,
                           G_TYPE_INVALID))
     {
@@ -624,13 +624,13 @@ polkit_cafe_dialog_add_button (CtkDialog   *dialog,
   CtkWidget *button;
 
   button = ctk_button_new_with_mnemonic (button_text);
-  ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
+  ctk_button_set_image (CTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_BUTTON));
 
-  ctk_button_set_use_underline (GTK_BUTTON (button), TRUE);
+  ctk_button_set_use_underline (CTK_BUTTON (button), TRUE);
   ctk_style_context_add_class (ctk_widget_get_style_context (button), "text-button");
   ctk_widget_set_can_default (button, TRUE);
   ctk_widget_show (button);
-  ctk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
+  ctk_dialog_add_action_widget (CTK_DIALOG (dialog), button, response_id);
 
   return button;
 }
@@ -660,53 +660,53 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
 
   have_user_combobox = FALSE;
 
-  dialog->priv->cancel_button = polkit_cafe_dialog_add_button (GTK_DIALOG (dialog),
+  dialog->priv->cancel_button = polkit_cafe_dialog_add_button (CTK_DIALOG (dialog),
                                                                _("_Cancel"),
                                                                "process-stop",
-                                                               GTK_RESPONSE_CANCEL);
+                                                               CTK_RESPONSE_CANCEL);
 
-  dialog->priv->auth_button = ctk_dialog_add_button (GTK_DIALOG (dialog),
+  dialog->priv->auth_button = ctk_dialog_add_button (CTK_DIALOG (dialog),
                                                      _("_Authenticate"),
-                                                     GTK_RESPONSE_OK);
+                                                     CTK_RESPONSE_OK);
 
-  ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+  ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_OK);
 
-  content_area = ctk_dialog_get_content_area (GTK_DIALOG (dialog));
+  content_area = ctk_dialog_get_content_area (CTK_DIALOG (dialog));
 
-  ctk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-  ctk_box_set_spacing (GTK_BOX (content_area), 2); /* 2 * 5 + 2 = 12 */
-  ctk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-  ctk_window_set_icon_name (GTK_WINDOW (dialog), "dialog-password");
+  ctk_container_set_border_width (CTK_CONTAINER (dialog), 5);
+  ctk_box_set_spacing (CTK_BOX (content_area), 2); /* 2 * 5 + 2 = 12 */
+  ctk_window_set_resizable (CTK_WINDOW (dialog), FALSE);
+  ctk_window_set_icon_name (CTK_WINDOW (dialog), "dialog-password");
 
-  hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-  ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
-  ctk_box_pack_start (GTK_BOX (content_area), hbox, TRUE, TRUE, 0);
+  hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 12);
+  ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
+  ctk_box_pack_start (CTK_BOX (content_area), hbox, TRUE, TRUE, 0);
 
   image = get_image (dialog);
-  ctk_widget_set_halign (image, GTK_ALIGN_CENTER);
-  ctk_widget_set_valign (image, GTK_ALIGN_START);
-  ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+  ctk_widget_set_halign (image, CTK_ALIGN_CENTER);
+  ctk_widget_set_valign (image, CTK_ALIGN_START);
+  ctk_box_pack_start (CTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-  main_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  ctk_box_pack_start (GTK_BOX (hbox), main_vbox, TRUE, TRUE, 0);
+  main_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 10);
+  ctk_box_pack_start (CTK_BOX (hbox), main_vbox, TRUE, TRUE, 0);
 
   /* main message */
   label = ctk_label_new (NULL);
   s = g_strdup_printf ("<big><b>%s</b></big>", dialog->priv->message);
-  ctk_label_set_markup (GTK_LABEL (label), s);
+  ctk_label_set_markup (CTK_LABEL (label), s);
   g_free (s);
 
-  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
-  ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-  ctk_label_set_max_width_chars (GTK_LABEL (label), 50);
-  ctk_box_pack_start (GTK_BOX (main_vbox), label, FALSE, FALSE, 0);
+  ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (CTK_LABEL (label), 0.5);
+  ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+  ctk_label_set_max_width_chars (CTK_LABEL (label), 50);
+  ctk_box_pack_start (CTK_BOX (main_vbox), label, FALSE, FALSE, 0);
 
   /* secondary message */
   label = ctk_label_new (NULL);
   if (g_strv_length (dialog->priv->users) > 1)
     {
-          ctk_label_set_markup (GTK_LABEL (label),
+          ctk_label_set_markup (CTK_LABEL (label),
                                 _("An application is attempting to perform an action that requires privileges. "
                                   "Authentication as one of the users below is required to perform this action."));
     }
@@ -714,29 +714,29 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
     {
       if (strcmp (g_get_user_name (), dialog->priv->users[0]) == 0)
         {
-          ctk_label_set_markup (GTK_LABEL (label),
+          ctk_label_set_markup (CTK_LABEL (label),
                                 _("An application is attempting to perform an action that requires privileges. "
                                   "Authentication is required to perform this action."));
         }
       else
         {
-          ctk_label_set_markup (GTK_LABEL (label),
+          ctk_label_set_markup (CTK_LABEL (label),
                                 _("An application is attempting to perform an action that requires privileges. "
                                   "Authentication as the super user is required to perform this action."));
         }
     }
 
-  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-  ctk_label_set_yalign (GTK_LABEL (label), 0.5);
-  ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-  ctk_label_set_max_width_chars (GTK_LABEL (label), 50);
-  ctk_box_pack_start (GTK_BOX (main_vbox), label, FALSE, FALSE, 0);
+  ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (CTK_LABEL (label), 0.5);
+  ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+  ctk_label_set_max_width_chars (CTK_LABEL (label), 50);
+  ctk_box_pack_start (CTK_BOX (main_vbox), label, FALSE, FALSE, 0);
 
   /* user combobox */
   if (g_strv_length (dialog->priv->users) > 1)
     {
       dialog->priv->user_combobox = ctk_combo_box_new ();
-      ctk_box_pack_start (GTK_BOX (main_vbox), GTK_WIDGET (dialog->priv->user_combobox), FALSE, FALSE, 0);
+      ctk_box_pack_start (CTK_BOX (main_vbox), CTK_WIDGET (dialog->priv->user_combobox), FALSE, FALSE, 0);
 
       create_user_combobox (dialog);
 
@@ -748,15 +748,15 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
     }
 
   /* password entry */
-  vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  ctk_box_pack_start (GTK_BOX (main_vbox), vbox, FALSE, FALSE, 0);
+  vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+  ctk_box_pack_start (CTK_BOX (main_vbox), vbox, FALSE, FALSE, 0);
 
   grid_password = ctk_grid_new ();
-  ctk_grid_set_column_spacing (GTK_GRID (grid_password), 12);
-  ctk_grid_set_row_spacing (GTK_GRID (grid_password), 6);
-  ctk_box_pack_start (GTK_BOX (vbox), grid_password, FALSE, FALSE, 0);
+  ctk_grid_set_column_spacing (CTK_GRID (grid_password), 12);
+  ctk_grid_set_row_spacing (CTK_GRID (grid_password), 6);
+  ctk_box_pack_start (CTK_BOX (vbox), grid_password, FALSE, FALSE, 0);
   dialog->priv->password_entry = ctk_entry_new ();
-  ctk_entry_set_visibility (GTK_ENTRY (dialog->priv->password_entry), FALSE);
+  ctk_entry_set_visibility (CTK_ENTRY (dialog->priv->password_entry), FALSE);
   dialog->priv->prompt_label = add_row (grid_password, 0, _("_Password:"), dialog->priv->password_entry);
 
   g_signal_connect_swapped (dialog->priv->password_entry, "activate",
@@ -770,23 +770,23 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
 
   /* A label for showing PAM_TEXT_INFO and PAM_TEXT_ERROR messages */
   label = ctk_label_new (NULL);
-  ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-  ctk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
+  ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+  ctk_box_pack_start (CTK_BOX (vbox), label, FALSE, FALSE, 0);
   dialog->priv->info_label = label;
 
   /* Details */
   details_expander = ctk_expander_new_with_mnemonic (_("<small><b>_Details</b></small>"));
-  ctk_expander_set_use_markup (GTK_EXPANDER (details_expander), TRUE);
-  ctk_box_pack_start (GTK_BOX (content_area), details_expander, FALSE, FALSE, 0);
+  ctk_expander_set_use_markup (CTK_EXPANDER (details_expander), TRUE);
+  ctk_box_pack_start (CTK_BOX (content_area), details_expander, FALSE, FALSE, 0);
 
-  details_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  ctk_container_add (GTK_CONTAINER (details_expander), details_vbox);
+  details_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 10);
+  ctk_container_add (CTK_CONTAINER (details_expander), details_vbox);
 
   grid = ctk_grid_new ();
   ctk_widget_set_margin_start (grid, 20);
-  ctk_grid_set_column_spacing (GTK_GRID (grid), 12);
-  ctk_grid_set_row_spacing (GTK_GRID (grid), 6);
-  ctk_box_pack_start (GTK_BOX (details_vbox), grid, FALSE, FALSE, 0);
+  ctk_grid_set_column_spacing (CTK_GRID (grid), 12);
+  ctk_grid_set_row_spacing (CTK_GRID (grid), 6);
+  ctk_box_pack_start (CTK_BOX (details_vbox), grid, FALSE, FALSE, 0);
 
   /* TODO: sort keys? */
   rows = 0;
@@ -805,11 +805,11 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
 
           label = ctk_label_new (NULL);
           s = g_strdup_printf ("<small>%s</small>", value);
-          ctk_label_set_markup (GTK_LABEL (label), s);
+          ctk_label_set_markup (CTK_LABEL (label), s);
           g_free (s);
 
-          ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-          ctk_label_set_yalign (GTK_LABEL (label), 1.0);
+          ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+          ctk_label_set_yalign (CTK_LABEL (label), 1.0);
 
           s = g_strdup_printf ("<small><b>%s:</b></small>", key);
           add_row (grid, rows, s, label);
@@ -823,15 +823,15 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
   /* --- */
 
   label = ctk_label_new (NULL);
-  ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
+  ctk_label_set_use_markup (CTK_LABEL (label), TRUE);
   s = g_strdup_printf ("<small><a href=\"%s\">%s</a></small>",
                        dialog->priv->action_id,
                        dialog->priv->action_id);
-  ctk_label_set_markup (GTK_LABEL (label), s);
+  ctk_label_set_markup (CTK_LABEL (label), s);
   g_free (s);
 
-  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-  ctk_label_set_yalign (GTK_LABEL (label), 1.0);
+  ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (CTK_LABEL (label), 1.0);
 
   add_row (grid, rows++, _("<small><b>Action:</b></small>"), label);
   g_signal_connect (label, "activate-link", G_CALLBACK (action_id_activated), NULL);
@@ -843,15 +843,15 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
   /* --- */
 
   label = ctk_label_new (NULL);
-  ctk_label_set_use_markup (GTK_LABEL (label), TRUE);
+  ctk_label_set_use_markup (CTK_LABEL (label), TRUE);
   s = g_strdup_printf ("<small><a href=\"%s\">%s</a></small>",
                        dialog->priv->vendor_url,
                        dialog->priv->vendor);
-  ctk_label_set_markup (GTK_LABEL (label), s);
+  ctk_label_set_markup (CTK_LABEL (label), s);
   g_free (s);
 
-  ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-  ctk_label_set_yalign (GTK_LABEL (label), 1.0);
+  ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+  ctk_label_set_yalign (CTK_LABEL (label), 1.0);
 
   add_row (grid, rows++, _("<small><b>Vendor:</b></small>"), label);
 
@@ -860,14 +860,14 @@ polkit_cafe_authentication_dialog_constructed (GObject *object)
   g_free (s);
 
   /* Disable password entry and authenticate until have a user selected */
-  if (have_user_combobox && ctk_combo_box_get_active (GTK_COMBO_BOX (dialog->priv->user_combobox)) == 0)
+  if (have_user_combobox && ctk_combo_box_get_active (CTK_COMBO_BOX (dialog->priv->user_combobox)) == 0)
     {
       ctk_widget_set_sensitive (dialog->priv->prompt_label, FALSE);
       ctk_widget_set_sensitive (dialog->priv->password_entry, FALSE);
       ctk_widget_set_sensitive (dialog->priv->auth_button, FALSE);
     }
 
-  ctk_widget_realize (GTK_WIDGET (dialog));
+  ctk_widget_realize (CTK_WIDGET (dialog));
 
 }
 
@@ -1007,16 +1007,16 @@ polkit_cafe_authentication_dialog_new (const gchar    *action_id,
                          "users", users,
                          NULL);
 
-  window = GTK_WINDOW (dialog);
+  window = CTK_WINDOW (dialog);
 
-  ctk_window_set_position (window, GTK_WIN_POS_CENTER);
+  ctk_window_set_position (window, CTK_WIN_POS_CENTER);
   ctk_window_set_modal (window, TRUE);
   ctk_window_set_resizable (window, FALSE);
   ctk_window_set_keep_above (window, TRUE);
   ctk_window_set_title (window, _("Authenticate"));
   g_signal_connect (dialog, "close", G_CALLBACK (ctk_widget_hide), NULL);
 
-  return GTK_WIDGET (dialog);
+  return CTK_WIDGET (dialog);
 }
 
 /**
@@ -1034,7 +1034,7 @@ polkit_cafe_authentication_dialog_indicate_error (PolkitCafeAuthenticationDialog
 
   /* TODO: detect compositing manager and do fancy stuff here */
 
-  ctk_window_get_position (GTK_WINDOW (dialog), &x, &y);
+  ctk_window_get_position (CTK_WINDOW (dialog), &x, &y);
 
   for (n = 0; n < 10; n++)
     {
@@ -1043,7 +1043,7 @@ polkit_cafe_authentication_dialog_indicate_error (PolkitCafeAuthenticationDialog
       else
         diff = 15;
 
-      ctk_window_move (GTK_WINDOW (dialog), x + diff, y);
+      ctk_window_move (CTK_WINDOW (dialog), x + diff, y);
 
       while (ctk_events_pending ())
         {
@@ -1053,7 +1053,7 @@ polkit_cafe_authentication_dialog_indicate_error (PolkitCafeAuthenticationDialog
       g_usleep (10000);
     }
 
-  ctk_window_move (GTK_WINDOW (dialog), x, y);
+  ctk_window_move (CTK_WINDOW (dialog), x, y);
 }
 
 /**
@@ -1085,7 +1085,7 @@ polkit_cafe_authentication_dialog_run_until_user_is_selected (PolkitCafeAuthenti
 
   dialog->priv->is_running = TRUE;
 
-  response = ctk_dialog_run (GTK_DIALOG (dialog));
+  response = ctk_dialog_run (CTK_DIALOG (dialog));
 
   dialog->priv->is_running = FALSE;
 
@@ -1119,9 +1119,9 @@ polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitCafeAuthe
   gint response;
   gchar *ret;
 
-  ctk_label_set_text_with_mnemonic (GTK_LABEL (dialog->priv->prompt_label), prompt);
-  ctk_entry_set_visibility (GTK_ENTRY (dialog->priv->password_entry), echo_chars);
-  ctk_entry_set_text (GTK_ENTRY (dialog->priv->password_entry), "");
+  ctk_label_set_text_with_mnemonic (CTK_LABEL (dialog->priv->prompt_label), prompt);
+  ctk_entry_set_visibility (CTK_ENTRY (dialog->priv->password_entry), echo_chars);
+  ctk_entry_set_text (CTK_ENTRY (dialog->priv->password_entry), "");
   ctk_widget_grab_focus (dialog->priv->password_entry);
 
   ret = NULL;
@@ -1137,16 +1137,16 @@ polkit_cafe_authentication_dialog_run_until_response_for_prompt (PolkitCafeAuthe
   ctk_widget_set_no_show_all (dialog->priv->grid_password, FALSE);
   ctk_widget_show_all (dialog->priv->grid_password);
 
-  response = ctk_dialog_run (GTK_DIALOG (dialog));
+  response = ctk_dialog_run (CTK_DIALOG (dialog));
 
   ctk_widget_hide (dialog->priv->grid_password);
   ctk_widget_set_no_show_all (dialog->priv->grid_password, TRUE);
 
   dialog->priv->is_running = FALSE;
 
-  if (response == GTK_RESPONSE_OK)
+  if (response == CTK_RESPONSE_OK)
     {
-      ret = g_strdup (ctk_entry_get_text (GTK_ENTRY (dialog->priv->password_entry)));
+      ret = g_strdup (ctk_entry_get_text (CTK_ENTRY (dialog->priv->password_entry)));
     }
   else if (response == RESPONSE_USER_SELECTED)
     {
@@ -1180,7 +1180,7 @@ void
 polkit_cafe_authentication_dialog_set_info_message (PolkitCafeAuthenticationDialog *dialog,
                                                      const gchar                     *info_markup)
 {
-  ctk_label_set_markup (GTK_LABEL (dialog->priv->info_label), info_markup);
+  ctk_label_set_markup (CTK_LABEL (dialog->priv->info_label), info_markup);
 }
 
 
@@ -1198,7 +1198,7 @@ polkit_cafe_authentication_dialog_cancel (PolkitCafeAuthenticationDialog *dialog
   if (!dialog->priv->is_running)
     return FALSE;
 
-  ctk_dialog_response (GTK_DIALOG (dialog), GTK_RESPONSE_CANCEL);
+  ctk_dialog_response (CTK_DIALOG (dialog), CTK_RESPONSE_CANCEL);
 
   return TRUE;
 }
