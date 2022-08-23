@@ -18,135 +18,135 @@ msgstr ""
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../polkitgtkcafe/polkitlockbutton.c:451
+#: ../polkitctkcafe/polkitlockbutton.c:451
 msgid "Action Identifier"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:452
+#: ../polkitctkcafe/polkitlockbutton.c:452
 msgid "The action identifier to use for the button"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:468
+#: ../polkitctkcafe/polkitlockbutton.c:468
 msgid "Is Authorized"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:469
+#: ../polkitctkcafe/polkitlockbutton.c:469
 msgid "Whether the process is authorized"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:484
+#: ../polkitctkcafe/polkitlockbutton.c:484
 msgid "Is Visible"
 msgstr "Est Visible"
 
-#: ../polkitgtkcafe/polkitlockbutton.c:485
+#: ../polkitctkcafe/polkitlockbutton.c:485
 msgid "Whether the widget is visible"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:500
+#: ../polkitctkcafe/polkitlockbutton.c:500
 msgid "Can Obtain"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:501
+#: ../polkitctkcafe/polkitlockbutton.c:501
 msgid "Whether authorization can be obtained"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:516
-#: ../polkitgtkcafe/polkitlockbutton.c:618
+#: ../polkitctkcafe/polkitlockbutton.c:516
+#: ../polkitctkcafe/polkitlockbutton.c:618
 msgid "Unlock Text"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:517
+#: ../polkitctkcafe/polkitlockbutton.c:517
 msgid "The text to display when prompting the user to unlock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:518
+#: ../polkitctkcafe/polkitlockbutton.c:518
 msgid "Click to make changes"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:533
-#: ../polkitgtkcafe/polkitlockbutton.c:635
+#: ../polkitctkcafe/polkitlockbutton.c:533
+#: ../polkitctkcafe/polkitlockbutton.c:635
 msgid "Unlock Tooltip"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:534
+#: ../polkitctkcafe/polkitlockbutton.c:534
 msgid "The tooltip to display when prompting the user to unlock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:535
+#: ../polkitctkcafe/polkitlockbutton.c:535
 msgid "Authentication is needed to make changes."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:550
+#: ../polkitctkcafe/polkitlockbutton.c:550
 msgid "Lock Text"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:551
+#: ../polkitctkcafe/polkitlockbutton.c:551
 msgid "The text to display when prompting the user to lock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:552
+#: ../polkitctkcafe/polkitlockbutton.c:552
 msgid "Click to prevent changes"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:567
+#: ../polkitctkcafe/polkitlockbutton.c:567
 msgid "Lock Tooltip"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:568
+#: ../polkitctkcafe/polkitlockbutton.c:568
 msgid "The tooltip to display when prompting the user to lock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:569
+#: ../polkitctkcafe/polkitlockbutton.c:569
 msgid "To prevent further changes, click the lock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:584
+#: ../polkitctkcafe/polkitlockbutton.c:584
 msgid "Lock Down Text"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:585
+#: ../polkitctkcafe/polkitlockbutton.c:585
 msgid ""
 "The text to display when prompting the user to lock down the action for all "
 "users."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:586
+#: ../polkitctkcafe/polkitlockbutton.c:586
 msgid "Click to lock down"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:601
+#: ../polkitctkcafe/polkitlockbutton.c:601
 msgid "Lock Down Tooltip"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:602
+#: ../polkitctkcafe/polkitlockbutton.c:602
 msgid ""
 "The tooltip to display when prompting the user to lock down the action for "
 "all users."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:603
+#: ../polkitctkcafe/polkitlockbutton.c:603
 msgid ""
 "To prevent users without administrative privileges from making changes, "
 "click the lock."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:619
+#: ../polkitctkcafe/polkitlockbutton.c:619
 msgid ""
 "The text to display when the user cannot obtain authorization through "
 "authentication."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:620
+#: ../polkitctkcafe/polkitlockbutton.c:620
 msgid "Not authorized to make changes"
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:636
+#: ../polkitctkcafe/polkitlockbutton.c:636
 msgid ""
 "The tooltip to display when the user cannot obtain authorization through "
 "authentication."
 msgstr ""
 
-#: ../polkitgtkcafe/polkitlockbutton.c:637
+#: ../polkitctkcafe/polkitlockbutton.c:637
 msgid "System policy prevents changes. Contact your system administator."
 msgstr ""
 
