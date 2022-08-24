@@ -4,7 +4,6 @@ Comment=PolicyKit Authentication Agent for the CAFE Desktop
 Exec=@FULL_LIBEXECDIR@/polkit-cafe-authentication-agent-1
 Terminal=false
 Type=Application
-Categories=
 NoDisplay=true
 OnlyShowIn=CAFE;
 X-CAFE-AutoRestart=true
