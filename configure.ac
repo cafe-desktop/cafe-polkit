@@ -1,4 +1,4 @@
-AC_INIT([polkit-cafe],[1.24.0],[https://cafe-desktop.org/],[cafe-polkit])
+AC_INIT([polkit-cafe],[1.25.0],[https://cafe-desktop.org/],[cafe-polkit])
 
 AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip check-news])
 
