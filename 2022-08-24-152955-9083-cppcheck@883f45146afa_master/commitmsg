@@ -1,0 +1,7 @@
+Description: Drop empty 'Categories' key
+
+Based in debian patch:
+https://salsa.debian.org/debian-mate-team/mate-polkit/-/commit/2d6d28c8954aa2a4c3b091083457ea828cbad468
+
+Description: Drop empty Categories= key. Fix line-wrapping after file has been translated.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
