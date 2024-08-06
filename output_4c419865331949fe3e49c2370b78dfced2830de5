@@ -1,0 +1,1539 @@
+Checking src/main.c ...
+src/main.c:225:20: style: Local variable 'authority' shadows outer variable [shadowVariable]
+  PolkitAuthority *authority = POLKIT_AUTHORITY (source_object);
+                   ^
+src/main.c:46:25: note: Shadowed declaration
+static PolkitAuthority *authority = NULL;
+                        ^
+src/main.c:225:20: note: Shadow variable
+  PolkitAuthority *authority = POLKIT_AUTHORITY (source_object);
+                   ^
+src/main.c:102:41: style: Parameter 'status_icon' can be declared as pointer to const. However it seems that 'on_status_icon_activate' is a callback function, if 'status_icon' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+on_status_icon_activate (CtkStatusIcon *status_icon,
+                                        ^
+src/main.c:190:41: note: You might need to cast the function pointer here
+                            G_CALLBACK (on_status_icon_activate),
+                                        ^
+src/main.c:102:41: note: Parameter 'status_icon' can be declared as pointer to const
+on_status_icon_activate (CtkStatusIcon *status_icon,
+                                        ^
+src/main.c:109:43: style: Parameter 'status_icon' can be declared as pointer to const. However it seems that 'on_status_icon_popup_menu' is a callback function, if 'status_icon' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+on_status_icon_popup_menu (CtkStatusIcon *status_icon,
+                                          ^
+src/main.c:194:41: note: You might need to cast the function pointer here
+                            G_CALLBACK (on_status_icon_popup_menu),
+                                        ^
+src/main.c:109:43: note: Parameter 'status_icon' can be declared as pointer to const
+on_status_icon_popup_menu (CtkStatusIcon *status_icon,
+                                          ^
+src/main.c:315:24: style: Parameter 'proxy' can be declared as pointer to const. However it seems that 'signal_cb' is a callback function, if 'proxy' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                       ^
+src/main.c:391:65: note: You might need to cast the function pointer here
+        g_signal_connect (client_proxy, "g-signal", G_CALLBACK (signal_cb), NULL);
+                                                                ^
+src/main.c:315:24: note: Parameter 'proxy' can be declared as pointer to const
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                       ^
+src/main.c:315:38: style: Parameter 'sender_name' can be declared as pointer to const. However it seems that 'signal_cb' is a callback function, if 'sender_name' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                                     ^
+src/main.c:391:65: note: You might need to cast the function pointer here
+        g_signal_connect (client_proxy, "g-signal", G_CALLBACK (signal_cb), NULL);
+                                                                ^
+src/main.c:315:38: note: Parameter 'sender_name' can be declared as pointer to const
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                                     ^
+src/main.c:315:58: style: Parameter 'signal_name' can be declared as pointer to const. However it seems that 'signal_cb' is a callback function, if 'signal_name' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                                                         ^
+src/main.c:391:65: note: You might need to cast the function pointer here
+        g_signal_connect (client_proxy, "g-signal", G_CALLBACK (signal_cb), NULL);
+                                                                ^
+src/main.c:315:58: note: Parameter 'signal_name' can be declared as pointer to const
+signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+                                                         ^
+src/main.c:316:22: style: Parameter 'parameters' can be declared as pointer to const. However it seems that 'signal_cb' is a callback function, if 'parameters' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+           GVariant *parameters, gpointer user_data)
+                     ^
+src/main.c:391:65: note: You might need to cast the function pointer here
+        g_signal_connect (client_proxy, "g-signal", G_CALLBACK (signal_cb), NULL);
+                                                                ^
+src/main.c:316:22: note: Parameter 'parameters' can be declared as pointer to const
+           GVariant *parameters, gpointer user_data)
+                     ^
+Checking src/main.c: HAVE_APPINDICATOR...
+src/main.c:95:37: style: Parameter 'menu_item' can be declared as pointer to const. However it seems that 'on_menu_item_activate' is a callback function, if 'menu_item' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+on_menu_item_activate (CtkMenuItem *menu_item,
+                                    ^
+src/main.c:166:41: note: You might need to cast the function pointer here
+                            G_CALLBACK (on_menu_item_activate),
+                                        ^
+src/main.c:95:37: note: Parameter 'menu_item' can be declared as pointer to const
+on_menu_item_activate (CtkMenuItem *menu_item,
+                                    ^
+Checking src/main.c: HAVE_BIND_TEXTDOMAIN_CODESET...
+Checking src/main.c: HAVE_CONFIG_H...
+1/4 files checked 18% done
+Checking src/polkitcafeauthenticationdialog.c ...
+src/polkitcafeauthenticationdialog.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src/polkitcafeauthenticationdialog.c:98:9: style: Variable 'indices' can be declared as pointer to const [constVariablePointer]
+  gint *indices;
+        ^
+src/polkitcafeauthenticationdialog.c:537:32: style: Parameter 'url_label' can be declared as pointer to const. However it seems that 'action_id_activated' is a callback function, if 'url_label' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+action_id_activated (CtkLabel *url_label, gpointer user_data)
+                               ^
+src/polkitcafeauthenticationdialog.c:837:57: note: You might need to cast the function pointer here
+  g_signal_connect (label, "activate-link", G_CALLBACK (action_id_activated), NULL);
+                                                        ^
+src/polkitcafeauthenticationdialog.c:537:32: note: Parameter 'url_label' can be declared as pointer to const
+action_id_activated (CtkLabel *url_label, gpointer user_data)
+                               ^
+Checking src/polkitcafeauthenticationdialog.c: HAVE_ACCOUNTSSERVICE...
+Checking src/polkitcafeauthenticationdialog.c: HAVE_CONFIG_H...
+2/4 files checked 68% done
+Checking src/polkitcafeauthenticator.c ...
+src/polkitcafeauthenticator.c:79:58: style: Parameter 'authenticator' can be declared as pointer to const [constParameterPointer]
+polkit_cafe_authenticator_init (PolkitCafeAuthenticator *authenticator)
+                                                         ^
+src/polkitcafeauthenticator.c:510:64: style: Parameter 'authenticator' can be declared as pointer to const [constParameterPointer]
+polkit_cafe_authenticator_get_cookie (PolkitCafeAuthenticator *authenticator)
+                                                               ^
+3/4 files checked 89% done
+Checking src/polkitcafelistener.c ...
+src/polkitcafelistener.c:64:48: style: Parameter 'listener' can be declared as pointer to const [constParameterPointer]
+polkit_cafe_listener_init (PolkitCafeListener *listener)
+                                               ^
+4/4 files checked 100% done
+nofile:0:0: information: Active checkers: 106/712 (use --checkers-report=<filename> to see details) [checkersReport]
+
+/usr/bin/cafe-autogen
+checking for autoreconf >= 2.53...
+(B  testing autoreconf... found 2.71
+configure.ac:32: warning: The macro `AC_HEADER_STDC' is obsolete.
+configure.ac:32: You should run autoupdate.
+./lib/autoconf/headers.m4:704: AC_HEADER_STDC is expanded from...
+configure.ac:32: the top level
+configure.ac:109: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:109: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+configure.ac:109: the top level
+checking for pkg-config >= 0.14.0...
+(B  testing pkg-config... found 1.8.1
+checking for cafe-common >= 0.0.1...
+(B  testing cafe-doc-common... found 1.25.0
+Checking for required M4 macros...
+(BChecking for forbidden M4 macros...
+(BProcessing ./configure.ac
+(Bconfigure.ac:32: warning: The macro `AC_HEADER_STDC' is obsolete.
+configure.ac:32: You should run autoupdate.
+./lib/autoconf/headers.m4:704: AC_HEADER_STDC is expanded from...
+configure.ac:32: the top level
+configure.ac:109: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:109: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+configure.ac:109: the top level
+Running cafe-doc-common...
+(BRunning autoreconf...
+(Bautoreconf: export WARNINGS=no-portability
+autoreconf: Entering directory '.'
+autoreconf: running: autopoint --force
+autopoint: using AM_GNU_GETTEXT_REQUIRE_VERSION instead of AM_GNU_GETTEXT_VERSION
+Copying file ABOUT-NLS
+Copying file config.rpath
+Copying file m4/build-to-host.m4
+Copying file m4/gettext.m4
+Copying file m4/host-cpu-c-abi.m4
+Copying file m4/iconv.m4
+Copying file m4/intlmacosx.m4
+Copying file m4/lib-ld.m4
+Copying file m4/lib-link.m4
+Copying file m4/lib-prefix.m4
+Copying file m4/nls.m4
+Copying file m4/po.m4
+Copying file m4/progtest.m4
+Copying file po/Makefile.in.in
+Copying file po/Makevars.template
+Copying file po/Rules-quot
+Copying file po/boldquot.sed
+Copying file po/en@boldquot.header
+Copying file po/en@quot.header
+Copying file po/insert-header.sin
+Copying file po/quot.sed
+Copying file po/remove-potcdate.sin
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4 ${ACLOCAL_FLAGS}
+autoreconf: running: /usr/bin/autoconf --force
+configure.ac:32: warning: The macro `AC_HEADER_STDC' is obsolete.
+configure.ac:32: You should run autoupdate.
+./lib/autoconf/headers.m4:704: AC_HEADER_STDC is expanded from...
+configure.ac:32: the top level
+configure.ac:109: warning: The macro `AC_HELP_STRING' is obsolete.
+configure.ac:109: You should run autoupdate.
+./lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
+configure.ac:109: the top level
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:29: installing './compile'
+configure.ac:36: installing './config.guess'
+configure.ac:36: installing './config.sub'
+configure.ac:3: installing './install-sh'
+configure.ac:3: installing './missing'
+src/Makefile.am: installing './depcomp'
+autoreconf: Leaving directory '.'
+Skipping configure process.
+scan-build: Using '/usr/lib/llvm-16/bin/clang' for static analysis
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable debugging... no
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer accepts -g... yes
+checking for /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer option to enable C11 features... none needed
+checking whether /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer understands -c and -o together... rm: cannot remove 'conftest.plist': Is a directory
+yes
+checking dependency style of /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer... gcc3
+checking whether C compiler accepts -Werror=unknown-warning-option... no
+checking whether C compiler accepts -Wall... yes
+checking whether C compiler accepts -Wmissing-prototypes... yes
+checking whether C compiler accepts -Wbad-function-cast... yes
+checking whether C compiler accepts -Wcast-align... yes
+checking whether C compiler accepts -Wextra... yes
+checking whether C compiler accepts -Wformat-nonliteral... yes
+checking whether C compiler accepts -Wmissing-declarations... yes
+checking whether C compiler accepts -Wmissing-field-initializers... yes
+checking whether C compiler accepts -Wnested-externs... yes
+checking whether C compiler accepts -Wpointer-arith... yes
+checking whether C compiler accepts -Wredundant-decls... yes
+checking whether C compiler accepts -Wshadow... yes
+checking whether C compiler accepts -Wstrict-prototypes... yes
+checking whether C compiler accepts -Wunused-macros... yes
+checking whether C compiler accepts -Werror=format-security... yes
+checking flags to pass to the C compiler /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer... -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+checking for gcc... (cached) /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer
+checking whether the compiler supports GNU C... (cached) yes
+checking whether /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer accepts -g... (cached) yes
+checking for /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer option to enable C11 features... (cached) none needed
+checking whether /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer understands -c and -o together... (cached) yes
+checking dependency style of /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer... (cached) gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... rm: cannot remove 'conftest.plist': Is a directory
+BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3145728
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... rm: cannot remove 'conftest.plist': Is a directory
+@
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer object... rm: cannot remove 'conftest.plist': Is a directory
+ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer supports -fno-rtti -fno-exceptions... no
+checking for /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer option to produce PIC... -fPIC -DPIC
+checking if /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer PIC flag -fPIC -DPIC works... yes
+checking if /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer static flag -static works... yes
+checking if /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer supports -c -o file.o... yes
+checking if /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer supports -c -o file.o... (cached) yes
+checking whether the /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for glib-2.0 >= 2.50.0 gio-2.0 >= 2.50.0... yes
+checking for ctk+-3.0 >= 3.22.0... yes
+checking for polkit-agent-1 >= 0.97... yes
+checking for polkit-gobject-1 >= 0.97... yes
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking how to run the C preprocessor... /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer -E
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib64
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating src/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+                  polkit-cafe 1.25.0
+                =======================
+
+        prefix:                     /usr
+        libdir:                     ${exec_prefix}/lib
+        libexecdir:                 ${exec_prefix}/libexec
+        bindir:                     ${exec_prefix}/bin
+        sbindir:                    ${exec_prefix}/sbin
+        datadir:                    ${datarootdir}
+        sysconfdir:                 ${prefix}/etc
+        localstatedir:              ${prefix}/var
+
+        compiler:                   /usr/share/clang/scan-build-16/bin/../libexec/ccc-analyzer
+        cflags:                     -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+        cppflags:                   
+        Warning flags:              -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security
+
+        Accountsservice:            yes
+        Application indicator:      no
+        Maintainer mode:            yes
+
+scan-build: Analysis run complete.
+scan-build: Removing directory '/tmp/scan-build-2024-08-06-104951-11777-1' because it contains no reports.
+scan-build: No bugs found.
+scan-build: Using '/usr/lib/llvm-16/bin/clang' for static analysis
+make  all-recursive
+make[1]: Entering directory '/rootdir'
+Making all in po
+make[2]: Entering directory '/rootdir/po'
+make cafe-polkit.pot-update
+make[3]: Entering directory '/rootdir/po'
+sed -e '/^#/d' remove-potcdate.sin > t-remove-potcdate.sed
+mv t-remove-potcdate.sed remove-potcdate.sed
+package_gnu=""; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+         LC_ALL=C find -L .. -maxdepth 1 -type f -size -10000000c -exec grep -i 'GNU cafe-polkit' /dev/null '{}' ';' 2>/dev/null; \
+       else \
+         LC_ALL=C grep -i 'GNU cafe-polkit' ../* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n '' || test 'https://cafe-desktop.org/' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address=''; \
+else \
+  msgid_bugs_address='https://cafe-desktop.org/'; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=cafe-polkit --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=cafe-polkit --directory=.. \
+      --add-comments=TRANSLATORS: \
+      --files-from=./POTFILES.in \
+      --copyright-holder='CAFE Desktop Environment team' \
+      --package-name="${package_prefix}cafe-polkit" \
+      --package-version='1.25.0' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --from-code=UTF-8 --keyword=_ --keyword=N_ --keyword=C_:1c,2 --keyword=NC_:1c,2 --keyword=g_dngettext:2,3 --add-comments=Translators:  \
+    ;; \
+esac
+Warning: program compiled against libxml 212 using older 209
+test ! -f cafe-polkit.po || { \
+  if test -f ./cafe-polkit.pot-header; then \
+    sed -e '1,/^#$/d' < cafe-polkit.po > cafe-polkit.1po && \
+    cat ./cafe-polkit.pot-header cafe-polkit.1po > cafe-polkit.po && \
+    rm -f cafe-polkit.1po \
+    || exit 1; \
+  fi; \
+  if test -f ./cafe-polkit.pot; then \
+    sed -f remove-potcdate.sed < ./cafe-polkit.pot > cafe-polkit.1po && \
+    sed -f remove-potcdate.sed < cafe-polkit.po > cafe-polkit.2po && \
+    if cmp cafe-polkit.1po cafe-polkit.2po >/dev/null 2>&1; then \
+      rm -f cafe-polkit.1po cafe-polkit.2po cafe-polkit.po; \
+    else \
+      rm -f cafe-polkit.1po cafe-polkit.2po ./cafe-polkit.pot && \
+      mv cafe-polkit.po ./cafe-polkit.pot; \
+    fi; \
+  else \
+    mv cafe-polkit.po ./cafe-polkit.pot; \
+  fi; \
+}
+make[3]: Leaving directory '/rootdir/po'
+test ! -f ./cafe-polkit.pot || \
+  test -z "af.gmo am.gmo ar.gmo as.gmo ast.gmo az.gmo be.gmo bg.gmo bn.gmo bn_IN.gmo br.gmo bs.gmo ca.gmo ca@valencia.gmo cmn.gmo crh.gmo cs.gmo cy.gmo da.gmo de.gmo dz.gmo el.gmo en_AU.gmo en_CA.gmo en_GB.gmo eo.gmo es.gmo es_AR.gmo es_CO.gmo et.gmo eu.gmo fa.gmo fi.gmo fr.gmo fr_CA.gmo frp.gmo fur.gmo fy.gmo ga.gmo gl.gmo gu.gmo he.gmo hi.gmo hr.gmo hu.gmo hy.gmo id.gmo ie.gmo is.gmo it.gmo ja.gmo ka.gmo kab.gmo kk.gmo kn.gmo ko.gmo ks.gmo ku.gmo ku_IQ.gmo ky.gmo li.gmo lt.gmo lv.gmo mai.gmo mg.gmo mi.gmo mk.gmo ml.gmo mn.gmo mr.gmo ms.gmo nb.gmo nds.gmo ne.gmo nl.gmo nn.gmo nso.gmo oc.gmo or.gmo pa.gmo pl.gmo ps.gmo pt.gmo pt_BR.gmo ro.gmo ru.gmo si.gmo sk.gmo sl.gmo sq.gmo sr.gmo sr@latin.gmo sv.gmo ta.gmo te.gmo th.gmo tr.gmo tt.gmo ug.gmo uk.gmo ur.gmo ur_PK.gmo uz.gmo vi.gmo wa.gmo xh.gmo zh_CN.gmo zh_HK.gmo zh_TW.gmo zu.gmo" || make af.gmo am.gmo ar.gmo as.gmo ast.gmo az.gmo be.gmo bg.gmo bn.gmo bn_IN.gmo br.gmo bs.gmo ca.gmo ca@valencia.gmo cmn.gmo crh.gmo cs.gmo cy.gmo da.gmo de.gmo dz.gmo el.gmo en_AU.gmo en_CA.gmo en_GB.gmo eo.gmo es.gmo es_AR.gmo es_CO.gmo et.gmo eu.gmo fa.gmo fi.gmo fr.gmo fr_CA.gmo frp.gmo fur.gmo fy.gmo ga.gmo gl.gmo gu.gmo he.gmo hi.gmo hr.gmo hu.gmo hy.gmo id.gmo ie.gmo is.gmo it.gmo ja.gmo ka.gmo kab.gmo kk.gmo kn.gmo ko.gmo ks.gmo ku.gmo ku_IQ.gmo ky.gmo li.gmo lt.gmo lv.gmo mai.gmo mg.gmo mi.gmo mk.gmo ml.gmo mn.gmo mr.gmo ms.gmo nb.gmo nds.gmo ne.gmo nl.gmo nn.gmo nso.gmo oc.gmo or.gmo pa.gmo pl.gmo ps.gmo pt.gmo pt_BR.gmo ro.gmo ru.gmo si.gmo sk.gmo sl.gmo sq.gmo sr.gmo sr@latin.gmo sv.gmo ta.gmo te.gmo th.gmo tr.gmo tt.gmo ug.gmo uk.gmo ur.gmo ur_PK.gmo uz.gmo vi.gmo wa.gmo xh.gmo zh_CN.gmo zh_HK.gmo zh_TW.gmo zu.gmo
+make[3]: Entering directory '/rootdir/po'
+/usr/bin/msgmerge --update --quiet --quiet --lang=af --previous af.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=am --previous am.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=as --previous as.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ar --previous ar.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ast --previous ast.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=az --previous az.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=be --previous be.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=bn --previous bn.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=bg --previous bg.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=bn_IN --previous bn_IN.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=br --previous br.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=bs --previous bs.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ca --previous ca.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ca@valencia --previous ca@valencia.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=cmn --previous cmn.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=cs --previous cs.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=crh --previous crh.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=cy --previous cy.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=da --previous da.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=de --previous de.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=dz --previous dz.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=el --previous el.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=en_AU --previous en_AU.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=en_CA --previous en_CA.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=en_GB --previous en_GB.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=es --previous es.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=eo --previous eo.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=es_AR --previous es_AR.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=et --previous et.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=es_CO --previous es_CO.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fa --previous fa.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=eu --previous eu.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fr --previous fr.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fi --previous fi.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fr_CA --previous fr_CA.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fur --previous fur.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=frp --previous frp.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=fy --previous fy.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=gl --previous gl.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ga --previous ga.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=gu --previous gu.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=he --previous he.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=hi --previous hi.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=hr --previous hr.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=hu --previous hu.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=hy --previous hy.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=id --previous id.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ie --previous ie.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=is --previous is.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=it --previous it.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ka --previous ka.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ja --previous ja.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=kab --previous kab.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=kk --previous kk.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=kn --previous kn.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ko --previous ko.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ks --previous ks.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ku --previous ku.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ku_IQ --previous ku_IQ.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ky --previous ky.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=li --previous li.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=lt --previous lt.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=lv --previous lv.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mai --previous mai.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mg --previous mg.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mk --previous mk.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mi --previous mi.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mn --previous mn.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ml --previous ml.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=mr --previous mr.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ms --previous ms.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=nb --previous nb.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=nds --previous nds.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ne --previous ne.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=nl --previous nl.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=nn --previous nn.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=oc --previous oc.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=nso --previous nso.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=or --previous or.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=pa --previous pa.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=pl --previous pl.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ps --previous ps.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=pt --previous pt.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=pt_BR --previous pt_BR.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ru --previous ru.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ro --previous ro.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=si --previous si.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sk --previous sk.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sl --previous sl.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sq --previous sq.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sr --previous sr.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sr@latin --previous sr@latin.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=sv --previous sv.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=te --previous te.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ta --previous ta.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=th --previous th.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=tr --previous tr.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=tt --previous tt.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=uk --previous uk.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ur --previous ur.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ug --previous ug.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=uz --previous uz.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=ur_PK --previous ur_PK.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=vi --previous vi.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=wa --previous wa.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=xh --previous xh.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=zh_CN --previous zh_CN.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=zh_HK --previous zh_HK.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=zh_TW --previous zh_TW.po cafe-polkit.pot
+/usr/bin/msgmerge --update --quiet --quiet --lang=zu --previous zu.po cafe-polkit.pot
+rm -f af.gmo && /usr/bin/msgmerge --for-msgfmt -o af.1po af.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o af.gmo af.1po && rm -f af.1po
+rm -f am.gmo && /usr/bin/msgmerge --for-msgfmt -o am.1po am.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o am.gmo am.1po && rm -f am.1po
+rm -f ar.gmo && /usr/bin/msgmerge --for-msgfmt -o ar.1po ar.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ar.gmo ar.1po && rm -f ar.1po
+af.1po: 3 translated messages.
+rm -f as.gmo && /usr/bin/msgmerge --for-msgfmt -o as.1po as.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o as.gmo as.1po && rm -f as.1po
+rm -f az.gmo && /usr/bin/msgmerge --for-msgfmt -o az.1po az.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o az.gmo az.1po && rm -f az.1po
+am.1po: 21 translated messages.
+ar.1po: 21 translated messages.
+rm -f ast.gmo && /usr/bin/msgmerge --for-msgfmt -o ast.1po ast.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ast.gmo ast.1po && rm -f ast.1po
+rm -f be.gmo && /usr/bin/msgmerge --for-msgfmt -o be.1po be.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o be.gmo be.1po && rm -f be.1po
+rm -f bg.gmo && /usr/bin/msgmerge --for-msgfmt -o bg.1po bg.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o bg.gmo bg.1po && rm -f bg.1po
+az.1po: 1 translated message.
+be.1po: 21 translated messages.
+ast.1po: 4 translated messages.
+as.1po: 4 translated messages.
+rm -f bn_IN.gmo && /usr/bin/msgmerge --for-msgfmt -o bn_IN.1po bn_IN.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn_IN.gmo bn_IN.1po && rm -f bn_IN.1po
+rm -f bn.gmo && /usr/bin/msgmerge --for-msgfmt -o bn.1po bn.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o bn.gmo bn.1po && rm -f bn.1po
+rm -f bs.gmo && /usr/bin/msgmerge --for-msgfmt -o bs.1po bs.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o bs.gmo bs.1po && rm -f bs.1po
+bg.1po: 21 translated messages.
+rm -f br.gmo && /usr/bin/msgmerge --for-msgfmt -o br.1po br.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o br.gmo br.1po && rm -f br.1po
+rm -f ca.gmo && /usr/bin/msgmerge --for-msgfmt -o ca.1po ca.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca.gmo ca.1po && rm -f ca.1po
+bs.1po: 9 translated messages.
+bn_IN.1po: 17 translated messages.
+rm -f ca@valencia.gmo && /usr/bin/msgmerge --for-msgfmt -o ca@valencia.1po ca@valencia.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ca@valencia.gmo ca@valencia.1po && rm -f ca@valencia.1po
+bn.1po: 4 translated messages.
+br.1po: 4 translated messages.
+rm -f cmn.gmo && /usr/bin/msgmerge --for-msgfmt -o cmn.1po cmn.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o cmn.gmo cmn.1po && rm -f cmn.1po
+ca.1po: 21 translated messages.
+ca@valencia.1po: rm -f crh.gmo && /usr/bin/msgmerge --for-msgfmt -o crh.1po crh.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o crh.gmo crh.1po && rm -f crh.1po
+rm -f cs.gmo && /usr/bin/msgmerge --for-msgfmt -o cs.1po cs.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o cs.gmo cs.1po && rm -f cs.1po
+21 translated messages.
+rm -f cy.gmo && /usr/bin/msgmerge --for-msgfmt -o cy.1po cy.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o cy.gmo cy.1po && rm -f cy.1po
+rm -f da.gmo && /usr/bin/msgmerge --for-msgfmt -o da.1po da.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o da.gmo da.1po && rm -f da.1po
+cy.1po: 3 translated messages.
+crh.1po: cs.1po: 21 translated messages.
+cmn.1po: 16 translated messages.
+4 translated messages.
+da.1po: 21 translated messages.
+rm -f de.gmo && /usr/bin/msgmerge --for-msgfmt -o de.1po de.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o de.gmo de.1po && rm -f de.1po
+rm -f dz.gmo && /usr/bin/msgmerge --for-msgfmt -o dz.1po dz.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o dz.gmo dz.1po && rm -f dz.1po
+rm -f en_AU.gmo && /usr/bin/msgmerge --for-msgfmt -o en_AU.1po en_AU.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_AU.gmo en_AU.1po && rm -f en_AU.1po
+rm -f en_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o en_CA.1po en_CA.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_CA.gmo en_CA.1po && rm -f en_CA.1po
+rm -f el.gmo && /usr/bin/msgmerge --for-msgfmt -o el.1po el.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o el.gmo el.1po && rm -f el.1po
+dz.1po: 3 translated messages.
+de.1po: 21 translated messages.
+en_CA.1po: 2 translated messages.
+en_AU.1po: 21 translated messages.
+el.1po: 21 translated messages.
+rm -f en_GB.gmo && /usr/bin/msgmerge --for-msgfmt -o en_GB.1po en_GB.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o en_GB.gmo en_GB.1po && rm -f en_GB.1po
+rm -f es.gmo && /usr/bin/msgmerge --for-msgfmt -o es.1po es.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o es.gmo es.1po && rm -f es.1po
+rm -f eo.gmo && /usr/bin/msgmerge --for-msgfmt -o eo.1po eo.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o eo.gmo eo.1po && rm -f eo.1po
+rm -f es_AR.gmo && /usr/bin/msgmerge --for-msgfmt -o es_AR.1po es_AR.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_AR.gmo es_AR.1po && rm -f es_AR.1po
+rm -f es_CO.gmo && /usr/bin/msgmerge --for-msgfmt -o es_CO.1po es_CO.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o es_CO.gmo es_CO.1po && rm -f es_CO.1po
+en_GB.1po: 21 translated messages.
+eo.1po: 2 translated messages.
+rm -f et.gmo && /usr/bin/msgmerge --for-msgfmt -o et.1po et.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o et.gmo et.1po && rm -f et.1po
+es_AR.1po: 21 translated messages.
+es.1po: 21 translated messages.
+es_CO.1po: 20 translated messages.
+rm -f eu.gmo && /usr/bin/msgmerge --for-msgfmt -o eu.1po eu.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o eu.gmo eu.1po && rm -f eu.1po
+rm -f fa.gmo && /usr/bin/msgmerge --for-msgfmt -o fa.1po fa.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fa.gmo fa.1po && rm -f fa.1po
+rm -f fi.gmo && /usr/bin/msgmerge --for-msgfmt -o fi.1po fi.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fi.gmo fi.1po && rm -f fi.1po
+rm -f fr.gmo && /usr/bin/msgmerge --for-msgfmt -o fr.1po fr.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr.gmo fr.1po && rm -f fr.1po
+et.1po: 18 translated messages.
+eu.1po: 17 translated messages.
+fi.1po: 21 translated messages.
+fr.1po: 21 translated messages.
+rm -f fr_CA.gmo && /usr/bin/msgmerge --for-msgfmt -o fr_CA.1po fr_CA.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fr_CA.gmo fr_CA.1po && rm -f fr_CA.1po
+fa.1po: 2 translated messages.
+rm -f frp.gmo && /usr/bin/msgmerge --for-msgfmt -o frp.1po frp.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o frp.gmo frp.1po && rm -f frp.1po
+rm -f fur.gmo && /usr/bin/msgmerge --for-msgfmt -o fur.1po fur.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fur.gmo fur.1po && rm -f fur.1po
+rm -f fy.gmo && /usr/bin/msgmerge --for-msgfmt -o fy.1po fy.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o fy.gmo fy.1po && rm -f fy.1po
+rm -f ga.gmo && /usr/bin/msgmerge --for-msgfmt -o ga.1po ga.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ga.gmo ga.1po && rm -f ga.1po
+frp.1po: 1 translated message.
+fy.1po: 2 translated messages.
+fr_CA.1po: 0 translated messages.
+fur.1po: 2 translated messages.
+rm -f gu.gmo && /usr/bin/msgmerge --for-msgfmt -o gu.1po gu.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o gu.gmo gu.1po && rm -f gu.1po
+ga.1po: 4 translated messages.
+rm -f he.gmo && /usr/bin/msgmerge --for-msgfmt -o he.1po he.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o he.gmo he.1po && rm -f he.1po
+rm -f gl.gmo && /usr/bin/msgmerge --for-msgfmt -o gl.1po gl.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o gl.gmo gl.1po && rm -f gl.1po
+rm -f hr.gmo && /usr/bin/msgmerge --for-msgfmt -o hr.1po hr.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o hr.gmo hr.1po && rm -f hr.1po
+rm -f hi.gmo && /usr/bin/msgmerge --for-msgfmt -o hi.1po hi.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o hi.gmo hi.1po && rm -f hi.1po
+he.1po: 21 translated messages.
+rm -f hu.gmo && /usr/bin/msgmerge --for-msgfmt -o hu.1po hu.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o hu.gmo hu.1po && rm -f hu.1po
+gu.1po: 17 translated messages.
+hr.1po: 21 translated messages.
+rm -f hy.gmo && /usr/bin/msgmerge --for-msgfmt -o hy.1po hy.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o hy.gmo hy.1po && rm -f hy.1po
+gl.1po: 21 translated messages.
+hu.1po: 21 translated messages.
+hi.1po: 18 translated messages.
+rm -f id.gmo && /usr/bin/msgmerge --for-msgfmt -o id.1po id.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o id.gmo id.1po && rm -f id.1po
+rm -f ie.gmo && /usr/bin/msgmerge --for-msgfmt -o ie.1po ie.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ie.gmo ie.1po && rm -f ie.1po
+hy.1po: 21 translated messages.
+rm -f is.gmo && /usr/bin/msgmerge --for-msgfmt -o is.1po is.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o is.gmo is.1po && rm -f is.1po
+id.1po: 21 translated messages.
+rm -f it.gmo && /usr/bin/msgmerge --for-msgfmt -o it.1po it.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o it.gmo it.1po && rm -f it.1po
+rm -f ja.gmo && /usr/bin/msgmerge --for-msgfmt -o ja.1po ja.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ja.gmo ja.1po && rm -f ja.1po
+rm -f ka.gmo && /usr/bin/msgmerge --for-msgfmt -o ka.1po ka.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ka.gmo ka.1po && rm -f ka.1po
+is.1po: 21 translated messages.
+ie.1po: 21 translated messages.
+ja.1po: 21 translated messages.
+it.1po: 21 translated messages.
+rm -f kab.gmo && /usr/bin/msgmerge --for-msgfmt -o kab.1po kab.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o kab.gmo kab.1po && rm -f kab.1po
+rm -f kk.gmo && /usr/bin/msgmerge --for-msgfmt -o kk.1po kk.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o kk.gmo kk.1po && rm -f kk.1po
+ka.1po: 4 translated messages.
+rm -f ko.gmo && /usr/bin/msgmerge --for-msgfmt -o ko.1po ko.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ko.gmo ko.1po && rm -f ko.1po
+rm -f kn.gmo && /usr/bin/msgmerge --for-msgfmt -o kn.1po kn.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o kn.gmo kn.1po && rm -f kn.1po
+kab.1po: 2 translated messages.
+rm -f ks.gmo && /usr/bin/msgmerge --for-msgfmt -o ks.1po ks.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ks.gmo ks.1po && rm -f ks.1po
+kk.1po: 21 translated messages.
+ko.1po: 21 translated messages.
+rm -f ku.gmo && /usr/bin/msgmerge --for-msgfmt -o ku.1po ku.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku.gmo ku.1po && rm -f ku.1po
+kn.1po: 17 translated messages.
+rm -f ku_IQ.gmo && /usr/bin/msgmerge --for-msgfmt -o ku_IQ.1po ku_IQ.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ku_IQ.gmo ku_IQ.1po && rm -f ku_IQ.1po
+rm -f ky.gmo && /usr/bin/msgmerge --for-msgfmt -o ky.1po ky.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ky.gmo ky.1po && rm -f ky.1po
+ks.1po: 1 translated message.
+ku_IQ.1po: 3 translated messages.
+rm -f li.gmo && /usr/bin/msgmerge --for-msgfmt -o li.1po li.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o li.gmo li.1po && rm -f li.1po
+ku.1po: 3 translated messages.
+rm -f lv.gmo && /usr/bin/msgmerge --for-msgfmt -o lv.1po lv.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o lv.gmo lv.1po && rm -f lv.1po
+rm -f lt.gmo && /usr/bin/msgmerge --for-msgfmt -o lt.1po lt.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o lt.gmo lt.1po && rm -f lt.1po
+ky.1po: 9 translated messages.
+li.1po: 1 translated message.
+rm -f mg.gmo && /usr/bin/msgmerge --for-msgfmt -o mg.1po mg.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mg.gmo mg.1po && rm -f mg.1po
+rm -f mai.gmo && /usr/bin/msgmerge --for-msgfmt -o mai.1po mai.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mai.gmo mai.1po && rm -f mai.1po
+lt.1po: 21 translated messages.
+lv.1po: 17 translated messages.
+rm -f mi.gmo && /usr/bin/msgmerge --for-msgfmt -o mi.1po mi.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mi.gmo mi.1po && rm -f mi.1po
+rm -f mk.gmo && /usr/bin/msgmerge --for-msgfmt -o mk.1po mk.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mk.gmo mk.1po && rm -f mk.1po
+mg.1po: 2 translated messages.
+rm -f ml.gmo && /usr/bin/msgmerge --for-msgfmt -o ml.1po ml.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ml.gmo ml.1po && rm -f ml.1po
+mai.1po: 4 translated messages.
+rm -f mn.gmo && /usr/bin/msgmerge --for-msgfmt -o mn.1po mn.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mn.gmo mn.1po && rm -f mn.1po
+mk.1po: 4 translated messages.
+rm -f mr.gmo && /usr/bin/msgmerge --for-msgfmt -o mr.1po mr.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o mr.gmo mr.1po && rm -f mr.1po
+mi.1po: 1 translated message.
+rm -f ms.gmo && /usr/bin/msgmerge --for-msgfmt -o ms.1po ms.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ms.gmo ms.1po && rm -f ms.1po
+ml.1po: 17 translated messages.
+mn.1po: 3 translated messages.
+mr.1po: 18 translated messages.
+rm -f nb.gmo && /usr/bin/msgmerge --for-msgfmt -o nb.1po nb.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o nb.gmo nb.1po && rm -f nb.1po
+rm -f nds.gmo && /usr/bin/msgmerge --for-msgfmt -o nds.1po nds.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o nds.gmo nds.1po && rm -f nds.1po
+rm -f ne.gmo && /usr/bin/msgmerge --for-msgfmt -o ne.1po ne.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ne.gmo ne.1po && rm -f ne.1po
+rm -f nl.gmo && /usr/bin/msgmerge --for-msgfmt -o nl.1po nl.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o nl.gmo nl.1po && rm -f nl.1po
+nb.1po: 21 translated messages.
+ms.1po: 21 translated messages.
+ne.1po: 7 translated messages.
+rm -f nso.gmo && /usr/bin/msgmerge --for-msgfmt -o nso.1po nso.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o nso.gmo nso.1po && rm -f nso.1po
+rm -f nn.gmo && /usr/bin/msgmerge --for-msgfmt -o nn.1po nn.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o nn.gmo nn.1po && rm -f nn.1po
+nds.1po: 4 translated messages.
+nl.1po: 21 translated messages.
+rm -f oc.gmo && /usr/bin/msgmerge --for-msgfmt -o oc.1po oc.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o oc.gmo oc.1po && rm -f oc.1po
+rm -f pa.gmo && /usr/bin/msgmerge --for-msgfmt -o pa.1po pa.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o pa.gmo pa.1po && rm -f pa.1po
+rm -f or.gmo && /usr/bin/msgmerge --for-msgfmt -o or.1po or.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o or.gmo or.1po && rm -f or.1po
+nn.1po: 4 translated messages.
+nso.1po: 1 translated message.
+oc.1po: 21 translated messages.
+rm -f pl.gmo && /usr/bin/msgmerge --for-msgfmt -o pl.1po pl.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o pl.gmo pl.1po && rm -f pl.1po
+rm -f ps.gmo && /usr/bin/msgmerge --for-msgfmt -o ps.1po ps.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ps.gmo ps.1po && rm -f ps.1po
+pa.1po: 17 translated messages.
+or.1po: 17 translated messages.
+rm -f pt_BR.gmo && /usr/bin/msgmerge --for-msgfmt -o pt_BR.1po pt_BR.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt_BR.gmo pt_BR.1po && rm -f pt_BR.1po
+rm -f ro.gmo && /usr/bin/msgmerge --for-msgfmt -o ro.1po ro.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ro.gmo ro.1po && rm -f ro.1po
+rm -f pt.gmo && /usr/bin/msgmerge --for-msgfmt -o pt.1po pt.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o pt.gmo pt.1po && rm -f pt.1po
+ps.1po: 3 translated messages.
+pl.1po: 21 translated messages.
+rm -f si.gmo && /usr/bin/msgmerge --for-msgfmt -o si.1po si.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o si.gmo si.1po && rm -f si.1po
+rm -f ru.gmo && /usr/bin/msgmerge --for-msgfmt -o ru.1po ru.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ru.gmo ru.1po && rm -f ru.1po
+ro.1po: 21 translated messages.
+pt.1po: 21 translated messages.
+pt_BR.1po: 21 translated messages.
+rm -f sk.gmo && /usr/bin/msgmerge --for-msgfmt -o sk.1po sk.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sk.gmo sk.1po && rm -f sk.1po
+rm -f sl.gmo && /usr/bin/msgmerge --for-msgfmt -o sl.1po sl.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sl.gmo sl.1po && rm -f sl.1po
+rm -f sq.gmo && /usr/bin/msgmerge --for-msgfmt -o sq.1po sq.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sq.gmo sq.1po && rm -f sq.1po
+ru.1po: 21 translated messages.
+si.1po: 3 translated messages.
+rm -f sr.gmo && /usr/bin/msgmerge --for-msgfmt -o sr.1po sr.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr.gmo sr.1po && rm -f sr.1po
+sk.1po: 21 translated messages.
+sq.1po: 21 translated messages.
+sl.1po: 20 translated messages.
+rm -f te.gmo && /usr/bin/msgmerge --for-msgfmt -o te.1po te.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o te.gmo te.1po && rm -f te.1po
+rm -f sr@latin.gmo && /usr/bin/msgmerge --for-msgfmt -o sr@latin.1po sr@latin.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sr@latin.gmo sr@latin.1po && rm -f sr@latin.1po
+rm -f ta.gmo && /usr/bin/msgmerge --for-msgfmt -o ta.1po ta.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ta.gmo ta.1po && rm -f ta.1po
+rm -f sv.gmo && /usr/bin/msgmerge --for-msgfmt -o sv.1po sv.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o sv.gmo sv.1po && rm -f sv.1po
+sr.1po: 21 translated messages.
+te.1po: 17 translated messages.
+rm -f th.gmo && /usr/bin/msgmerge --for-msgfmt -o th.1po th.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o th.gmo th.1po && rm -f th.1po
+sr@latin.1po: 4 translated messages.
+ta.1po: 17 translated messages.
+rm -f tt.gmo && /usr/bin/msgmerge --for-msgfmt -o tt.1po tt.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o tt.gmo tt.1po && rm -f tt.1po
+sv.1po: 21 translated messages.
+rm -f tr.gmo && /usr/bin/msgmerge --for-msgfmt -o tr.1po tr.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o tr.gmo tr.1po && rm -f tr.1po
+tt.1po: 1 translated message.
+th.1po: 21 translated messages.
+rm -f ug.gmo && /usr/bin/msgmerge --for-msgfmt -o ug.1po ug.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ug.gmo ug.1po && rm -f ug.1po
+rm -f uk.gmo && /usr/bin/msgmerge --for-msgfmt -o uk.1po uk.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o uk.gmo uk.1po && rm -f uk.1po
+rm -f ur_PK.gmo && /usr/bin/msgmerge --for-msgfmt -o ur_PK.1po ur_PK.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ur_PK.gmo ur_PK.1po && rm -f ur_PK.1po
+rm -f ur.gmo && /usr/bin/msgmerge --for-msgfmt -o ur.1po ur.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o ur.gmo ur.1po && rm -f ur.1po
+ug.1po: 3 translated messages.
+tr.1po: 21 translated messages.
+rm -f uz.gmo && /usr/bin/msgmerge --for-msgfmt -o uz.1po uz.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o uz.gmo uz.1po && rm -f uz.1po
+ur_PK.1po: 1 translated message.
+rm -f vi.gmo && /usr/bin/msgmerge --for-msgfmt -o vi.1po vi.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o vi.gmo vi.1po && rm -f vi.1po
+uk.1po: 21 translated messages.
+ur.1po: 17 translated messages.
+uz.1po: 6 translated messages.
+rm -f wa.gmo && /usr/bin/msgmerge --for-msgfmt -o wa.1po wa.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o wa.gmo wa.1po && rm -f wa.1po
+rm -f xh.gmo && /usr/bin/msgmerge --for-msgfmt -o xh.1po xh.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o xh.gmo xh.1po && rm -f xh.1po
+rm -f zh_CN.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_CN.1po zh_CN.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_CN.gmo zh_CN.1po && rm -f zh_CN.1po
+vi.1po: 21 translated messages.
+rm -f zh_HK.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_HK.1po zh_HK.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_HK.gmo zh_HK.1po && rm -f zh_HK.1po
+wa.1po: 1 translated message.
+rm -f zh_TW.gmo && /usr/bin/msgmerge --for-msgfmt -o zh_TW.1po zh_TW.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o zh_TW.gmo zh_TW.1po && rm -f zh_TW.1po
+xh.1po: 1 translated message.
+rm -f zu.gmo && /usr/bin/msgmerge --for-msgfmt -o zu.1po zu.po cafe-polkit.pot && /usr/bin/msgfmt -c --statistics --verbose -o zu.gmo zu.1po && rm -f zu.1po
+zh_CN.1po: 21 translated messages.
+zh_TW.1po: 21 translated messages.
+zh_HK.1po: 17 translated messages.
+zu.1po: 1 translated message.
+make[3]: Leaving directory '/rootdir/po'
+touch ./stamp-po
+make[2]: Leaving directory '/rootdir/po'
+Making all in src
+make[2]: Entering directory '/rootdir/src'
+  CC       polkit_cafe_authentication_agent_1-polkitcafelistener.o
+  CC       polkit_cafe_authentication_agent_1-polkitcafeauthenticator.o
+  CC       polkit_cafe_authentication_agent_1-main.o
+  CC       polkit_cafe_authentication_agent_1-polkitcafeauthenticationdialog.o
+  GEN      polkit-cafe-authentication-agent-1.desktop.in
+  GEN      polkit-cafe-authentication-agent-1.desktop
+polkitcafelistener.c: In function 'polkit_cafe_listener_init':
+polkitcafelistener.c:64:48: warning: unused parameter 'listener' [-Wunused-parameter]
+   64 | polkit_cafe_listener_init (PolkitCafeListener *listener)
+      |                            ~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+polkitcafelistener.c: In function 'authenticator_completed':
+polkitcafelistener.c:147:51: warning: unused parameter 'gained_authorization' [-Wunused-parameter]
+  147 |                          gboolean                 gained_authorization,
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+polkitcafelistener.c: In function 'cancelled_cb':
+polkitcafelistener.c:176:29: warning: unused parameter 'cancellable' [-Wunused-parameter]
+  176 | cancelled_cb (GCancellable *cancellable,
+      |               ~~~~~~~~~~~~~~^~~~~~~~~~~
+polkitcafelistener.c: In function 'polkit_cafe_listener_initiate_authentication_finish':
+polkitcafelistener.c:248:76: warning: unused parameter 'listener' [-Wunused-parameter]
+  248 | polkit_cafe_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
+      |                                                      ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c: In function 'revoke_tmp_authz_cb':
+main.c:68:36: warning: unused parameter 'user_data' [-Wunused-parameter]
+   68 |                      gpointer      user_data)
+      |                      ~~~~~~~~~~~~~~^~~~~~~~~
+main.c: In function 'on_status_icon_activate':
+main.c:102:41: warning: declaration of 'status_icon' shadows a global declaration [-Wshadow]
+  102 | on_status_icon_activate (CtkStatusIcon *status_icon,
+      |                          ~~~~~~~~~~~~~~~^~~~~~~~~~~
+main.c:57:23: note: shadowed declaration is here
+   57 | static CtkStatusIcon *status_icon = NULL;
+      |                       ^~~~~~~~~~~
+main.c:102:41: warning: unused parameter 'status_icon' [-Wunused-parameter]
+  102 | on_status_icon_activate (CtkStatusIcon *status_icon,
+      |                          ~~~~~~~~~~~~~~~^~~~~~~~~~~
+main.c:103:41: warning: unused parameter 'user_data' [-Wunused-parameter]
+  103 |                          gpointer       user_data)
+      |                          ~~~~~~~~~~~~~~~^~~~~~~~~
+main.c: In function 'on_status_icon_popup_menu':
+main.c:109:43: warning: declaration of 'status_icon' shadows a global declaration [-Wshadow]
+  109 | on_status_icon_popup_menu (CtkStatusIcon *status_icon,
+      |                            ~~~~~~~~~~~~~~~^~~~~~~~~~~
+main.c:57:23: note: shadowed declaration is here
+   57 | static CtkStatusIcon *status_icon = NULL;
+      |                       ^~~~~~~~~~~
+main.c:109:43: warning: unused parameter 'status_icon' [-Wunused-parameter]
+  109 | on_status_icon_popup_menu (CtkStatusIcon *status_icon,
+      |                            ~~~~~~~~~~~~~~~^~~~~~~~~~~
+main.c:110:43: warning: unused parameter 'button' [-Wunused-parameter]
+  110 |                            guint          button,
+      |                            ~~~~~~~~~~~~~~~^~~~~~
+main.c:111:43: warning: unused parameter 'activate_time' [-Wunused-parameter]
+  111 |                            guint          activate_time,
+      |                            ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+main.c:112:43: warning: unused parameter 'user_data' [-Wunused-parameter]
+  112 |                            gpointer       user_data)
+      |                            ~~~~~~~~~~~~~~~^~~~~~~~~
+main.c: In function 'enumerate_temporary_authorizations_cb':
+main.c:225:20: warning: declaration of 'authority' shadows a global declaration [-Wshadow]
+  225 |   PolkitAuthority *authority = POLKIT_AUTHORITY (source_object);
+      |                    ^~~~~~~~~
+main.c:46:25: note: shadowed declaration is here
+   46 | static PolkitAuthority *authority = NULL;
+      |                         ^~~~~~~~~
+main.c:242:53: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  242 |   g_list_foreach (current_temporary_authorizations, (GFunc) g_object_unref, NULL);
+      |                                                     ^
+main.c:223:54: warning: unused parameter 'user_data' [-Wunused-parameter]
+  223 |                                        gpointer      user_data)
+      |                                        ~~~~~~~~~~~~~~^~~~~~~~~
+main.c: In function 'update_temporary_authorization_icon':
+main.c:254:55: warning: declaration of 'authority' shadows a global declaration [-Wshadow]
+  254 | update_temporary_authorization_icon (PolkitAuthority *authority)
+      |                                      ~~~~~~~~~~~~~~~~~^~~~~~~~~
+main.c:46:25: note: shadowed declaration is here
+   46 | static PolkitAuthority *authority = NULL;
+      |                         ^~~~~~~~~
+main.c: In function 'on_authority_changed':
+main.c:264:40: warning: declaration of 'authority' shadows a global declaration [-Wshadow]
+  264 | on_authority_changed (PolkitAuthority *authority,
+      |                       ~~~~~~~~~~~~~~~~~^~~~~~~~~
+main.c:46:25: note: shadowed declaration is here
+   46 | static PolkitAuthority *authority = NULL;
+      |                         ^~~~~~~~~
+main.c:265:40: warning: unused parameter 'user_data' [-Wunused-parameter]
+  265 |                       gpointer         user_data)
+      |                       ~~~~~~~~~~~~~~~~~^~~~~~~~~
+main.c: In function 'signal_cb':
+main.c:315:24: warning: unused parameter 'proxy' [-Wunused-parameter]
+  315 | signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+      |            ~~~~~~~~~~~~^~~~~
+main.c:315:38: warning: unused parameter 'sender_name' [-Wunused-parameter]
+  315 | signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
+      |                               ~~~~~~~^~~~~~~~~~~
+main.c:316:22: warning: unused parameter 'parameters' [-Wunused-parameter]
+  316 |            GVariant *parameters, gpointer user_data)
+      |            ~~~~~~~~~~^~~~~~~~~~
+main.c:316:43: warning: unused parameter 'user_data' [-Wunused-parameter]
+  316 |            GVariant *parameters, gpointer user_data)
+      |                                  ~~~~~~~~~^~~~~~~~~
+polkitcafeauthenticationdialog.c: In function 'user_combobox_set_sensitive':
+polkitcafeauthenticationdialog.c:91:47: warning: unused parameter 'cell_layout' [-Wunused-parameter]
+   91 | user_combobox_set_sensitive (CtkCellLayout   *cell_layout,
+      |                              ~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+polkitcafeauthenticationdialog.c:95:47: warning: unused parameter 'user_data' [-Wunused-parameter]
+   95 |                              gpointer         user_data)
+      |                              ~~~~~~~~~~~~~~~~~^~~~~~~~~
+polkitcafeauthenticationdialog.c: In function 'action_id_activated':
+polkitcafeauthenticationdialog.c:537:32: warning: unused parameter 'url_label' [-Wunused-parameter]
+  537 | action_id_activated (CtkLabel *url_label, gpointer user_data)
+      |                      ~~~~~~~~~~^~~~~~~~~
+polkitcafeauthenticationdialog.c:537:52: warning: unused parameter 'user_data' [-Wunused-parameter]
+  537 | action_id_activated (CtkLabel *url_label, gpointer user_data)
+      |                                           ~~~~~~~~~^~~~~~~~~
+polkitcafeauthenticator.c: In function 'polkit_cafe_authenticator_init':
+polkitcafeauthenticator.c:79:58: warning: unused parameter 'authenticator' [-Wunused-parameter]
+   79 | polkit_cafe_authenticator_init (PolkitCafeAuthenticator *authenticator)
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+polkitcafeauthenticator.c: In function 'polkit_cafe_authenticator_finalize':
+polkitcafeauthenticator.c:98:46: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+   98 |   g_list_foreach (authenticator->identities, (GFunc) g_object_unref, NULL);
+      |                                              ^
+polkitcafeauthenticator.c: In function 'get_desc_for_action':
+polkitcafeauthenticator.c:174:33: warning: cast between incompatible function types from 'void (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  174 |   g_list_foreach (action_descs, (GFunc) g_object_unref, NULL);
+      |                                 ^
+polkitcafeauthenticator.c: In function 'on_dialog_deleted':
+polkitcafeauthenticator.c:181:31: warning: unused parameter 'widget' [-Wunused-parameter]
+  181 | on_dialog_deleted (CtkWidget *widget,
+      |                    ~~~~~~~~~~~^~~~~~
+polkitcafeauthenticator.c:182:31: warning: unused parameter 'event' [-Wunused-parameter]
+  182 |                    CdkEvent  *event,
+      |                    ~~~~~~~~~~~^~~~~
+polkitcafeauthenticator.c: In function 'on_user_selected':
+polkitcafeauthenticator.c:191:31: warning: unused parameter 'object' [-Wunused-parameter]
+  191 | on_user_selected (GObject    *object,
+      |                   ~~~~~~~~~~~~^~~~~~
+polkitcafeauthenticator.c:192:31: warning: unused parameter 'pspec' [-Wunused-parameter]
+  192 |                   GParamSpec *pspec,
+      |                   ~~~~~~~~~~~~^~~~~
+polkitcafeauthenticator.c: In function 'polkit_cafe_authenticator_new':
+polkitcafeauthenticator.c:235:46: warning: cast between incompatible function types from 'void * (*)(void *)' to 'void (*)(void *, void *)' [-Wcast-function-type]
+  235 |   g_list_foreach (authenticator->identities, (GFunc) g_object_ref, NULL);
+      |                                              ^
+polkitcafeauthenticator.c: In function 'session_request':
+polkitcafeauthenticator.c:279:38: warning: unused parameter 'session' [-Wunused-parameter]
+  279 | session_request (PolkitAgentSession *session,
+      |                  ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+polkitcafeauthenticator.c: In function 'session_show_error':
+polkitcafeauthenticator.c:335:41: warning: unused parameter 'session' [-Wunused-parameter]
+  335 | session_show_error (PolkitAgentSession *session,
+      |                     ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+polkitcafeauthenticator.c: In function 'session_show_info':
+polkitcafeauthenticator.c:348:40: warning: unused parameter 'session' [-Wunused-parameter]
+  348 | session_show_info (PolkitAgentSession *session,
+      |                    ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+polkitcafeauthenticator.c: In function 'session_completed':
+polkitcafeauthenticator.c:365:40: warning: unused parameter 'session' [-Wunused-parameter]
+  365 | session_completed (PolkitAgentSession *session,
+      |                    ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+  CCLD     polkit-cafe-authentication-agent-1
+make[2]: Leaving directory '/rootdir/src'
+make[2]: Entering directory '/rootdir'
+make[2]: Leaving directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+scan-build: Analysis run complete.
+scan-build: Removing directory '/rootdir/html-report/2024-08-06-105000-14139-1' because it contains no reports.
+scan-build: No bugs found.
+Making check in po
+make[1]: Entering directory '/rootdir/po'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/po'
+Making check in src
+make[1]: Entering directory '/rootdir/src'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/src'
+make[1]: Entering directory '/rootdir'
+make[1]: Leaving directory '/rootdir'
+Listing... 0%Listing... 0%Listing... 0%              adduser/testing,now 3.137 all [installed,automatic]
+adwaita-icon-theme/testing,now 46.0-1 all [installed,automatic]
+apt/now 2.9.6 amd64 [installed,upgradable to: 2.9.7]
+aptitude-common/testing,now 0.8.13-6 all [installed,automatic]
+aptitude/testing,now 0.8.13-6 amd64 [installed]
+at-spi2-common/testing,now 2.52.0-1 all [installed,automatic]
+at-spi2-core/testing,now 2.52.0-1 amd64 [installed,automatic]
+autoconf-archive/testing,now 20220903-3 all [installed]
+autoconf/testing,now 2.71-3 all [installed,automatic]
+automake/testing,now 1:1.16.5-1.3 all [installed,automatic]
+autopoint/testing,now 0.22.5-2 all [installed]
+autotools-dev/testing,now 20220109.1 all [installed,automatic]
+base-files/testing,now 13.3 amd64 [installed,automatic]
+base-passwd/testing,now 3.6.4 amd64 [installed,automatic]
+bash/testing,now 5.2.21-2.1 amd64 [installed,automatic]
+binfmt-support/testing,now 2.2.2-7 amd64 [installed,automatic]
+binutils-common/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+binutils-x86-64-linux-gnu/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+binutils/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+bsdextrautils/testing,now 2.40.2-1 amd64 [installed,automatic]
+bsdutils/testing,now 1:2.40.2-1 amd64 [installed,automatic]
+build-essential/testing,now 12.10 amd64 [installed,automatic]
+bzip2-doc/testing,now 1.0.8-5.1 all [installed,automatic]
+bzip2/testing,now 1.0.8-5.1 amd64 [installed,automatic]
+ca-certificates/testing,now 20240203 all [installed,automatic]
+clang-16/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+clang-tools-16/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+clang-tools/testing,now 1:16.0-58.1 amd64 [installed]
+clang/testing,now 1:16.0-58.1 amd64 [installed]
+coreutils/testing,now 9.4-3.1 amd64 [installed,automatic]
+cpp-13-x86-64-linux-gnu/testing,now 13.3.0-3 amd64 [installed,automatic]
+cpp-13/testing,now 13.3.0-3 amd64 [installed,automatic]
+cpp-x86-64-linux-gnu/testing,now 4:13.2.0-7 amd64 [installed,automatic]
+cpp/testing,now 4:13.2.0-7 amd64 [installed,automatic]
+cppcheck/testing,now 2.14.0-1+b1 amd64 [installed]
+ctk-update-icon-cache/unknown,now 3.25.5-1 amd64 [installed,automatic]
+curl/testing,now 8.8.0-4 amd64 [installed,automatic]
+dash/testing,now 0.5.12-9 amd64 [installed,automatic]
+dbus-bin/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+dbus-daemon/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+dbus-session-bus-common/testing,now 1.14.10-4 all [installed,automatic]
+dbus-system-bus-common/testing,now 1.14.10-4 all [installed,automatic]
+dbus-user-session/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+dbus/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+dconf-gsettings-backend/testing,now 0.40.0-4+b2 amd64 [installed,automatic]
+dconf-service/testing,now 0.40.0-4+b2 amd64 [installed,automatic]
+debconf/testing,now 1.5.87 all [installed,automatic]
+debhelper/testing,now 13.16 all [installed,automatic]
+debian-archive-keyring/testing,now 2023.4 all [installed,automatic]
+debianutils/testing,now 5.20 amd64 [installed,automatic]
+dh-autoreconf/testing,now 20 all [installed,automatic]
+dh-strip-nondeterminism/testing,now 1.14.0-1 all [installed,automatic]
+diffutils/testing,now 1:3.10-1 amd64 [installed,automatic]
+dirmngr/testing,now 2.2.43-8 amd64 [installed,automatic]
+dmsetup/testing,now 2:1.02.196-1+b1 amd64 [installed,automatic]
+dpkg-dev/testing,now 1.22.11 all [installed,automatic]
+dpkg/testing,now 1.22.11 amd64 [installed,automatic]
+dwz/testing,now 0.15-1+b1 amd64 [installed,automatic]
+e2fsprogs/testing,now 1.47.1-1 amd64 [installed,automatic]
+expect/testing,now 5.45.4-3 amd64 [installed]
+fakeroot/testing,now 1.33-1 amd64 [installed,automatic]
+file/testing,now 1:5.45-3 amd64 [installed,automatic]
+findutils/testing,now 4.10.0-2 amd64 [installed,automatic]
+fontconfig-config/testing,now 2.15.0-1.1 amd64 [installed,automatic]
+fontconfig/testing,now 2.15.0-1.1 amd64 [installed,automatic]
+fonts-dejavu-core/testing,now 2.37-8 all [installed,automatic]
+fonts-dejavu-mono/testing,now 2.37-8 all [installed,automatic]
+g++-13-x86-64-linux-gnu/testing,now 13.3.0-3 amd64 [installed,automatic]
+g++-13/testing,now 13.3.0-3 amd64 [installed,automatic]
+g++-x86-64-linux-gnu/testing,now 4:13.2.0-7 amd64 [installed,automatic]
+g++/testing,now 4:13.2.0-7 amd64 [installed,automatic]
+gcc-13-base/testing,now 13.3.0-3 amd64 [installed,automatic]
+gcc-13-x86-64-linux-gnu/testing,now 13.3.0-3 amd64 [installed,automatic]
+gcc-13/testing,now 13.3.0-3 amd64 [installed,automatic]
+gcc-14-base/testing,now 14-20240330-1 amd64 [installed,automatic]
+gcc-x86-64-linux-gnu/testing,now 4:13.2.0-7 amd64 [installed,automatic]
+gcc/testing,now 4:13.2.0-7 amd64 [installed]
+gettext-base/testing,now 0.22.5-2 amd64 [installed,automatic]
+gettext/testing,now 0.22.5-2 amd64 [installed,automatic]
+gir1.2-atk-1.0/testing,now 2.52.0-1 amd64 [installed,automatic]
+gir1.2-atspi-2.0/testing,now 2.52.0-1 amd64 [installed,automatic]
+gir1.2-ayatanaappindicator3-0.1/testing,now 0.5.93+really-1 amd64 [installed,automatic]
+gir1.2-ayatanaido3-0.4/testing,now 0.10.2-1 amd64 [installed,automatic]
+gir1.2-cloudproviders-0.3.0/testing,now 0.3.6-1 amd64 [installed,automatic]
+gir1.2-ctk-3.0/unknown,now 3.25.5-1 amd64 [installed]
+gir1.2-dbusmenu-glib-0.4/testing,now 18.10.20180917~bzr492+repack1-3.1+b1 amd64 [installed,automatic]
+gir1.2-freedesktop-dev/testing,now 1.80.1-3+b1 amd64 [installed,automatic]
+gir1.2-freedesktop/testing,now 1.80.1-3+b1 amd64 [installed,automatic]
+gir1.2-gdkpixbuf-2.0/testing,now 2.42.12+dfsg-1 amd64 [installed,automatic]
+gir1.2-glib-2.0-dev/testing,now 2.80.4-1 amd64 [installed,automatic]
+gir1.2-glib-2.0/testing,now 2.80.4-1 amd64 [installed,automatic]
+gir1.2-gtk-2.0/testing,now 2.24.33-5 amd64 [installed,automatic]
+gir1.2-gtk-3.0/testing,now 3.24.43-1 amd64 [installed,automatic]
+gir1.2-harfbuzz-0.0/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+gir1.2-pango-1.0/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+gir1.2-polkit-1.0/testing,now 124-3 amd64 [installed,automatic]
+git-man/testing,now 1:2.43.0-1 all [installed,automatic]
+git/testing,now 1:2.43.0-1+b1 amd64 [installed]
+gnupg-l10n/testing,now 2.2.43-8 all [installed,automatic]
+gnupg-utils/testing,now 2.2.43-8 amd64 [installed,automatic]
+gnupg/testing,now 2.2.43-8 all [installed,automatic]
+gpg-agent/testing,now 2.2.43-8 amd64 [installed,automatic]
+gpg-wks-client/testing,now 2.2.43-8 amd64 [installed,automatic]
+gpg/testing,now 2.2.43-8 amd64 [installed,automatic]
+gpgconf/testing,now 2.2.43-8 amd64 [installed,automatic]
+gpgsm/testing,now 2.2.43-8 amd64 [installed,automatic]
+gpgv/testing,now 2.2.43-8 amd64 [installed,automatic]
+grep/testing,now 3.11-4 amd64 [installed,automatic]
+groff-base/testing,now 1.23.0-5 amd64 [installed,automatic]
+gsettings-desktop-schemas/testing,now 47~alpha-2 all [installed,automatic]
+gtk-update-icon-cache/testing,now 3.24.43-1 amd64 [installed,automatic]
+gzip/testing,now 1.12-1.1 amd64 [installed,automatic]
+hicolor-icon-theme/testing,now 0.18-1 all [installed,automatic]
+hostname/testing,now 3.23+nmu2 amd64 [installed,automatic]
+icu-devtools/testing,now 72.1-5 amd64 [installed,automatic]
+init-system-helpers/testing,now 1.66 all [installed,automatic]
+intltool-debian/testing,now 0.35.0+20060710.6 all [installed,automatic]
+krb5-locales/testing,now 1.21.3-3 all [installed,automatic]
+less/testing,now 643-1 amd64 [installed,automatic]
+lib32gcc-s1/testing,now 14-20240330-1 amd64 [installed,automatic]
+lib32stdc++6/testing,now 14-20240330-1 amd64 [installed,automatic]
+libacl1/testing,now 2.3.2-2 amd64 [installed,automatic]
+libalgorithm-diff-perl/testing,now 1.201-1 all [installed,automatic]
+libalgorithm-diff-xs-perl/testing,now 0.04-8+b3 amd64 [installed,automatic]
+libalgorithm-merge-perl/testing,now 0.08-5 all [installed,automatic]
+libapparmor1/testing,now 3.1.7-1+b1 amd64 [installed,automatic]
+libapt-pkg6.0t64/now 2.9.6 amd64 [installed,upgradable to: 2.9.7]
+libarchive-cpio-perl/testing,now 0.10-3 all [installed,automatic]
+libarchive-zip-perl/testing,now 1.68-1 all [installed,automatic]
+libasan8/testing,now 14-20240330-1 amd64 [installed,automatic]
+libassuan0/testing,now 2.5.6-1+b1 amd64 [installed,automatic]
+libatk-bridge2.0-0t64/testing,now 2.52.0-1 amd64 [installed,automatic]
+libatk-bridge2.0-dev/testing,now 2.52.0-1 amd64 [installed,automatic]
+libatk1.0-0t64/testing,now 2.52.0-1 amd64 [installed,automatic]
+libatk1.0-dev/testing,now 2.52.0-1 amd64 [installed,automatic]
+libatomic1/testing,now 14-20240330-1 amd64 [installed,automatic]
+libatspi2.0-0t64/testing,now 2.52.0-1 amd64 [installed,automatic]
+libatspi2.0-dev/testing,now 2.52.0-1 amd64 [installed,automatic]
+libattr1/testing,now 1:2.5.2-1 amd64 [installed,automatic]
+libaudit-common/testing,now 1:3.1.2-4 all [installed,automatic]
+libaudit1/testing,now 1:3.1.2-4+b1 amd64 [installed,automatic]
+libavahi-client3/testing,now 0.8-13+b2 amd64 [installed,automatic]
+libavahi-common-data/testing,now 0.8-13+b2 amd64 [installed,automatic]
+libavahi-common3/testing,now 0.8-13+b2 amd64 [installed,automatic]
+libayatana-appindicator3-1/testing,now 0.5.93+really-1 amd64 [installed,automatic]
+libayatana-appindicator3-dev/testing,now 0.5.93+really-1 amd64 [installed]
+libayatana-ido3-0.4-0/testing,now 0.10.2-1 amd64 [installed,automatic]
+libayatana-ido3-dev/testing,now 0.10.2-1 amd64 [installed,automatic]
+libayatana-indicator3-7/testing,now 0.9.4-1 amd64 [installed,automatic]
+libayatana-indicator3-dev/testing,now 0.9.4-1 amd64 [installed,automatic]
+libbinutils/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+libblkid-dev/testing,now 2.40.2-1 amd64 [installed,automatic]
+libblkid1/testing,now 2.40.2-1 amd64 [installed,automatic]
+libboost-iostreams1.83.0/testing,now 1.83.0-3+b2 amd64 [installed,automatic]
+libbrotli-dev/testing,now 1.1.0-2+b4 amd64 [installed,automatic]
+libbrotli1/testing,now 1.1.0-2+b4 amd64 [installed,automatic]
+libbsd0/testing,now 0.12.2-1 amd64 [installed,automatic]
+libbz2-1.0/testing,now 1.0.8-5.1 amd64 [installed,automatic]
+libbz2-dev/testing,now 1.0.8-5.1 amd64 [installed,automatic]
+libc-bin/testing,now 2.39-6 amd64 [installed,automatic]
+libc-dev-bin/testing,now 2.39-6 amd64 [installed,automatic]
+libc6-dev/testing,now 2.39-6 amd64 [installed,automatic]
+libc6-i386/testing,now 2.39-6 amd64 [installed,automatic]
+libc6/testing,now 2.39-6 amd64 [installed,automatic]
+libcairo-gobject2/testing,now 1.18.0-3+b1 amd64 [installed,automatic]
+libcairo-script-interpreter2/testing,now 1.18.0-3+b1 amd64 [installed,automatic]
+libcairo2-dev/testing,now 1.18.0-3+b1 amd64 [installed,automatic]
+libcairo2/testing,now 1.18.0-3+b1 amd64 [installed,automatic]
+libcap-ng0/testing,now 0.8.5-1+b1 amd64 [installed,automatic]
+libcap2/testing,now 1:2.66-5 amd64 [installed,automatic]
+libcbor0.10/testing,now 0.10.2-1.1 amd64 [installed,automatic]
+libcc1-0/testing,now 14-20240330-1 amd64 [installed,automatic]
+libclang-common-16-dev/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+libclang-cpp16t64/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+libclang-rt-16-dev/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+libclang1-16t64/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+libcloudproviders-dev/testing,now 0.3.6-1 amd64 [installed,automatic]
+libcloudproviders0/testing,now 0.3.6-1 amd64 [installed,automatic]
+libcolord2/testing,now 1.4.7-1+b1 amd64 [installed,automatic]
+libcom-err2/testing,now 1.47.1-1 amd64 [installed,automatic]
+libcrypt-dev/testing,now 1:4.4.36-4 amd64 [installed,automatic]
+libcrypt1/testing,now 1:4.4.36-4 amd64 [installed,automatic]
+libcryptsetup12/testing,now 2:2.7.2-2 amd64 [installed,automatic]
+libctf-nobfd0/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+libctf0/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+libctk-3-0/unknown,now 3.25.5-1 amd64 [installed]
+libctk-3-bin/unknown,now 3.25.5-1 amd64 [installed,automatic]
+libctk-3-common/unknown,now 3.25.5-1 all [installed]
+libctk-3-dev/unknown,now 3.25.5-1 amd64 [installed]
+libcups2t64/testing,now 2.4.10-1 amd64 [installed,automatic]
+libcurl3t64-gnutls/testing,now 8.8.0-4 amd64 [installed,automatic]
+libcurl4t64/testing,now 8.8.0-4 amd64 [installed,automatic]
+libcwidget4/testing,now 0.5.18-6+b1 amd64 [installed,automatic]
+libdatrie-dev/testing,now 0.2.13-3 amd64 [installed,automatic]
+libdatrie1/testing,now 0.2.13-3 amd64 [installed,automatic]
+libdb5.3t64/testing,now 5.3.28+dfsg2-7 amd64 [installed,automatic]
+libdbus-1-3/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+libdbus-1-dev/testing,now 1.14.10-4+b1 amd64 [installed,automatic]
+libdbusmenu-glib-dev/testing,now 18.10.20180917~bzr492+repack1-3.1+b1 amd64 [installed,automatic]
+libdbusmenu-glib4/testing,now 18.10.20180917~bzr492+repack1-3.1+b1 amd64 [installed,automatic]
+libdbusmenu-gtk3-4/testing,now 18.10.20180917~bzr492+repack1-3.1+b1 amd64 [installed,automatic]
+libdconf1/testing,now 0.40.0-4+b2 amd64 [installed,automatic]
+libdebconfclient0/testing,now 0.272 amd64 [installed,automatic]
+libdebhelper-perl/testing,now 13.16 all [installed,automatic]
+libdeflate-dev/testing,now 1.20-1 amd64 [installed,automatic]
+libdeflate0/testing,now 1.20-1 amd64 [installed,automatic]
+libdevmapper1.02.1/testing,now 2:1.02.196-1+b1 amd64 [installed,automatic]
+libdpkg-perl/testing,now 1.22.11 all [installed,automatic]
+libdrm-amdgpu1/testing,now 2.4.122-1 amd64 [installed,automatic]
+libdrm-common/testing,now 2.4.122-1 all [installed,automatic]
+libdrm-intel1/testing,now 2.4.122-1 amd64 [installed,automatic]
+libdrm-radeon1/testing,now 2.4.122-1 amd64 [installed,automatic]
+libdrm2/testing,now 2.4.122-1 amd64 [installed,automatic]
+libedit2/testing,now 3.1-20240517-1 amd64 [installed,automatic]
+libegl-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libegl-mesa0/testing,now 24.1.3-2 amd64 [installed,automatic]
+libegl1-mesa-dev/testing,now 24.1.3-2 amd64 [installed,automatic]
+libegl1/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libelf1t64/testing,now 0.191-2 amd64 [installed,automatic]
+libepoxy-dev/testing,now 1.5.10-1+b2 amd64 [installed,automatic]
+libepoxy0/testing,now 1.5.10-1+b2 amd64 [installed,automatic]
+liberror-perl/testing,now 0.17029-2 all [installed,automatic]
+libexpat1-dev/testing,now 2.6.2-1 amd64 [installed,automatic]
+libexpat1/testing,now 2.6.2-1 amd64 [installed,automatic]
+libext2fs2t64/testing,now 1.47.1-1 amd64 [installed,automatic]
+libfakeroot/testing,now 1.33-1 amd64 [installed,automatic]
+libffi-dev/testing,now 3.4.6-1 amd64 [installed,automatic]
+libffi8/testing,now 3.4.6-1 amd64 [installed,automatic]
+libfido2-1/testing,now 1.15.0-1 amd64 [installed,automatic]
+libfile-fcntllock-perl/testing,now 0.22-4+b3 amd64 [installed,automatic]
+libfile-stripnondeterminism-perl/testing,now 1.14.0-1 all [installed,automatic]
+libfontconfig-dev/testing,now 2.15.0-1.1 amd64 [installed,automatic]
+libfontconfig1/testing,now 2.15.0-1.1 amd64 [installed,automatic]
+libfreetype-dev/testing,now 2.13.2+dfsg-1+b4 amd64 [installed,automatic]
+libfreetype6/testing,now 2.13.2+dfsg-1+b4 amd64 [installed,automatic]
+libfribidi-dev/testing,now 1.0.15-1 amd64 [installed,automatic]
+libfribidi0/testing,now 1.0.15-1 amd64 [installed,automatic]
+libgail-common/testing,now 2.24.33-5 amd64 [installed,automatic]
+libgail18t64/testing,now 2.24.33-5 amd64 [installed,automatic]
+libgbm1/testing,now 24.1.3-2 amd64 [installed,automatic]
+libgc1/testing,now 1:8.2.6-2 amd64 [installed,automatic]
+libgcc-13-dev/testing,now 13.3.0-3 amd64 [installed,automatic]
+libgcc-s1/testing,now 14-20240330-1 amd64 [installed,automatic]
+libgcrypt20/testing,now 1.11.0-2 amd64 [installed,automatic]
+libgdbm-compat4t64/testing,now 1.23-6 amd64 [installed,automatic]
+libgdbm6t64/testing,now 1.23-6 amd64 [installed,automatic]
+libgdk-pixbuf-2.0-0/testing,now 2.42.12+dfsg-1 amd64 [installed,automatic]
+libgdk-pixbuf-2.0-dev/testing,now 2.42.12+dfsg-1 amd64 [installed,automatic]
+libgdk-pixbuf2.0-bin/testing,now 2.42.12+dfsg-1 amd64 [installed,automatic]
+libgdk-pixbuf2.0-common/testing,now 2.42.12+dfsg-1 all [installed,automatic]
+libgirepository-2.0-0/testing,now 2.80.4-1 amd64 [installed,automatic]
+libgl-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libgl1-mesa-dri/testing,now 24.1.3-2 amd64 [installed,automatic]
+libgl1/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglapi-mesa/testing,now 24.1.3-2 amd64 [installed,automatic]
+libgles-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libgles1/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libgles2/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglib2.0-0t64/testing,now 2.80.4-1 amd64 [installed,automatic]
+libglib2.0-bin/testing,now 2.80.4-1 amd64 [installed,automatic]
+libglib2.0-data/testing,now 2.80.4-1 all [installed,automatic]
+libglib2.0-dev-bin/testing,now 2.80.4-1 amd64 [installed,automatic]
+libglib2.0-dev/testing,now 2.80.4-1 amd64 [installed,automatic]
+libglvnd-core-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglvnd-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglvnd0/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglx-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libglx-mesa0/testing,now 24.1.3-2 amd64 [installed,automatic]
+libglx0/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libgmp10/testing,now 2:6.3.0+dfsg-2+b1 amd64 [installed,automatic]
+libgnutls30t64/testing,now 3.8.6-2 amd64 [installed,automatic]
+libgomp1/testing,now 14-20240330-1 amd64 [installed,automatic]
+libgpg-error0/testing,now 1.49-2 amd64 [installed,automatic]
+libgpm2/testing,now 1.20.7-11 amd64 [installed,automatic]
+libgprofng0/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+libgraphite2-3/testing,now 1.3.14-2 amd64 [installed,automatic]
+libgraphite2-dev/testing,now 1.3.14-2 amd64 [installed,automatic]
+libgssapi-krb5-2/testing,now 1.21.3-3 amd64 [installed,automatic]
+libgtk-3-0t64/testing,now 3.24.43-1 amd64 [installed,automatic]
+libgtk-3-bin/testing,now 3.24.43-1 amd64 [installed,automatic]
+libgtk-3-common/testing,now 3.24.43-1 all [installed,automatic]
+libgtk-3-dev/testing,now 3.24.43-1 amd64 [installed,automatic]
+libgtk2.0-0t64/testing,now 2.24.33-5 amd64 [installed,automatic]
+libgtk2.0-bin/testing,now 2.24.33-5 amd64 [installed,automatic]
+libgtk2.0-common/testing,now 2.24.33-5 all [installed,automatic]
+libgtk2.0-dev/testing,now 2.24.33-5 amd64 [installed,automatic]
+libharfbuzz-cairo0/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libharfbuzz-dev/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libharfbuzz-gobject0/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libharfbuzz-icu0/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libharfbuzz-subset0/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libharfbuzz0b/testing,now 8.3.0-2+b1 amd64 [installed,automatic]
+libhogweed6t64/testing,now 3.10-1 amd64 [installed,automatic]
+libhwasan0/testing,now 14-20240330-1 amd64 [installed,automatic]
+libice-dev/testing,now 2:1.0.10-1+b1 amd64 [installed,automatic]
+libice6/testing,now 2:1.0.10-1+b1 amd64 [installed,automatic]
+libicu-dev/testing,now 72.1-5 amd64 [installed,automatic]
+libicu72/testing,now 72.1-5 amd64 [installed,automatic]
+libidn2-0/testing,now 2.3.7-2 amd64 [installed,automatic]
+libisl23/testing,now 0.26-3+b2 amd64 [installed,automatic]
+libitm1/testing,now 14-20240330-1 amd64 [installed,automatic]
+libjansson4/testing,now 2.14-2+b2 amd64 [installed,automatic]
+libjbig-dev/testing,now 2.1-6.1+b1 amd64 [installed,automatic]
+libjbig0/testing,now 2.1-6.1+b1 amd64 [installed,automatic]
+libjpeg-dev/testing,now 1:2.1.5-3 amd64 [installed,automatic]
+libjpeg62-turbo-dev/testing,now 1:2.1.5-3 amd64 [installed,automatic]
+libjpeg62-turbo/testing,now 1:2.1.5-3 amd64 [installed,automatic]
+libjson-c5/testing,now 0.17-1+b1 amd64 [installed,automatic]
+libk5crypto3/testing,now 1.21.3-3 amd64 [installed,automatic]
+libkeyutils1/testing,now 1.6.3-3 amd64 [installed,automatic]
+libkmod2/testing,now 32+20240611-1 amd64 [installed,automatic]
+libkrb5-3/testing,now 1.21.3-3 amd64 [installed,automatic]
+libkrb5support0/testing,now 1.21.3-3 amd64 [installed,automatic]
+libksba8/testing,now 1.6.7-2 amd64 [installed,automatic]
+liblcms2-2/testing,now 2.14-2+b1 amd64 [installed,automatic]
+libldap-2.5-0/testing,now 2.5.18+dfsg-2 amd64 [installed,automatic]
+libldap-common/testing,now 2.5.18+dfsg-2 all [installed,automatic]
+liblerc-dev/testing,now 4.0.0+ds-4+b1 amd64 [installed,automatic]
+liblerc4/testing,now 4.0.0+ds-4+b1 amd64 [installed,automatic]
+libllvm16t64/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+libllvm17t64/testing,now 1:17.0.6-12+b1 amd64 [installed,automatic]
+liblocale-gettext-perl/testing,now 1.07-7 amd64 [installed,automatic]
+liblsan0/testing,now 14-20240330-1 amd64 [installed,automatic]
+libltdl-dev/testing,now 2.4.7-7+b1 amd64 [installed,automatic]
+libltdl7/testing,now 2.4.7-7+b1 amd64 [installed,automatic]
+liblz4-1/now 1.9.4-2 amd64 [installed,upgradable to: 1.9.4-3]
+liblzma-dev/testing,now 5.6.2-2 amd64 [installed,automatic]
+liblzma5/testing,now 5.6.2-2 amd64 [installed,automatic]
+liblzo2-2/testing,now 2.10-3 amd64 [installed,automatic]
+libmagic-mgc/testing,now 1:5.45-3 amd64 [installed,automatic]
+libmagic1t64/testing,now 1:5.45-3 amd64 [installed,automatic]
+libmail-sendmail-perl/testing,now 0.80-3 all [installed,automatic]
+libmd0/testing,now 1.1.0-2 amd64 [installed,automatic]
+libmount-dev/testing,now 2.40.2-1 amd64 [installed,automatic]
+libmount1/testing,now 2.40.2-1 amd64 [installed,automatic]
+libmpc3/testing,now 1.3.1-1+b2 amd64 [installed,automatic]
+libmpfr6/testing,now 4.2.1-1+b1 amd64 [installed,automatic]
+libncurses-dev/testing,now 6.5-2 amd64 [installed,automatic]
+libncurses6/testing,now 6.5-2 amd64 [installed,automatic]
+libncursesw6/testing,now 6.5-2 amd64 [installed,automatic]
+libnettle8t64/testing,now 3.10-1 amd64 [installed,automatic]
+libnghttp2-14/testing,now 1.62.1-2 amd64 [installed,automatic]
+libnghttp3-9/testing,now 1.4.0-1 amd64 [installed,automatic]
+libngtcp2-16/testing,now 1.6.0-1 amd64 [installed,automatic]
+libngtcp2-crypto-gnutls8/testing,now 1.6.0-1 amd64 [installed,automatic]
+libnpth0t64/testing,now 1.6-3.1 amd64 [installed,automatic]
+libnss-systemd/testing,now 256.4-2 amd64 [installed,automatic]
+libobjc-13-dev/testing,now 13.3.0-3 amd64 [installed,automatic]
+libobjc4/testing,now 14-20240330-1 amd64 [installed,automatic]
+libopengl-dev/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libopengl0/testing,now 1.7.0-1+b1 amd64 [installed,automatic]
+libp11-kit0/testing,now 0.25.5-2 amd64 [installed,automatic]
+libpam-modules-bin/testing,now 1.5.3-7 amd64 [installed,automatic]
+libpam-modules/testing,now 1.5.3-7 amd64 [installed,automatic]
+libpam-runtime/testing,now 1.5.3-7 all [installed,automatic]
+libpam-systemd/testing,now 256.4-2 amd64 [installed,automatic]
+libpam0g/testing,now 1.5.3-7 amd64 [installed,automatic]
+libpango-1.0-0/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+libpango1.0-dev/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+libpangocairo-1.0-0/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+libpangoft2-1.0-0/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+libpangoxft-1.0-0/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+libpciaccess0/testing,now 0.17-3+b1 amd64 [installed,automatic]
+libpcre2-16-0/testing,now 10.42-4+b1 amd64 [installed,automatic]
+libpcre2-32-0/testing,now 10.42-4+b1 amd64 [installed,automatic]
+libpcre2-8-0/testing,now 10.42-4+b1 amd64 [installed,automatic]
+libpcre2-dev/testing,now 10.42-4+b1 amd64 [installed,automatic]
+libpcre2-posix3/testing,now 10.42-4+b1 amd64 [installed,automatic]
+libperl5.38t64/testing,now 5.38.2-5 amd64 [installed,automatic]
+libpfm4/testing,now 4.13.0+git32-g0d4ed0e-1 amd64 [installed,automatic]
+libpipeline1/testing,now 1.5.7-2 amd64 [installed,automatic]
+libpixman-1-0/testing,now 0.42.2-1+b1 amd64 [installed,automatic]
+libpixman-1-dev/testing,now 0.42.2-1+b1 amd64 [installed,automatic]
+libpkgconf3/testing,now 1.8.1-3 amd64 [installed,automatic]
+libpng-dev/testing,now 1.6.43-5 amd64 [installed,automatic]
+libpng-tools/testing,now 1.6.43-5 amd64 [installed,automatic]
+libpng16-16t64/testing,now 1.6.43-5 amd64 [installed,automatic]
+libpolkit-agent-1-0/testing,now 124-3 amd64 [installed,automatic]
+libpolkit-agent-1-dev/testing,now 124-3 amd64 [installed]
+libpolkit-gobject-1-0/testing,now 124-3 amd64 [installed,automatic]
+libpolkit-gobject-1-dev/testing,now 124-3 amd64 [installed]
+libproc2-0/testing,now 2:4.0.4-5 amd64 [installed,automatic]
+libpsl5t64/testing,now 0.21.2-1.1 amd64 [installed,automatic]
+libpython3-stdlib/testing,now 3.12.4-1 amd64 [installed,automatic]
+libpython3.12-minimal/testing,now 3.12.4-3 amd64 [installed,automatic]
+libpython3.12-stdlib/testing,now 3.12.4-3 amd64 [installed,automatic]
+libquadmath0/testing,now 14-20240330-1 amd64 [installed,automatic]
+libreadline8t64/testing,now 8.2-4 amd64 [installed,automatic]
+librsvg2-2/testing,now 2.58.0+dfsg-1 amd64 [installed,automatic]
+librsvg2-common/testing,now 2.58.0+dfsg-1 amd64 [installed,automatic]
+librtmp1/testing,now 2.4+20151223.gitfa8646d.1-2+b4 amd64 [installed,automatic]
+libsasl2-2/testing,now 2.1.28+dfsg1-6 amd64 [installed,automatic]
+libsasl2-modules-db/testing,now 2.1.28+dfsg1-6 amd64 [installed,automatic]
+libsasl2-modules/testing,now 2.1.28+dfsg1-6 amd64 [installed,automatic]
+libseccomp2/testing,now 2.5.5-1+b1 amd64 [installed,automatic]
+libselinux1-dev/testing,now 3.5-2+b3 amd64 [installed,automatic]
+libselinux1/testing,now 3.5-2+b3 amd64 [installed,automatic]
+libsemanage-common/testing,now 3.5-1 all [installed,automatic]
+libsemanage2/testing,now 3.5-1+b4 amd64 [installed,automatic]
+libsensors-config/testing,now 1:3.6.0-10 all [installed,automatic]
+libsensors5/testing,now 1:3.6.0-10 amd64 [installed,automatic]
+libsepol-dev/testing,now 3.5-2+b1 amd64 [installed,automatic]
+libsepol2/testing,now 3.5-2+b1 amd64 [installed,automatic]
+libsframe1/testing,now 2.42.90.20240720-2 amd64 [installed,automatic]
+libsharpyuv-dev/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libsharpyuv0/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libsigc++-2.0-0v5/testing,now 2.12.1-2 amd64 [installed,automatic]
+libsm-dev/testing,now 2:1.2.3-1+b1 amd64 [installed,automatic]
+libsm6/testing,now 2:1.2.3-1+b1 amd64 [installed,automatic]
+libsmartcols1/testing,now 2.40.2-1 amd64 [installed,automatic]
+libsqlite3-0/testing,now 3.46.0-1 amd64 [installed,automatic]
+libss2/testing,now 1.47.1-1 amd64 [installed,automatic]
+libssh2-1t64/testing,now 1.11.0-7 amd64 [installed,automatic]
+libssl3t64/testing,now 3.2.2-1 amd64 [installed,automatic]
+libstdc++-13-dev/testing,now 13.3.0-3 amd64 [installed,automatic]
+libstdc++6/testing,now 14-20240330-1 amd64 [installed,automatic]
+libsys-hostname-long-perl/testing,now 1.5-3 all [installed,automatic]
+libsysprof-capture-4-dev/testing,now 46.0-2 amd64 [installed,automatic]
+libsystemd-shared/testing,now 256.4-2 amd64 [installed,automatic]
+libsystemd0/testing,now 256.4-2 amd64 [installed,automatic]
+libtasn1-6/testing,now 4.19.0-3+b2 amd64 [installed,automatic]
+libtcl8.6/testing,now 8.6.14+dfsg-1 amd64 [installed,automatic]
+libthai-data/testing,now 0.1.29-2 all [installed,automatic]
+libthai-dev/testing,now 0.1.29-2 amd64 [installed,automatic]
+libthai0/testing,now 0.1.29-2 amd64 [installed,automatic]
+libtiff-dev/testing,now 4.5.1+git230720-4 amd64 [installed,automatic]
+libtiff6/testing,now 4.5.1+git230720-4 amd64 [installed,automatic]
+libtiffxx6/testing,now 4.5.1+git230720-4 amd64 [installed,automatic]
+libtinfo6/testing,now 6.5-2 amd64 [installed,automatic]
+libtinyxml2-10/testing,now 10.0.0+dfsg-2+b1 amd64 [installed,automatic]
+libtool/testing,now 2.4.7-7 all [installed,automatic]
+libtsan2/testing,now 14-20240330-1 amd64 [installed,automatic]
+libubsan1/testing,now 14-20240330-1 amd64 [installed,automatic]
+libuchardet0/testing,now 0.0.8-1+b1 amd64 [installed,automatic]
+libudev1/testing,now 256.4-2 amd64 [installed,automatic]
+libunistring5/testing,now 1.2-1 amd64 [installed,automatic]
+libuuid1/testing,now 2.40.2-1 amd64 [installed,automatic]
+libvulkan1/testing,now 1.3.283.0-1 amd64 [installed,automatic]
+libwayland-bin/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwayland-client0/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwayland-cursor0/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwayland-dev/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwayland-egl1/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwayland-server0/testing,now 1.23.0-1 amd64 [installed,automatic]
+libwebp-dev/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libwebp7/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libwebpdecoder3/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libwebpdemux2/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libwebpmux3/testing,now 1.4.0-0.1 amd64 [installed,automatic]
+libx11-6/testing,now 2:1.8.7-1+b1 amd64 [installed,automatic]
+libx11-data/testing,now 2:1.8.7-1 all [installed,automatic]
+libx11-dev/testing,now 2:1.8.7-1+b1 amd64 [installed,automatic]
+libx11-xcb1/testing,now 2:1.8.7-1+b1 amd64 [installed,automatic]
+libxapian30/testing,now 1.4.25-1 amd64 [installed,automatic]
+libxau-dev/testing,now 1:1.0.9-1+b1 amd64 [installed,automatic]
+libxau6/testing,now 1:1.0.9-1+b1 amd64 [installed,automatic]
+libxcb-dri2-0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-dri3-0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-glx0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-present0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-randr0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-render0-dev/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-render0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-shm0-dev/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-shm0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-sync1/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb-xfixes0/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb1-dev/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcb1/testing,now 1.17.0-2 amd64 [installed,automatic]
+libxcomposite-dev/testing,now 1:0.4.5-1+b1 amd64 [installed,automatic]
+libxcomposite1/testing,now 1:0.4.5-1+b1 amd64 [installed,automatic]
+libxcursor-dev/testing,now 1:1.2.2-1 amd64 [installed,automatic]
+libxcursor1/testing,now 1:1.2.2-1 amd64 [installed,automatic]
+libxdamage-dev/testing,now 1:1.1.6-1+b1 amd64 [installed,automatic]
+libxdamage1/testing,now 1:1.1.6-1+b1 amd64 [installed,automatic]
+libxdmcp-dev/testing,now 1:1.1.2-3+b1 amd64 [installed,automatic]
+libxdmcp6/testing,now 1:1.1.2-3+b1 amd64 [installed,automatic]
+libxext-dev/testing,now 2:1.3.4-1+b1 amd64 [installed,automatic]
+libxext6/testing,now 2:1.3.4-1+b1 amd64 [installed,automatic]
+libxfixes-dev/testing,now 1:6.0.0-2+b1 amd64 [installed,automatic]
+libxfixes3/testing,now 1:6.0.0-2+b1 amd64 [installed,automatic]
+libxft-dev/testing,now 2.3.6-1+b1 amd64 [installed,automatic]
+libxft2/testing,now 2.3.6-1+b1 amd64 [installed,automatic]
+libxi-dev/testing,now 2:1.8.1-1 amd64 [installed,automatic]
+libxi6/testing,now 2:1.8.1-1 amd64 [installed,automatic]
+libxinerama-dev/testing,now 2:1.1.4-3+b1 amd64 [installed,automatic]
+libxinerama1/testing,now 2:1.1.4-3+b1 amd64 [installed,automatic]
+libxkbcommon-dev/testing,now 1.6.0-1+b1 amd64 [installed,automatic]
+libxkbcommon0/testing,now 1.6.0-1+b1 amd64 [installed,automatic]
+libxml2-dev/testing,now 2.9.14+dfsg-1.3+b3 amd64 [installed,automatic]
+libxml2-utils/testing,now 2.9.14+dfsg-1.3+b3 amd64 [installed,automatic]
+libxml2/testing,now 2.9.14+dfsg-1.3+b3 amd64 [installed,automatic]
+libxmuu1/testing,now 2:1.1.3-3+b2 amd64 [installed,automatic]
+libxrandr-dev/testing,now 2:1.5.4-1 amd64 [installed,automatic]
+libxrandr2/testing,now 2:1.5.4-1 amd64 [installed,automatic]
+libxrender-dev/testing,now 1:0.9.10-1.1+b1 amd64 [installed,automatic]
+libxrender1/testing,now 1:0.9.10-1.1+b1 amd64 [installed,automatic]
+libxshmfence1/testing,now 1.3-1+b1 amd64 [installed,automatic]
+libxtst-dev/testing,now 2:1.2.3-1.1+b1 amd64 [installed,automatic]
+libxtst6/testing,now 2:1.2.3-1.1+b1 amd64 [installed,automatic]
+libxxf86vm1/testing,now 1:1.1.4-1+b2 amd64 [installed,automatic]
+libxxhash0/testing,now 0.8.2-2+b1 amd64 [installed,automatic]
+libyaml-0-2/testing,now 0.2.5-1+b1 amd64 [installed,automatic]
+libz3-4/testing,now 4.8.12-3.1+b2 amd64 [installed,automatic]
+libz3-dev/testing,now 4.8.12-3.1+b2 amd64 [installed,automatic]
+libzstd-dev/testing,now 1.5.6+dfsg-1 amd64 [installed,automatic]
+libzstd1/testing,now 1.5.6+dfsg-1 amd64 [installed,automatic]
+linux-libc-dev/testing,now 6.9.12-1 all [installed,automatic]
+linux-sysctl-defaults/testing,now 4.10.1 all [installed,automatic]
+llvm-16-dev/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+llvm-16-linker-tools/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+llvm-16-runtime/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+llvm-16-tools/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+llvm-16/testing,now 1:16.0.6-27+b1 amd64 [installed,automatic]
+login/testing,now 1:4.15.3-2 amd64 [installed,automatic]
+logsave/testing,now 1.47.1-1 amd64 [installed,automatic]
+m4/testing,now 1.4.19-4 amd64 [installed,automatic]
+make/testing,now 4.3-4.1 amd64 [installed]
+man-db/testing,now 2.12.1-2 amd64 [installed,automatic]
+manpages-dev/testing,now 6.8-2 all [installed,automatic]
+manpages/testing,now 6.8-2 all [installed,automatic]
+mawk/now 1.3.4.20240622-1 amd64 [installed,upgradable to: 1.3.4.20240622-2]
+media-types/testing,now 10.1.0 all [installed,automatic]
+mesa-vulkan-drivers/testing,now 24.1.3-2 amd64 [installed,automatic]
+mount/testing,now 2.40.2-1 amd64 [installed,automatic]
+ncurses-base/testing,now 6.5-2 all [installed,automatic]
+ncurses-bin/testing,now 6.5-2 amd64 [installed,automatic]
+netbase/testing,now 6.4 all [installed,automatic]
+openssh-client/testing,now 1:9.8p1-2 amd64 [installed,automatic]
+openssl/testing,now 3.2.2-1 amd64 [installed,automatic]
+pango1.0-tools/testing,now 1.54.0+ds-1 amd64 [installed,automatic]
+passwd/testing,now 1:4.15.3-2 amd64 [installed,automatic]
+patch/testing,now 2.7.6-7 amd64 [installed,automatic]
+perl-base/testing,now 5.38.2-5 amd64 [installed,automatic]
+perl-modules-5.38/testing,now 5.38.2-5 all [installed,automatic]
+perl/testing,now 5.38.2-5 amd64 [installed,automatic]
+pinentry-curses/testing,now 1.2.1-3+b2 amd64 [installed,automatic]
+pkgconf-bin/testing,now 1.8.1-3 amd64 [installed,automatic]
+pkgconf/testing,now 1.8.1-3 amd64 [installed,automatic]
+po-debconf/testing,now 1.0.21+nmu1 all [installed,automatic]
+procps/testing,now 2:4.0.4-5 amd64 [installed,automatic]
+psmisc/testing,now 23.7-1 amd64 [installed,automatic]
+publicsuffix/testing,now 20231001.0357-0.1 all [installed,automatic]
+python3-minimal/testing,now 3.12.4-1 amd64 [installed,automatic]
+python3-packaging/testing,now 24.1-1 all [installed,automatic]
+python3-pkg-resources/testing,now 70.3.0-2 all [installed,automatic]
+python3-pygments/testing,now 2.18.0+dfsg-1 all [installed,automatic]
+python3-yaml/testing,now 6.0.1-2+b1 amd64 [installed,automatic]
+python3.12-minimal/testing,now 3.12.4-3 amd64 [installed,automatic]
+python3.12/testing,now 3.12.4-3 amd64 [installed,automatic]
+python3/testing,now 3.12.4-1 amd64 [installed,automatic]
+readline-common/testing,now 8.2-4 all [installed,automatic]
+rpcsvc-proto/testing,now 1.4.3-1 amd64 [installed,automatic]
+sed/testing,now 4.9-2 amd64 [installed,automatic]
+sensible-utils/testing,now 0.0.24 all [installed,automatic]
+sgml-base/testing,now 1.31 all [installed,automatic]
+shared-mime-info/testing,now 2.4-5 amd64 [installed,automatic]
+systemd-cryptsetup/testing,now 256.4-2 amd64 [installed,automatic]
+systemd-sysv/testing,now 256.4-2 amd64 [installed,automatic]
+systemd-timesyncd/testing,now 256.4-2 amd64 [installed,automatic]
+systemd/testing,now 256.4-2 amd64 [installed,automatic]
+sysvinit-utils/testing,now 3.09-2 amd64 [installed,automatic]
+tar/testing,now 1.35+dfsg-3 amd64 [installed,automatic]
+tcl-expect/testing,now 5.45.4-3 amd64 [installed,automatic]
+tcl8.6/testing,now 8.6.14+dfsg-1 amd64 [installed,automatic]
+tzdata/testing,now 2024a-4 all [installed,automatic]
+usr-is-merged/testing,now 39 all [installed,automatic]
+util-linux/testing,now 2.40.2-1 amd64 [installed,automatic]
+uuid-dev/testing,now 2.40.2-1 amd64 [installed,automatic]
+wayland-protocols/testing,now 1.36-1 all [installed,automatic]
+x11-common/testing,now 1:7.7+23.1 all [installed,automatic]
+x11proto-dev/testing,now 2024.1-1 all [installed,automatic]
+xauth/testing,now 1:1.1.2-1 amd64 [installed,automatic]
+xdg-user-dirs/testing,now 0.18-1 amd64 [installed,automatic]
+xkb-data/testing,now 2.42-1 all [installed,automatic]
+xml-core/testing,now 0.19 all [installed,automatic]
+xorg-sgml-doctools/testing,now 1:1.11-1.1 all [installed,automatic]
+xtrans-dev/testing,now 1.4.0-1 all [installed,automatic]
+xz-utils/testing,now 5.6.2-2 amd64 [installed,automatic]
+zlib1g-dev/testing,now 1:1.3.dfsg+really1.3.1-1 amd64 [installed,automatic]
+zlib1g/testing,now 1:1.3.dfsg+really1.3.1-1 amd64 [installed,automatic]
+Errors detected in the build 0
+Warnings detected in the logs 49
+cppcheck defects detected in the logs 15
+TOTAL warnings detected in the logs 64
