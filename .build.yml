@@ -14,9 +14,11 @@ requires:
     - expect #required for unbuffer
     - gcc
     - git
+    - intltool
     - libayatana-appindicator3-dev
     - libpolkit-agent-1-dev
     - libpolkit-gobject-1-dev
+    - libtool
     - make
 
 before_scripts:
