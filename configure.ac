@@ -29,7 +29,6 @@ CAFE_DEBUG_CHECK
 CAFE_COMPILE_WARNINGS([maximum])
 
 AC_PROG_CC
-AC_HEADER_STDC
 
 # Initialize libtool
 LT_PREREQ([2.2.6])
