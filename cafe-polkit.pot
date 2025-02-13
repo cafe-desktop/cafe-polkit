@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-polkit 1.23.0\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-07 09:47+0100\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,59 +33,59 @@ msgstr ""
 msgid "%s (%s)"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:664
+#: src/polkitcafeauthenticationdialog.c:665
 msgid "_Cancel"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:669
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:710
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:718
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:724
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:760 src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:778
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:839
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:856
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:858
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr ""
 
-#: src/polkitcafeauthenticationdialog.c:1016
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr ""
 
@@ -102,10 +102,10 @@ msgstr ""
 msgid "Authentication dialog was dismissed by the user"
 msgstr ""
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr ""
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr ""
