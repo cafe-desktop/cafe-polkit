@@ -2,25 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-polkit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Helena S <ele@tutamail.com>, 2018
 # Damir Jerovšek <jierro@windowslive.com>, 2019
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-polkit 1.23.0\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-07 09:47+0100\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: 2018-03-11 20:32+0000\n"
 "Last-Translator: Damir Jerovšek <jierro@windowslive.com>, 2019\n"
 "Language-Team: Slovenian (https://www.transifex.com/cafe/teams/13566/sl/)\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3);\n"
 
 #: src/main.c:163
 msgid "Drop all elevated privileges"
@@ -39,15 +40,15 @@ msgstr "Izbor uporabnika ..."
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/polkitcafeauthenticationdialog.c:664
+#: src/polkitcafeauthenticationdialog.c:665
 msgid "_Cancel"
 msgstr "_Prekliči"
 
-#: src/polkitcafeauthenticationdialog.c:669
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr "_Overi"
 
-#: src/polkitcafeauthenticationdialog.c:710
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
@@ -55,7 +56,7 @@ msgstr ""
 "Program poskuša izvesti dejanje, ki zahteva posebna dovoljenja. Dejanje "
 "lahko odobrijo izpisani uporabniki."
 
-#: src/polkitcafeauthenticationdialog.c:718
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
@@ -63,7 +64,7 @@ msgstr ""
 "Program poskuša izvesti dejanje, ki zahteva posebna dovoljenja. Za izvedbo "
 "dejanja je zahtevana overitev."
 
-#: src/polkitcafeauthenticationdialog.c:724
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
@@ -71,33 +72,33 @@ msgstr ""
 "Program poskuša izvesti dejanje, ki zahteva posebna dovoljenja. Dejanje je "
 "mogoče izvesti le s skrbniškim dovoljenjem."
 
-#: src/polkitcafeauthenticationdialog.c:760 src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr "_Geslo:"
 
-#: src/polkitcafeauthenticationdialog.c:778
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr "<small><b>_Podrobnosti</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr "<small><b>Dejanje:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:839
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr "Kliknite za urejanje %s"
 
-#: src/polkitcafeauthenticationdialog.c:856
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr "<small><b>Ponudnik:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:858
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr "Kliknite za odpiranje %s"
 
-#: src/polkitcafeauthenticationdialog.c:1016
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr "Overi"
 
@@ -114,10 +115,10 @@ msgstr "Poskus overitve ni uspel. Poskusite ponovno."
 msgid "Authentication dialog was dismissed by the user"
 msgstr "Overitveno pogovorno okno je bilo preklicano s strani uporabnika"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr "Posrednik overjanja PolicyKit"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr "Posrednik overitve PolicyKit za namizje CAFE"

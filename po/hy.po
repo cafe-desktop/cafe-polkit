@@ -2,22 +2,22 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-polkit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Siranush <ss.m.95@mail.ru>, 2019
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-polkit 1.23.0\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-07 09:47+0100\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: 2018-03-11 20:32+0000\n"
 "Last-Translator: Siranush <ss.m.95@mail.ru>, 2019\n"
 "Language-Team: Armenian (https://www.transifex.com/cafe/teams/13566/hy/)\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hy\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/main.c:163
@@ -37,67 +37,66 @@ msgstr "Ընտրել օգտվողին..."
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/polkitcafeauthenticationdialog.c:664
+#: src/polkitcafeauthenticationdialog.c:665
 msgid "_Cancel"
 msgstr "_Չեղարկել "
 
-#: src/polkitcafeauthenticationdialog.c:669
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr "_Վավերացնել"
 
-#: src/polkitcafeauthenticationdialog.c:710
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
 msgstr ""
-"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։"
-" Նույնականացումը որպես օգտվողներից մեկը պահանջվում ներքևում այս "
+"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։ "
+"Նույնականացումը որպես օգտվողներից մեկը պահանջվում ներքևում այս "
 "գործողությունը կատարել։"
 
-#: src/polkitcafeauthenticationdialog.c:718
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
-"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։"
-" Նույնականացումը պահանջվում է կատարել այս գործողությունը։"
+"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։ "
+"Նույնականացումը պահանջվում է կատարել այս գործողությունը։"
 
-#: src/polkitcafeauthenticationdialog.c:724
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
 msgstr ""
-"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։"
-" Նույնականացումը որպես գեր օգտագործող պահանջվում է կատարել այս "
-"գործողությունը։"
+"Դիմումը փորձում է կատարել որևէ գործողություն, որը պահանջում արտոնություններ։ "
+"Նույնականացումը որպես գեր օգտագործող պահանջվում է կատարել այս գործողությունը։"
 
-#: src/polkitcafeauthenticationdialog.c:760 src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr "_Գաղտնաբառ"
 
-#: src/polkitcafeauthenticationdialog.c:778
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr "<small><b>_Մանրամասն</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr "<small><b>Գործողություն:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:839
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr "Սեղմեք խմբագրել %s"
 
-#: src/polkitcafeauthenticationdialog.c:856
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr "<small><b>Վաճառող:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:858
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr "Սեղմեք բացել %s"
 
-#: src/polkitcafeauthenticationdialog.c:1016
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr "Վավերացնել"
 
@@ -114,10 +113,10 @@ msgstr "Ձեր նույնականացման փորձը անհաջող էր։ Խ�
 msgid "Authentication dialog was dismissed by the user"
 msgstr "Նույնականացնել օգտատիրոջ կողմից ազատված երկխոսությունը"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr "PolicyKit Նույնականացման գործակալը"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr "PolicyKit Նույնականացման գործակալը CAFE աշխատանքային սեղանի համար"

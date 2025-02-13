@@ -2,22 +2,22 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-polkit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-polkit 1.23.0\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-07 09:47+0100\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: 2018-03-11 20:32+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Kannada (https://www.transifex.com/cafe/teams/13566/kn/)\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: kn\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/main.c:163
@@ -37,66 +37,65 @@ msgstr "ಬಳಕೆದಾರನನ್ನು ಆಯ್ಕೆ ಮಾಡಿ..."
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/polkitcafeauthenticationdialog.c:664
+#: src/polkitcafeauthenticationdialog.c:665
 msgid "_Cancel"
 msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
 
-#: src/polkitcafeauthenticationdialog.c:669
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr "ದೃಢೀಕರಿಸು(_A)"
 
-#: src/polkitcafeauthenticationdialog.c:710
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
 msgstr ""
-"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ."
-" ಈ ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಈ ಕೆಳಗಿನ ಬಳಕೆದಾರರಲ್ಲಿ ಒಬ್ಬರಾಗಿ ದೃಢೀಕರಿಸುವ "
-"ಅಗತ್ಯವಿರುತ್ತದೆ."
+"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ. ಈ "
+"ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಈ ಕೆಳಗಿನ ಬಳಕೆದಾರರಲ್ಲಿ ಒಬ್ಬರಾಗಿ ದೃಢೀಕರಿಸುವ ಅಗತ್ಯವಿರುತ್ತದೆ."
 
-#: src/polkitcafeauthenticationdialog.c:718
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
-"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ."
-" ಈ ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ದೃಢೀಕರಣದ ಅಗತ್ಯವಿರುತ್ತದೆ."
+"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ. ಈ "
+"ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ದೃಢೀಕರಣದ ಅಗತ್ಯವಿರುತ್ತದೆ."
 
-#: src/polkitcafeauthenticationdialog.c:724
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
 msgstr ""
-"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ."
-" ಈ ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಸೂಪರ್ ಯೂಸರ್ ಆಗಿ ದೃಢೀಕರಿಸುವ ಅಗತ್ಯವಿರುತ್ತದೆ."
+"ಒಂದು ಅನ್ವಯವು ಅಧಿಕಾರದ ಅಗತ್ಯವಿರುವ ಒಂದು ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದೆ. ಈ "
+"ಕಾರ್ಯವನ್ನು ನಿರ್ವಹಿಸಲು ಸೂಪರ್ ಯೂಸರ್ ಆಗಿ ದೃಢೀಕರಿಸುವ ಅಗತ್ಯವಿರುತ್ತದೆ."
 
-#: src/polkitcafeauthenticationdialog.c:760 src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr "ಗುಪ್ತಪದ(_P):"
 
-#: src/polkitcafeauthenticationdialog.c:778
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr "<small><b>ವಿವರಗಳು(_D)</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr "<small><b>ಕ್ರಿಯೆ:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:839
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr "%s ಅನ್ನು ಸಂಪಾದಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ"
 
-#: src/polkitcafeauthenticationdialog.c:856
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr "<small><b>ಮಾರಾಟಗಾರ:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:858
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr "%s ಅನ್ನು ತೆರೆಯಲು ಕ್ಲಿಕ್ ಮಾಡಿ"
 
-#: src/polkitcafeauthenticationdialog.c:1016
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr "ದೃಢೀಕರಿಸಿ"
 
@@ -113,10 +112,10 @@ msgstr ""
 msgid "Authentication dialog was dismissed by the user"
 msgstr ""
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr "PolicyKit ದೃಢೀಕರಣ ಮಧ್ಯವರ್ತಿ"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr ""

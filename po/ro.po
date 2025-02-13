@@ -2,26 +2,27 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-polkit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # corneliu.e <corneliueva@yahoo.com>, 2018
 # sidro <slacky2005@gmail.com>, 2018
 # Daniel <danny3@tutanota.com>, 2019
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-polkit 1.23.0\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-07 09:47+0100\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: 2018-03-11 20:32+0000\n"
 "Last-Translator: Daniel <danny3@tutanota.com>, 2019\n"
 "Language-Team: Romanian (https://www.transifex.com/cafe/teams/13566/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #: src/main.c:163
 msgid "Drop all elevated privileges"
@@ -40,66 +41,66 @@ msgstr "Alegere utilizator..."
 msgid "%s (%s)"
 msgstr "%s (%s)"
 
-#: src/polkitcafeauthenticationdialog.c:664
+#: src/polkitcafeauthenticationdialog.c:665
 msgid "_Cancel"
 msgstr "_Renunță"
 
-#: src/polkitcafeauthenticationdialog.c:669
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr "_Autentifică"
 
-#: src/polkitcafeauthenticationdialog.c:710
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
 msgstr ""
-"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a"
-" efectua această acțiune este necesară autentificarea ca unul din "
+"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a "
+"efectua această acțiune este necesară autentificarea ca unul din "
 "utilizatorii de mai jos."
 
-#: src/polkitcafeauthenticationdialog.c:718
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
-"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a"
-" efectua această acțiune este necesară autentificarea."
+"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a "
+"efectua această acțiune este necesară autentificarea."
 
-#: src/polkitcafeauthenticationdialog.c:724
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
 msgstr ""
-"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a"
-" efectua această acțiune este necesară autentificarea ca administrator."
+"O aplicație încearcă să efectueze o acțiune ce necesită privilegii. Pentru a "
+"efectua această acțiune este necesară autentificarea ca administrator."
 
-#: src/polkitcafeauthenticationdialog.c:760 src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr "_Parolă:"
 
-#: src/polkitcafeauthenticationdialog.c:778
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr "<small><b>_Detalii</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr "<small><b>Acțiune:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:839
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr "Clic pentru a edita %s"
 
-#: src/polkitcafeauthenticationdialog.c:856
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr "<small><b>Producător:</b></small>"
 
-#: src/polkitcafeauthenticationdialog.c:858
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr "Clic pentru a deschide %s"
 
-#: src/polkitcafeauthenticationdialog.c:1016
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr "Autentifică"
 
@@ -116,10 +117,10 @@ msgstr "Încercarea de autentificare a eșuat. Încearcă din nou."
 msgid "Authentication dialog was dismissed by the user"
 msgstr "Fereastra pentru autentificare a fost închisă de utilizator"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr "Agent de autentificare PolicyKit"
 
-#: src/polkit-cafe-authentication-agent-1.desktop.in.in:4
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr "Agent de autentificare PolicyKit"

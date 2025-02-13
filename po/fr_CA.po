@@ -1,243 +1,117 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Ir0nsh007er <eerlemm@hotmail.com>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: CAFE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:37+0100\n"
+"Project-Id-Version: cafe-polkit 2.0.0\n"
+"Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
+"POT-Creation-Date: 2025-02-13 16:52+0100\n"
 "PO-Revision-Date: 2017-09-22 02:12+0000\n"
 "Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: French (Canada) (http://www.transifex.com/cafe/CAFE/language/fr_CA/)\n"
+"Language-Team: French (Canada) (http://www.transifex.com/cafe/CAFE/language/"
+"fr_CA/)\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../polkitctkcafe/polkitlockbutton.c:451
-msgid "Action Identifier"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:452
-msgid "The action identifier to use for the button"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:468
-msgid "Is Authorized"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:469
-msgid "Whether the process is authorized"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:484
-msgid "Is Visible"
-msgstr "Est Visible"
-
-#: ../polkitctkcafe/polkitlockbutton.c:485
-msgid "Whether the widget is visible"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:500
-msgid "Can Obtain"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:501
-msgid "Whether authorization can be obtained"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:516
-#: ../polkitctkcafe/polkitlockbutton.c:618
-msgid "Unlock Text"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:517
-msgid "The text to display when prompting the user to unlock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:518
-msgid "Click to make changes"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:533
-#: ../polkitctkcafe/polkitlockbutton.c:635
-msgid "Unlock Tooltip"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:534
-msgid "The tooltip to display when prompting the user to unlock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:535
-msgid "Authentication is needed to make changes."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:550
-msgid "Lock Text"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:551
-msgid "The text to display when prompting the user to lock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:552
-msgid "Click to prevent changes"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:567
-msgid "Lock Tooltip"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:568
-msgid "The tooltip to display when prompting the user to lock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:569
-msgid "To prevent further changes, click the lock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:584
-msgid "Lock Down Text"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:585
-msgid ""
-"The text to display when prompting the user to lock down the action for all "
-"users."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:586
-msgid "Click to lock down"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:601
-msgid "Lock Down Tooltip"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:602
-msgid ""
-"The tooltip to display when prompting the user to lock down the action for "
-"all users."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:603
-msgid ""
-"To prevent users without administrative privileges from making changes, "
-"click the lock."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:619
-msgid ""
-"The text to display when the user cannot obtain authorization through "
-"authentication."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:620
-msgid "Not authorized to make changes"
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:636
-msgid ""
-"The tooltip to display when the user cannot obtain authorization through "
-"authentication."
-msgstr ""
-
-#: ../polkitctkcafe/polkitlockbutton.c:637
-msgid "System policy prevents changes. Contact your system administator."
-msgstr ""
-
-#: ../src/main.c:163
+#: src/main.c:163
 msgid "Drop all elevated privileges"
 msgstr ""
 
-#: ../src/main.c:187
+#: src/main.c:187
 msgid "Click the icon to drop all elevated privileges"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:275
+#: src/polkitcafeauthenticationdialog.c:275
 msgid "Select user..."
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:310
+#: src/polkitcafeauthenticationdialog.c:310
 #, c-format
 msgid "%s (%s)"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:654
+#: src/polkitcafeauthenticationdialog.c:665
+msgid "_Cancel"
+msgstr ""
+
+#: src/polkitcafeauthenticationdialog.c:670
 msgid "_Authenticate"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:700
+#: src/polkitcafeauthenticationdialog.c:711
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as one of the users below is required to perform this action."
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:708
+#: src/polkitcafeauthenticationdialog.c:719
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication is required to perform this action."
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:714
+#: src/polkitcafeauthenticationdialog.c:725
 msgid ""
 "An application is attempting to perform an action that requires privileges. "
 "Authentication as the super user is required to perform this action."
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:753
-#: ../src/polkitcafeauthenticator.c:301
+#: src/polkitcafeauthenticationdialog.c:761 src/polkitcafeauthenticator.c:301
 msgid "_Password:"
 msgstr ""
 
-#. Details
-#: ../src/polkitcafeauthenticationdialog.c:771
+#: src/polkitcafeauthenticationdialog.c:779
 msgid "<small><b>_Details</b></small>"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:833
+#: src/polkitcafeauthenticationdialog.c:837
 msgid "<small><b>Action:</b></small>"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:836
+#: src/polkitcafeauthenticationdialog.c:840
 #, c-format
 msgid "Click to edit %s"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:855
+#: src/polkitcafeauthenticationdialog.c:857
 msgid "<small><b>Vendor:</b></small>"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:857
+#: src/polkitcafeauthenticationdialog.c:859
 #, c-format
 msgid "Click to open %s"
 msgstr ""
 
-#: ../src/polkitcafeauthenticationdialog.c:1017
+#: src/polkitcafeauthenticationdialog.c:1017
 msgid "Authenticate"
 msgstr ""
 
-#: ../src/polkitcafeauthenticator.c:297
+#: src/polkitcafeauthenticator.c:297
 #, c-format
 msgid "_Password for %s:"
 msgstr ""
 
-#: ../src/polkitcafeauthenticator.c:458
+#: src/polkitcafeauthenticator.c:458
 msgid "Your authentication attempt was unsuccessful. Please try again."
 msgstr ""
 
-#: ../src/polkitcafelistener.c:164
+#: src/polkitcafelistener.c:164
 msgid "Authentication dialog was dismissed by the user"
 msgstr ""
 
-#: ../src/polkit-cafe-authentication-agent-1.desktop.in.in.h:1
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:2
 msgid "PolicyKit Authentication Agent"
 msgstr ""
 
-#: ../src/polkit-cafe-authentication-agent-1.desktop.in.in.h:2
+#: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr ""
+
+#~ msgid "Is Visible"
+#~ msgstr "Est Visible"
