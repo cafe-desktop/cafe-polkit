@@ -61,7 +61,7 @@ static gboolean polkit_cafe_listener_initiate_authentication_finish (PolkitAgent
 G_DEFINE_TYPE (PolkitCafeListener, polkit_cafe_listener, POLKIT_AGENT_TYPE_LISTENER);
 
 static void
-polkit_cafe_listener_init (PolkitCafeListener *listener)
+polkit_cafe_listener_init (PolkitCafeListener *listener G_GNUC_UNUSED)
 {
 }
 
@@ -144,9 +144,9 @@ maybe_initiate_next_authenticator (PolkitCafeListener *listener)
 
 static void
 authenticator_completed (PolkitCafeAuthenticator *authenticator,
-                         gboolean                 gained_authorization,
-                         gboolean                 dismissed,
-                         gpointer                 user_data)
+			 gboolean                 gained_authorization G_GNUC_UNUSED,
+			 gboolean                 dismissed,
+			 gpointer                 user_data)
 {
   AuthData *data = user_data;
 
@@ -173,8 +173,8 @@ authenticator_completed (PolkitCafeAuthenticator *authenticator,
 }
 
 static void
-cancelled_cb (GCancellable *cancellable,
-              gpointer user_data)
+cancelled_cb (GCancellable *cancellable G_GNUC_UNUSED,
+	      gpointer      user_data)
 {
   AuthData *data = user_data;
 
@@ -245,9 +245,9 @@ polkit_cafe_listener_initiate_authentication (PolkitAgentListener  *agent_listen
 }
 
 static gboolean
-polkit_cafe_listener_initiate_authentication_finish (PolkitAgentListener  *listener,
-                                                      GAsyncResult         *res,
-                                                      GError              **error)
+polkit_cafe_listener_initiate_authentication_finish (PolkitAgentListener  *listener G_GNUC_UNUSED,
+						     GAsyncResult         *res,
+						     GError              **error)
 {
   GTask *task = G_TASK (res);
 

@@ -88,11 +88,11 @@ enum {
 };
 
 static void
-user_combobox_set_sensitive (CtkCellLayout   *cell_layout,
-                             CtkCellRenderer *cell,
-                             CtkTreeModel    *tree_model,
-                             CtkTreeIter     *iter,
-                             gpointer         user_data)
+user_combobox_set_sensitive (CtkCellLayout   *cell_layout G_GNUC_UNUSED,
+			     CtkCellRenderer *cell,
+			     CtkTreeModel    *tree_model,
+			     CtkTreeIter     *iter,
+			     gpointer         user_data G_GNUC_UNUSED)
 {
   CtkTreePath *path;
   gint *indices;
@@ -534,7 +534,8 @@ add_row (CtkWidget *grid, int row, const char *label_text, CtkWidget *entry)
 }
 
 static void
-action_id_activated (CtkLabel *url_label, gpointer user_data)
+action_id_activated (CtkLabel *url_label G_GNUC_UNUSED,
+		     gpointer  user_data G_GNUC_UNUSED)
 {
 #if 0
   GError *error;

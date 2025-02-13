@@ -64,8 +64,8 @@ static  GMainLoop *loop;
 
 static void
 revoke_tmp_authz_cb (GObject      *source_object,
-                     GAsyncResult *res,
-                     gpointer      user_data)
+		     GAsyncResult *res,
+		     gpointer      user_data G_GNUC_UNUSED)
 {
   GError *error;
 
@@ -99,17 +99,17 @@ on_menu_item_activate (CtkMenuItem *menu_item,
 }
 #else
 static void
-on_status_icon_activate (CtkStatusIcon *status_icon,
-                         gpointer       user_data)
+on_status_icon_activate (CtkStatusIcon *status_icon G_GNUC_UNUSED,
+			 gpointer       user_data G_GNUC_UNUSED)
 {
   revoke_tmp_authz ();
 }
 
 static void
-on_status_icon_popup_menu (CtkStatusIcon *status_icon,
-                           guint          button,
-                           guint          activate_time,
-                           gpointer       user_data)
+on_status_icon_popup_menu (CtkStatusIcon *status_icon G_GNUC_UNUSED,
+			   guint          button G_GNUC_UNUSED,
+			   guint          activate_time G_GNUC_UNUSED,
+			   gpointer       user_data G_GNUC_UNUSED)
 {
   revoke_tmp_authz ();
 }
@@ -219,8 +219,8 @@ update_temporary_authorization_icon_real (void)
 
 static void
 enumerate_temporary_authorizations_cb (GObject      *source_object,
-                                       GAsyncResult *res,
-                                       gpointer      user_data)
+				       GAsyncResult *res,
+				       gpointer      user_data G_GNUC_UNUSED)
 {
   PolkitAuthority *authority = POLKIT_AUTHORITY (source_object);
   GList *temporary_authorizations;
@@ -262,7 +262,7 @@ update_temporary_authorization_icon (PolkitAuthority *authority)
 
 static void
 on_authority_changed (PolkitAuthority *authority,
-                      gpointer         user_data)
+		      gpointer         user_data G_GNUC_UNUSED)
 {
   update_temporary_authorization_icon (authority);
 }
@@ -312,8 +312,11 @@ end_session_cb (void)
 }
 
 static void
-signal_cb (GDBusProxy *proxy, gchar *sender_name, gchar *signal_name,
-           GVariant *parameters, gpointer user_data)
+signal_cb (GDBusProxy *proxy G_GNUC_UNUSED,
+	   gchar      *sender_name G_GNUC_UNUSED,
+	   gchar      *signal_name,
+	   GVariant   *parameters G_GNUC_UNUSED,
+	   gpointer    user_data G_GNUC_UNUSED)
 {
         if (strcmp (signal_name, "Stop") == 0) {
                 stop_cb ();

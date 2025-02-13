@@ -76,7 +76,7 @@ static guint signals[LAST_SIGNAL] = {0};
 G_DEFINE_TYPE (PolkitCafeAuthenticator, polkit_cafe_authenticator, G_TYPE_OBJECT);
 
 static void
-polkit_cafe_authenticator_init (PolkitCafeAuthenticator *authenticator)
+polkit_cafe_authenticator_init (PolkitCafeAuthenticator *authenticator G_GNUC_UNUSED)
 {
 }
 
@@ -178,9 +178,9 @@ get_desc_for_action (PolkitAuthority *authority,
 }
 
 static void
-on_dialog_deleted (CtkWidget *widget,
-                   CdkEvent  *event,
-                   gpointer   user_data)
+on_dialog_deleted (CtkWidget *widget G_GNUC_UNUSED,
+		   CdkEvent  *event G_GNUC_UNUSED,
+		   gpointer   user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
@@ -188,9 +188,9 @@ on_dialog_deleted (CtkWidget *widget,
 }
 
 static void
-on_user_selected (GObject    *object,
-                  GParamSpec *pspec,
-                  gpointer    user_data)
+on_user_selected (GObject    *object G_GNUC_UNUSED,
+		  GParamSpec *pspec G_GNUC_UNUSED,
+		  gpointer    user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
@@ -276,10 +276,10 @@ polkit_cafe_authenticator_new (const gchar     *action_id,
 }
 
 static void
-session_request (PolkitAgentSession *session,
-                 const char         *request,
-                 gboolean            echo_on,
-                 gpointer            user_data)
+session_request (PolkitAgentSession *session G_GNUC_UNUSED,
+		 const char         *request,
+		 gboolean            echo_on,
+		 gpointer            user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *password;
@@ -332,9 +332,9 @@ out:
 }
 
 static void
-session_show_error (PolkitAgentSession *session,
-                    const gchar        *msg,
-                    gpointer            user_data)
+session_show_error (PolkitAgentSession *session G_GNUC_UNUSED,
+		    const gchar        *msg,
+		    gpointer            user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *s;
@@ -345,9 +345,9 @@ session_show_error (PolkitAgentSession *session,
 }
 
 static void
-session_show_info (PolkitAgentSession *session,
-                   const gchar        *msg,
-                   gpointer            user_data)
+session_show_info (PolkitAgentSession *session G_GNUC_UNUSED,
+		   const gchar        *msg,
+		   gpointer            user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
   gchar *s;
@@ -362,9 +362,9 @@ session_show_info (PolkitAgentSession *session,
 
 
 static void
-session_completed (PolkitAgentSession *session,
-                   gboolean            gained_authorization,
-                   gpointer            user_data)
+session_completed (PolkitAgentSession *session G_GNUC_UNUSED,
+		   gboolean            gained_authorization,
+		   gpointer            user_data)
 {
   PolkitCafeAuthenticator *authenticator = POLKIT_CAFE_AUTHENTICATOR (user_data);
 
