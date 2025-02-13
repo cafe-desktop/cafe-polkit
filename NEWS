@@ -1,3 +1,10 @@
+### cafe-polkit 2.0.0
+
+  * ci: some improvements
+  * build: remove obsolete AC_HEADER_STDC and AC_HELP_STRING
+  * add G_GNUC_UNUSED in unused parameters
+  * update translations
+
 ### cafe-polkit 1.25.0
 
   * initial commit: mate-polkit 1.24.0 fork
