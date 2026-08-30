@@ -1,9 +1,18 @@
+### cafe-polkit 2.1.0
+
+  * ci: add debian stable build
+  * port from GdkPixbuf to CdkPixbuf
+  * build: stop generating ChangeLog
+  * po,fr_CA: remove obsolete translations
+
+
 ### cafe-polkit 2.0.0
 
   * ci: some improvements
   * build: remove obsolete AC_HEADER_STDC and AC_HELP_STRING
   * add G_GNUC_UNUSED in unused parameters
   * update translations
+
 
 ### cafe-polkit 1.25.0
 
