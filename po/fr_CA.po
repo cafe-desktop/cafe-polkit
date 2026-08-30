@@ -112,6 +112,3 @@ msgstr ""
 #: src/polkit-cafe-authentication-agent-1.desktop.in.in:3
 msgid "PolicyKit Authentication Agent for the CAFE Desktop"
 msgstr ""
-
-#~ msgid "Is Visible"
-#~ msgstr "Est Visible"
